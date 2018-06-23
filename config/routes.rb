@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :venues, only: [:index, :update]
+  resources :venues, only: [:show] do
+    resources :suggestions, only: [:index, :create, :update]
+    resources :reviews, only: [:index, :create]
+  end
 end
