@@ -1,7 +1,7 @@
 # Task List
 https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/
 [x] generate Rails api app
-[ ] create-react-app
+[x] create-react-app
 [x] generate models: venue, venue_comment, suggestion
   `rails g model`
 [x] set up migrations & run them
@@ -46,3 +46,16 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
 [x] test JSON
 [ ] figure out why the timestamp data is showing up for location
 [ ] update README with proper install and usage instructions
+[ ] react-router
+[ ] React Components
+  [ ] VenueList
+  [ ] Venue Detail
+  [ ] SuggestionList
+  [ ] ReviewList
+  [ ] App
+[ ] Redux
+  [ ] create store
+  [ ] actions
+  [ ] reducers
+  [ ] thunk
+[ ] set up packages for React and Redux
