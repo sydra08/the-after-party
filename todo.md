@@ -45,3 +45,4 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     Content
 [x] test JSON
 [ ] figure out why the timestamp data is showing up for location
+[ ] update README with proper install and usage instructions

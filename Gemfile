@@ -14,6 +14,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 # activemodel serializer
 gem 'active_model_serializers'
+# foreman for managing multiple processes
+gem 'foreman', '~> 0.84.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
