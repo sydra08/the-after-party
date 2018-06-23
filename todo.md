@@ -2,16 +2,16 @@
 https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/
 [ ] generate Rails api app
 [ ] create-react-app
-[x] generate models: venue, venue_comment, suggestion
+[ ] generate models: venue, venue_comment, suggestion
   `rails g model`
-[x] set up migrations & run them
-[x] create seed data
+[ ] set up migrations & run them
+[ ] create seed data
   red rocks
   madison square garden
   brooklyn steel
   irving plaza
   bowery ballroom
-[x] set up models
+[ ] set up models
 [ ] set up controllers
   [ ] venues
     [ ] index
@@ -29,7 +29,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   [ ] venues
   [ ] suggestions (should probably be nested under venues?)
   [ ] reviews (should probably be nested under venues?)
-[ ] set up AMS
+[x] set up AMS
 [ ] set up serializers
   [ ] location
   [ ] venues list - name, location_id, avg_rating, capacity
