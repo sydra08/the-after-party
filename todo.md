@@ -1,17 +1,17 @@
 # Task List
 https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/
-[ ] generate Rails api app
+[x] generate Rails api app
 [ ] create-react-app
-[ ] generate models: venue, venue_comment, suggestion
+[x] generate models: venue, venue_comment, suggestion
   `rails g model`
-[ ] set up migrations & run them
-[ ] create seed data
+[x] set up migrations & run them
+[x] create seed data
   red rocks
   madison square garden
   brooklyn steel
   irving plaza
   bowery ballroom
-[ ] set up models
+[x] set up models
 [ ] set up controllers
   [ ] venues
     [ ] index
