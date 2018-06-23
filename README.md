@@ -1,24 +1,27 @@
-# README
+# About BeerMe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The After Party is an app for concert-goers. It allows you to explore and review venues. You can also learn about where to go before and after the show. Not only can you explore other people's suggestions but you can vote on them or leave your own.
 
-Things you may want to cover:
+## Install & Usage Instructions
 
-* Ruby version
+To install, clone or fork this repository, then run `bundle install` from the terminal prompt.
 
-* System dependencies
+To create a new version of the database, populate it with seed data, and get started, run the following commands from the terminal prompt:
 
-* Configuration
+NEED TO UPDATE
+```ruby
+rake db:drop
+rake db:migrate
+rake db:seed
+rails s
+```
 
-* Database creation
+In your browser, navigate to `localhost:3000`.
 
-* Database initialization
+## Contributions
 
-* How to run the test suite
+Bug reports and pull requests are welcome on GitHub at https://github.com/sydra08/the-after-party. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
-
-* ...
+This project is available as open source under the terms of the [MIT License](https://github.com/sydra08/the-after-party/blob/master/LICENSE).
