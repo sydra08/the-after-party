@@ -14,31 +14,34 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
 [x] set up models
 [ ] set up controllers
   [ ] venues
-    [ ] index
-    [ ] show
+    [x] index
+    [x] show
     [ ] update
   [ ] suggestions
-    [ ] index
+    [x] index
     [ ] create
     [ ] update
   [ ] reviews
-    [ ] index
+    [x] index
     [ ] create
     [ ] update
-[ ] set up routes
-  [ ] venues
-  [ ] suggestions (should probably be nested under venues?)
-  [ ] reviews (should probably be nested under venues?)
+[x] set up routes
+  [x] venues
+  [x] suggestions (should probably be nested under venues?)
+  [x] reviews (should probably be nested under venues?)
 [x] set up AMS
-[ ] set up serializers
-  [ ] location
-  [ ] venues list - name, location_id, avg_rating, capacity
+[x] set up serializers
+  [x] address
+  [x] category
+  [x] location
+  [x] venues list - name, location_id, avg_rating, capacity
     + don't think it needs to have the reviews or suggestions associations listed here, only location
-  [ ] venue show - name, location_id, avg_rating, capacity with all associations
-  [ ] suggestion list - all fields
+  [x] venue show - name, location_id, avg_rating, capacity with all associations
+  [x] suggestion list - all fields
     NAME location avg_price
     Category | Upvotes Downvotes
-  [ ] review list - all fields
+  [x] review list - all fields
     Rating
     Content
-[ ] test JSON
+[x] test JSON
+[ ] figure out why the timestamp data is showing up for location
