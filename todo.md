@@ -47,6 +47,12 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
 [ ] figure out why the timestamp data is showing up for location
 [ ] update README with proper install and usage instructions
 [ ] react-router
+[ ] packages
+  [ ] isomorphic fetch
+  [ ] es6 promise (?)
+  [ ] prop-types
+  [ ] react-router
+  [ ] redux thunk
 [ ] React Components
   [ ] VenueList
   [ ] Venue Detail
@@ -56,6 +62,10 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
 [ ] Redux
   [ ] create store
   [ ] actions
+    [ ] addReview
+    [ ] addSuggestion
+    [ ] updateSuggestion (when voting)
+    [ ] updateVenue (rating)
   [ ] reducers
   [ ] thunk
 [ ] set up packages for React and Redux
