@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
     else
       # 400 means bad request
       render json: @review, status: 400
+    end
   end
 
   private

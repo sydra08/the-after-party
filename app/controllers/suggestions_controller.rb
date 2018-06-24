@@ -13,6 +13,7 @@ class SuggestionsController < ApplicationController
     else
       # 400 means bad request
       render json: @suggestion, status: 400
+    end
   end
 
   def update
@@ -21,6 +22,7 @@ class SuggestionsController < ApplicationController
       render json: @suggestion, status: 200
     else
       render json: @suggestion, status: 404
+    end
   end
 
   private

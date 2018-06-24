@@ -19,6 +19,7 @@ class VenuesController < ApplicationController
       render json: @venue, status: 200
     else
       render json: @venue, status: 404
+    end
   end
 
   private
