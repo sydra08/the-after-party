@@ -1,4 +1,4 @@
-# About BeerMe
+# About The After Party
 
 The After Party is an app for concert-goers. It allows you to explore and review venues. You can also learn about where to go before and after the show. Not only can you explore other people's suggestions but you can vote on them or leave your own.
 
@@ -13,7 +13,9 @@ NEED TO UPDATE
 rake db:drop
 rake db:migrate
 rake db:seed
-rails s
+cd client
+npm install
+rake start
 ```
 
 In your browser, navigate to `localhost:3000`.
