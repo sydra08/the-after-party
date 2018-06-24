@@ -14,11 +14,17 @@ class VenuesController < ApplicationController
   end
 
   def update
+    @venue = Venue.find_by(id: params[:id])
+    if @venue.update(venue_params)
+      render json: @venue, status: 200
+    else
+      render json: @venue, status: 404
   end
 
   private
 
   def venue_params
+    params.require(:venue).permit(:avg_rating)
   end
 
 end
