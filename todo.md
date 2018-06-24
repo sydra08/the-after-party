@@ -46,19 +46,29 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
 [x] test JSON
 [ ] figure out why the timestamp data is showing up for location
 [ ] update README with proper install and usage instructions
-[ ] react-router
-[ ] packages
-  [ ] isomorphic fetch
-  [ ] es6 promise (?)
+[x] packages
+  [x] isomorphic fetch
+  [x] es6 promise (?)
   [ ] prop-types
-  [ ] react-router
-  [ ] redux thunk
+  [x] react-router
+  [x] redux thunk
+  [x] react-redux
+  [x] redux
 [ ] React Components
-  [ ] VenueList
-  [ ] Venue Detail
-  [ ] SuggestionList
-  [ ] ReviewList
+  + Venue
+    [ ] VenueListContainer
+    [ ] VenueList
+    [ ] Venue
+  + Suggestion
+    [ ] SuggestionListContainer
+    [ ] SuggestionList
+    [ ] Suggestion (is this where the form goes?)
+  + Review
+    [ ] ReviewListContainer
+    [ ] ReviewList
+    [ ] Review (is this where the form goes?)
   [ ] App
+[ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
 [ ] Redux
   [ ] create store
   [ ] actions
@@ -67,5 +77,5 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [ ] updateSuggestion (when voting)
     [ ] updateVenue (rating)
   [ ] reducers
-  [ ] thunk
-[ ] set up packages for React and Redux
+[ ] set up routes in React
+[ ] figure out where the props and state stuff goes
