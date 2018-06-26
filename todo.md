@@ -12,19 +12,19 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   irving plaza
   bowery ballroom
 [x] set up models
-[ ] set up controllers
-  [ ] venues
+[x] set up controllers
+  [x] venues
     [x] index
     [x] show
-    [ ] update
-  [ ] suggestions
+    [x] update
+  [x] suggestions
     [x] index
-    [ ] create
-    [ ] update
-  [ ] reviews
+    [x] create
+    [x] update
+  [x] reviews
     [x] index
-    [ ] create
-    [ ] update
+    [x] create
+    [x] update
 [x] set up routes
   [x] venues
   [x] suggestions (should probably be nested under venues?)
@@ -45,7 +45,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     Content
 [x] test JSON
 [ ] figure out why the timestamp data is showing up for location
-[ ] update README with proper install and usage instructions
+[x] update README with proper install and usage instructions
 [x] packages
   [x] isomorphic fetch
   [x] es6 promise (?)
@@ -55,10 +55,11 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   [x] react-redux
   [x] redux
 [ ] React Components
+  [ ] homepage
   + Venue
     [ ] VenueListContainer
     [ ] VenueList
-    [ ] Venue
+    [ ] Venue - contains the venue data 
   + Suggestion
     [ ] SuggestionListContainer
     [ ] SuggestionList
