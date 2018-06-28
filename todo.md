@@ -44,7 +44,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     Rating
     Content
 [x] test JSON
-[ ] figure out why the timestamp data is showing up for location
+[x] figure out why the timestamp data is showing up for location
 [x] update README with proper install and usage instructions
 [x] packages
   [x] isomorphic fetch
@@ -57,9 +57,9 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
 [ ] React Components
   [ ] homepage
   + Venue
-    [ ] VenueListContainer
-    [ ] VenueList
-    [ ] Venue - contains the venue data 
+    [x] VenueListContainer
+    [x] VenueList
+    [x] Venue - contains the venue data (this can be reused in the list view and on the broader page since the layout will be the same)
   + Suggestion
     [ ] SuggestionListContainer
     [ ] SuggestionList
