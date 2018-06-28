@@ -11,9 +11,9 @@ export default class Venue extends Component {
   }
   // waits until after the component has updated to update the state with new data
   componentDidMount() {
-    fetch('http://localhost:3000/venues')
-      .then(response => console.log(response))
-      // .then(response => console.log(response))
+    fetch('/venues')
+      .then(response => response.json())
+      .then(json => console.log(json))
   }
 
 
