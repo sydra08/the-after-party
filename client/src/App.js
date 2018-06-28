@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import VenueContainer from './components/VenueContainer.js';
-// import SuggestionContainer from './components/SuggestionContainer.js';
+import VenueContainer from './components/VenueContainer.js';
+import SuggestionContainer from './components/SuggestionContainer.js';
 import ReviewContainer from './components/ReviewContainer.js';
 
 class App extends Component {
@@ -17,6 +17,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <p>Testing to make sure it works!</p>
+        <VenueContainer />
+        <SuggestionContainer />
         <ReviewContainer />
       </div>
     );
