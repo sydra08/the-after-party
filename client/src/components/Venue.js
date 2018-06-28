@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 
-const Venue = ({ name, avg_rating }) => {
+const Venue = ({ name, rating }) => {
   return (
     <div className="venue">
       <h3>Name: {name}</h3>
-      <h4>Rating: {avg_rating}</h4>
+      <h4>Rating: {rating}</h4>
     </div>
   )
 }
 
 const VenueList = ({ venues }) => (
   <div className="venue-list">
-    {venues.map(venue => <Venue name="venue.name" rating="venue.avg_rating" />)}
+    {venues.map((venue, index) => <Venue key={index} name={venue.name} rating={venue.avg_rating} />)}
   </div>
 );
 
 
 export default class VenueContainer extends Component {
-  // need to create this as the venue list component because the data returned needs to be iterated over
   constructor() {
     super();
     this.state = {
@@ -28,7 +27,7 @@ export default class VenueContainer extends Component {
   componentDidMount() {
     fetch('/venues')
       .then(response => response.json())
-      .then(json => console.log(json))
+      // .then(json => console.log(json)) remove this because it causes issues with data rendering
       .then(json => this.setState({venues: json}))
   }
 
