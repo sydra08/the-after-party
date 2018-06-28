@@ -9,9 +9,14 @@ export default class Venue extends Component {
       rating: "4"
     };
   }
+  // waits until after the component has updated to update the state with new data
   componentDidMount() {
-    // fetch data
+    fetch('http://localhost:3000/venues')
+      .then(response => console.log(response))
+      // .then(response => console.log(response))
   }
+
+
   render() {
     return (
       <div className="venue-component">
