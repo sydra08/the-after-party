@@ -61,15 +61,18 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [x] VenueList
     [x] Venue - contains the venue data (this can be reused in the list view and on the broader page since the layout will be the same)
   + Suggestion
-    [ ] SuggestionListContainer
-    [ ] SuggestionList
-    [ ] Suggestion (is this where the form goes?)
+    [x] SuggestionListContainer
+    [x] SuggestionList
+    [x] Suggestion (is this where the form goes?)
+    [ ] SuggestionNew (the form)
   + Review
-    [ ] ReviewListContainer
-    [ ] ReviewList
-    [ ] Review (is this where the form goes?)
-  [ ] App
+    [x] ReviewListContainer
+    [x] ReviewList
+    [x] Review (is this where the form goes?)
+    [ ] ReviewNew (the form)
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
+[ ] set up routes in React w react-router (App.js)
+[ ] figure out where the props and state stuff goes
 [ ] Redux
   [ ] create store
   [ ] actions
@@ -78,5 +81,14 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [ ] updateSuggestion (when voting)
     [ ] updateVenue (rating)
   [ ] reducers
-[ ] set up routes in React
-[ ] figure out where the props and state stuff goes
+[ ] Design
+  [ ] http://polaris.shopify.com/ - like a lot of the options, but not sure it's the right fit
+    + like the filter options.
+    + could also consider doing a modal for the forms?
+    + the list formats aren't bad either
+    + like the loading design for pages with text
+    + alerts style is nice
+    + like the design principles too
+  [ ] https://react-bootstrap.github.io/ - never really had any success working with bootstrap, but willing to try
+    + like the form validations
+    + think that it's nice and basic and the Polaris one might get too complicated? It also looks really similar to the bootstrap stuff, just styled slightly differently at times
