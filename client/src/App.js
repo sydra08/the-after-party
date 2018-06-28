@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Venue from './components/Venue.js'
+import VenueContainer from './components/VenueContainer.js'
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <p>Testing to make sure it works!</p>
-        <Venue />
+        <VenueContainer />
       </div>
     );
   }
