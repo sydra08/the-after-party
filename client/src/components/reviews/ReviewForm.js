@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ReviewForm extends React.Component {
+class ReviewForm extends Component {
   constructor() {
     super();
 
@@ -10,18 +10,10 @@ class ReviewForm extends React.Component {
     };
   }
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //
-  //   const username = this.state.username;
-  //   const password = this.state.password;
-  //
-  //   if (!username || !password) {
-  //     return;
-  //   }
-  //
-  //   this.props.onSubmit({ username, password })
-  // }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state)
+  }
 
   handleInputChange = (event) => {
     const value = event.target.value;
