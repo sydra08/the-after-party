@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Venue = ({ name, rating }) => {
+const VenueShow = ({ name, rating }) => {
   return (
     <div className="venue">
       <h3>Name: {name}</h3>
@@ -9,4 +9,4 @@ const Venue = ({ name, rating }) => {
   )
 }
 
-export default Venue;
+export default VenueShow;

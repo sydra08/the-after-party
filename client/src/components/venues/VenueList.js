@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Venue from './Venue.js'
 
 const VenueList = ({ venues }) => (
   <div className="venue-list">
