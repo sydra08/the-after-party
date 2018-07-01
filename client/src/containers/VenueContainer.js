@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
-import VenueList from '../venues/VenueList';
+import VenueList from '../components/venues/VenueList';
 
 class VenueContainer extends Component {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReviewList from '../reviews/ReviewList.js';
-import ReviewForm from '../reviews/ReviewForm.js';
+import ReviewList from '../components/reviews/ReviewList.js';
+import ReviewForm from '../components/reviews/ReviewForm.js';
 
 export default class ReviewContainer extends Component {
   constructor() {
