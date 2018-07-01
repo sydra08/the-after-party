@@ -1,3 +1,5 @@
+import { FETCH_VENUES } from '../actions/venueActions';
+
 function VenuesReducer(state = {loading: false, venues:[]}, action) {
   switch(action.type){
     case 'FETCH_VENUES':
