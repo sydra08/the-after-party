@@ -5,14 +5,19 @@ import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueList from '../components/venues/VenueList';
 
-class VenueContainer extends Component {
-
+export default class VenueContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      venues: []
+    }
+  }
   componentDidMount() {
-    // fetch('/venues')
-    //   .then(response => response.json())
-    //   // .then(json => console.log(json)) remove this because it causes issues with data rendering
-    //   .then(json => this.setState({venues: json}))
-    this.props.fetchVenues()
+    fetch('/venues')
+      .then(response => response.json())
+      // .then(json => console.log(json)) remove this because it causes issues with data rendering
+      .then(json => this.setState({venues: json}))
+    // this.props.fetchVenues()
   }
 
   render() {
@@ -25,15 +30,3 @@ class VenueContainer extends Component {
     )
   }
 }
-
-function mapStateToProps(state) {
-  return {
-    venues: state.venues
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchVenues }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(VenueContainer);
