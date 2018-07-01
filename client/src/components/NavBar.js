@@ -23,7 +23,6 @@ const NavBar = () => {
       >Home</NavLink>
       <NavLink
         to="/venues"
-        exact
         style={link}
         activeStyle={{
           background: 'darkblue'
@@ -31,12 +30,18 @@ const NavBar = () => {
       >Venues</NavLink>
       <NavLink
         to="/suggestions"
-        exact
         style={link}
         activeStyle={{
           background: 'darkblue'
         }}
       >Suggestions</NavLink>
+      <NavLink
+        to="/reviews"
+        style={link}
+        activeStyle={{
+          background: 'darkblue'
+        }}
+      >Reviews</NavLink>
     </div>
   );
 };
