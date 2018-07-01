@@ -4,6 +4,7 @@ import './App.css';
 import VenueContainer from './components/VenueContainer.js';
 import SuggestionContainer from './components/SuggestionContainer.js';
 import ReviewContainer from './components/ReviewContainer.js';
+import ReviewForm from './components/ReviewForm.js';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         <VenueContainer />
         <SuggestionContainer />
         <ReviewContainer />
+        <ReviewForm />
       </div>
     );
   }
