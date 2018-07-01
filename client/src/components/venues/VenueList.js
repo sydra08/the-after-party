@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Venue from './Venue.js'
 
 const VenueList = ({ venues }) => (
   <div className="venue-list">
-    {venues.map((venue, index) => <Venue key={index} name={venue.name} rating={venue.avg_rating} />)}
+    <ul>
+      {venues.map((venue) => <li><Link style={{ marginRight: '12px' }} key={venue.id} to={`/venues/${venue.id}`}>{venue.name}</Link></li>)}
+    </ul>
   </div>
 );
 

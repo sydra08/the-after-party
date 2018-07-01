@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import VenueList from '../venues/VenueList.js'
+import { Route } from 'react-router-dom';
+import VenueList from '../venues/VenueList.js';
 
 export default class VenueContainer extends Component {
   constructor() {
@@ -17,10 +18,12 @@ export default class VenueContainer extends Component {
   }
 
   render() {
+    const { match } = this.props;
     return (
       <div className="venue-container-component">
-        <p>this is a test of the Venue list component</p>
+        <p>Venue List component</p>
         <VenueList venues={this.state.venues} />
+        <Route path={`${match.url}/:venueId`} component={VenueList} />
       </div>
     )
   }

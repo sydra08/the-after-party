@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SuggestionList from '../suggestions/SuggestionList.js'
+import SuggestionList from '../suggestions/SuggestionList.js';
 
 export default class SuggestionContainer extends Component {
   constructor() {
