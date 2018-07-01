@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReviewList from './ReviewList.js'
+import ReviewList from '../reviews/ReviewList.js'
 
 export default class ReviewContainer extends Component {
   constructor() {

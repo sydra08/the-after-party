@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VenueList from './VenueList.js'
+import VenueList from '../venues/VenueList.js'
 
 export default class VenueContainer extends Component {
   constructor() {

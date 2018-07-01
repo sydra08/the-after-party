@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import VenueContainer from './components/VenueContainer.js';
-import SuggestionContainer from './components/SuggestionContainer.js';
-import ReviewContainer from './components/ReviewContainer.js';
-import ReviewForm from './components/ReviewForm.js';
+import VenueContainer from './components/containers/VenueContainer.js';
+import SuggestionContainer from './components/containers/SuggestionContainer.js';
+import ReviewContainer from './components/containers/ReviewContainer.js';
+import ReviewForm from './components/reviews/ReviewForm.js';
 
 class App extends Component {
   render() {
