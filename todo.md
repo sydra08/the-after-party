@@ -74,6 +74,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [ ] rating element
       [ ] send venue data with form
       [ ] hook up form submit with API
+[ ] add a loading icon/screen for pages while API data is being fetched
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
 [ ] set up routes in React w react-router (App.js)
 [ ] figure out where the props and state stuff goes
@@ -86,7 +87,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [ ] Suggestion data
     [ ] Suggestion form
   [ ] Homepage - static view
-[ ] Redux
+[ ] Redux - need to start using Redux so that I can set up the links properly
   [ ] create store
   [ ] actions
     [ ] addReview
