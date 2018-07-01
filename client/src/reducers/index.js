@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import VenuesReducer from './VenuesReducer.js';
 
-const rootReducer = combineReducers({
+const RootReducer = combineReducers({
   venues: VenuesReducer
 });
 
-export default rootReducer;
+export default RootReducer;
