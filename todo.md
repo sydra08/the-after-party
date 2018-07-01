@@ -65,14 +65,27 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [x] SuggestionList
     [x] Suggestion (is this where the form goes?)
     [ ] SuggestionNew (the form)
+      + need to understand nested forms and components in order to do this. Does the address part of the form mean it gets it's own component that just displays within the Suggestion form components?
   + Review
     [x] ReviewListContainer
     [x] ReviewList
     [x] Review (is this where the form goes?)
     [ ] ReviewNew (the form)
+      [ ] rating element
+      [ ] send venue data with form
+      [ ] hook up form submit with API
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
 [ ] set up routes in React w react-router (App.js)
 [ ] figure out where the props and state stuff goes
+[ ] start creating different pages for app https://reactjs.org/docs/thinking-in-react.html
+  [ ] Venue List - just a list of the venues as links
+  [ ] Venue Show - display the venue, reviews, and suggestions
+    [ ] Venue data
+    [ ] Review data
+    [ ] Review form
+    [ ] Suggestion data
+    [ ] Suggestion form
+  [ ] Homepage - static view
 [ ] Redux
   [ ] create store
   [ ] actions
