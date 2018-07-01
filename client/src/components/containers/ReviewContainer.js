@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReviewList from '../reviews/ReviewList.js'
+import ReviewForm from '../reviews/ReviewForm.js';
 
 export default class ReviewContainer extends Component {
   constructor() {
@@ -22,6 +23,8 @@ export default class ReviewContainer extends Component {
       <div className="review-container-component">
         <p>this is a test of the Review container component</p>
         <ReviewList reviews={this.state.reviews} />
+        <p>Leave a review</p>
+        <ReviewForm />
       </div>
     )
   }

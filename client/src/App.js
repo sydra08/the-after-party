@@ -6,7 +6,6 @@ import NavBar from './components/NavBar.js'
 import VenueContainer from './components/containers/VenueContainer.js';
 import SuggestionContainer from './components/containers/SuggestionContainer.js';
 import ReviewContainer from './components/containers/ReviewContainer.js';
-import ReviewForm from './components/reviews/ReviewForm.js';
 
 class App extends Component {
   render() {
@@ -15,9 +14,9 @@ class App extends Component {
         <div>
           <NavBar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/venues" component={VenueContainer} />
-          <Route exact path="/suggestions" component={SuggestionContainer} />
-          <Route exact path="/reviews" component={ReviewContainer} />
+          <Route path="/venues" component={VenueContainer} />
+          <Route path="/suggestions" component={SuggestionContainer} />
+          <Route path="/reviews" component={ReviewContainer} />
         </div>
       </Router>
     );
