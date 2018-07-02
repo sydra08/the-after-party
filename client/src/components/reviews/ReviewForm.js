@@ -34,7 +34,7 @@ class ReviewForm extends Component {
               id="review-content"
               name="content"
               value={this.state.content}
-              onChange={this.handleInputChange}
+              onChange={(event) => this.handleInputChange(event)}
             />
           </label>
         </div>
