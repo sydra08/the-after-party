@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 // import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchVenues } from '../actions/venueActions';
+import fetchVenues from '../actions/venueActions';
 import VenueList from '../components/venues/VenueList';
 
-export default class VenueContainer extends Component {
+class VenueContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -13,11 +13,11 @@ export default class VenueContainer extends Component {
     }
   }
   componentDidMount() {
-    fetch('/venues')
-      .then(response => response.json())
-      // .then(json => console.log(json)) remove this because it causes issues with data rendering
-      .then(json => this.setState({venues: json}))
-    // this.props.fetchVenues()
+    // fetch('/venues')
+    //   .then(response => response.json())
+    //   // .then(json => console.log(json)) remove this because it causes issues with data rendering
+    //   .then(json => this.setState({venues: json}))
+    this.props.fetchVenues()
   }
 
   render() {
@@ -32,3 +32,17 @@ export default class VenueContainer extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    venues: state.venues
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchVenues: fetchVenues
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(VenueContainer);
