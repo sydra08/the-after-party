@@ -106,3 +106,83 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   [ ] https://react-bootstrap.github.io/ - never really had any success working with bootstrap, but willing to try
     + like the form validations
     + think that it's nice and basic and the Polaris one might get too complicated? It also looks really similar to the bootstrap stuff, just styled slightly differently at times
+
+    state = {
+      venues: [
+      {
+        name: "Irving Plaza",
+        address: {
+          street: "123 Main Street",
+          city: "New York",
+          state: "New York"
+        },
+        avg_rating: 5,
+        reviews: [
+        {
+          content: "I love it",
+          rating: 5
+        },
+        {
+          content: "Best place ever",
+          rating: 5
+        }
+        ],
+        suggestions: [
+        {
+          name: Artichoke Pizza,
+          category: Fast Casual,
+          address: {
+            street: "133 Main Street",
+            city: "New York",
+            state: "New York"
+          },
+          upvotes: 12341,
+          downvotes: 34
+        },
+        {
+          name: Halal Guys,
+          category: Fast Casual,
+          address: {
+            street: "143 Main Street",
+            city: "New York",
+            state: "New York"
+          },
+          upvotes: 132341,
+          downvotes: 1
+        }
+        ]
+      },
+      {
+        name: "Brooklyn Steel",
+        address: {
+          street: "1133 Main Street",
+          city: "Brooklyn",
+          state: "New York"
+        },
+        avg_rating: 4,
+        reviews: [
+        {
+          content: "Great Brooklyn venue",
+          rating: 3
+        },
+        {
+          content: "Awesome acoustics",
+          rating: 5
+        }
+        ],
+        suggestions: [
+        {
+          name: One Stop Beer Shop,
+          category: Beer Bar,
+          address: {
+            street: "1343 Main Street",
+            city: "Brooklyn",
+            state: "New York"
+          },
+          upvotes: 123,
+          downvotes: 5
+        }
+        ]
+      }
+      ]
+    }
