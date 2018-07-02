@@ -1,5 +1,3 @@
-import { FETCH_VENUES } from '../actions/venueActions';
-
 function VenuesReducer(state = {loading: false, venues:[]}, action) {
   console.log(action);
   switch(action.type){

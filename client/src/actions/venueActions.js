@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-export function fetchVenues() {
+function fetchVenues() {
   return function(dispatch) {
     return fetch('/venues')
       .then(response => {
@@ -8,3 +8,5 @@ export function fetchVenues() {
       }).then(venues => dispatch({type: 'FETCH_VENUES', payload: venues}))
   }
 }
+
+export default fetchVenues;
