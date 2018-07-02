@@ -6,7 +6,8 @@ function fetchVenues() {
     {name: "Brooklyn Steel", address_id: 2, avg_rating: 3.5, capacity: 1800},
     {name: "Madison Square Garden", address_id: 3, avg_rating: 4, capacity: 20789},
     {name: "Irving Plaza", address_id: 4, avg_rating: 4, capacity: 1025}
-  ]
+  ];
+  console.log("fetchVenues() was called")
   return {
     type: 'FETCH_VENUES',
     payload: venues

@@ -21,13 +21,14 @@ class VenueContainer extends Component {
   }
 
   render() {
-    const check = console.log(this.state);
+    console.log(`props:`);
+    console.log(this.props)
+    console.log('state')
+    console.log(this.state)
     // const { match } = this.props;
     return (
       <div className="venue-container-component">
         <p>Venue List component</p>
-        <p>{check}</p>
-        <VenueList venues={this.state.venues} />
       </div>
     )
   }
