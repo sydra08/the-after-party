@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-function fetchVenues() {
+export function fetchVenues() {
   const venues = [
     {name: "Red Rocks Amphitheater", address_id: 1, avg_rating: 5, capacity: 9525},
     {name: "Brooklyn Steel", address_id: 2, avg_rating: 3.5, capacity: 1800},
@@ -18,6 +18,4 @@ function fetchVenues() {
   //       return response.json()
   //     }).then(venues => dispatch({type: 'FETCH_VENUES', payload: venues}))
   // }
-}
-
-export default fetchVenues;
+};
