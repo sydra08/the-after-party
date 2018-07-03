@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-// import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueList from '../components/venues/VenueList';
+import VenueShow from '../components/venues/VenueShow';
 
 class VenueContainer extends Component {
   // constructor() {
@@ -25,11 +26,12 @@ class VenueContainer extends Component {
     console.log(this.props)
     console.log('state')
     console.log(this.state)
-    // const { match } = this.props;
+    const { match } = this.props;
     return (
       <div className="venue-container-component">
         <p>Venue List component</p>
         <VenueList venues={this.props.venues} />
+        <Route path={`${match.url}/:venueId`} component={VenueShow} />
       </div>
     )
   }
