@@ -18,11 +18,3 @@ export function fetchVenues() {
       .then(venues => dispatch({type: 'FETCH_VENUES', payload: venues}))
   }
 };
-
-export function fetchVenue(URL) {
-  return function(dispatch) {
-    return fetch(URL)
-      .then(response => response.json())
-      .then(venue => dispatch({type: 'FETCH_VENUE', payload: venue}))
-  }
-}
