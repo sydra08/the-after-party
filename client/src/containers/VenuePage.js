@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchVenues } from '../actions/venueActions';
+import { fetchVenue } from '../actions/venueActions';
 import VenueShow from '../components/venues/VenueShow';
 import SuggestionList from '../components/suggestions/SuggestionList';
 
@@ -25,7 +25,7 @@ class VenuePage extends Component {
     const { match } = this.props;
     return (
       <div className="venue-container-component">
-    
+
       </div>
     )
   }
@@ -33,12 +33,12 @@ class VenuePage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    venues: state.venues
+    venue: state.venue
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
+  return bindActionCreators({fetchVenue: fetchVenue}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(VenuePage);

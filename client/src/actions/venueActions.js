@@ -24,7 +24,7 @@ export function fetchVenue(venueId) {
   return function(dispatch) {
     return fetch(`/venues/${venueId}`)
       .then(response => {
-        return return response.json()
+        return response.json()
       }).then(venue => dispatch({type: 'FETCH_VENUE', payload: venue}))
   }
 }
