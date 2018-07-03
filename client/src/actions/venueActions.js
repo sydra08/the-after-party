@@ -14,16 +14,15 @@ export function fetchVenues() {
   // }
   return function(dispatch) {
     return fetch('/venues')
-      .then(response => {
-        return response.json()
-      }).then(venues => dispatch({type: 'FETCH_VENUES', payload: venues}))
+      .then(response => response.json())
+      .then(venues => dispatch({type: 'FETCH_VENUES', payload: venues}))
   }
 };
 
 export function fetchVenue(URL) {
   return function(dispatch) {
     return fetch(URL)
-      .then(response => console.log(response.json()))
+      .then(response => response.json())
       .then(venue => dispatch({type: 'FETCH_VENUE', payload: venue}))
   }
 }
