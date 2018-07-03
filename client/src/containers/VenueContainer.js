@@ -31,7 +31,6 @@ class VenueContainer extends Component {
       <div className="venue-container-component">
         <p>Venue List component</p>
         <VenueList venues={this.props.venues} />
-        <Route path={`${match.url}/:venueId`} component={VenueShow} />
       </div>
     )
   }

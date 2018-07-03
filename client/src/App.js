@@ -14,9 +14,9 @@ class App extends Component {
         <div>
           <NavBar />
           <Route exact path="/" component={Home} />
-          <Route path="/venues" component={VenueContainer} />
-          <Route path="/suggestions" component={SuggestionContainer} />
-          <Route path="/reviews" component={ReviewContainer} />
+          <Route exact path="/venues" component={VenueContainer} />
+          <Route exact path="/venues/:venueId" component={SuggestionContainer} />
+          <Route exact path="/reviews" component={ReviewContainer} />
         </div>
       </Router>
     );

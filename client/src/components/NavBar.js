@@ -28,20 +28,6 @@ const NavBar = () => {
           background: 'darkblue'
         }}
       >Venues</NavLink>
-      <NavLink
-        to="/suggestions"
-        style={link}
-        activeStyle={{
-          background: 'darkblue'
-        }}
-      >Suggestions</NavLink>
-      <NavLink
-        to="/reviews"
-        style={link}
-        activeStyle={{
-          background: 'darkblue'
-        }}
-      >Reviews</NavLink>
     </div>
   );
 };
