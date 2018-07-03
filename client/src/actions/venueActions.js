@@ -19,3 +19,12 @@ export function fetchVenues() {
       }).then(venues => dispatch({type: 'FETCH_VENUES', payload: venues}))
   }
 };
+
+export function fetchVenue(venueId) {
+  return function(dispatch) {
+    return fetch(`/venues/${venueId}`)
+      .then(response => {
+        return return response.json()
+      }).then(venue => dispatch({type: 'FETCH_VENUE', payload: venue}))
+  }
+}
