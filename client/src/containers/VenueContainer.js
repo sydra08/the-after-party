@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
@@ -25,7 +24,6 @@ class VenueContainer extends Component {
     console.log(this.props)
     console.log('state')
     console.log(this.state)
-    const { match } = this.props;
     return (
       <div className="venue-container-component">
         <p>Venue List component</p>

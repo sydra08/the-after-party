@@ -1,5 +1,5 @@
 import React from 'react';
-import Suggestion from './Suggestion.js'
+// import Suggestion from './Suggestion.js'
 
 const SuggestionList = ({ suggestions }) => (
   <div className="suggestion-list">

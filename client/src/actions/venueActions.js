@@ -20,11 +20,10 @@ export function fetchVenues() {
   }
 };
 
-export function fetchVenue(venueId) {
+export function fetchVenue(URL) {
   return function(dispatch) {
-    return fetch(`/venues/${venueId}`)
-      .then(response => {
-        return response.json()
-      }).then(venue => dispatch({type: 'FETCH_VENUE', payload: venue}))
+    return fetch(URL)
+      .then(response => console.log(response.json()))
+      .then(venue => dispatch({type: 'FETCH_VENUE', payload: venue}))
   }
 }

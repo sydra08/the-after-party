@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenue } from '../actions/venueActions';
@@ -10,22 +9,22 @@ class VenuePage extends Component {
   componentDidMount() {
     // grab the piece from the URL and then pass it to a fetchVenue(id) action
     console.log("match params from inside componentDidMount")
-    console.log(this.props.match.params)
-    const venueId = this.props.match.params
-    this.props.fetchVenue(venueId)
+    console.log(this.props.match.url)
+    const venueURL = this.props.match.url
+    this.props.fetchVenue(venueURL)
   }
 
   // figure out which venue it is and then get the suggestions for it (i.e. venues.venueId.suggestions)
 
   render() {
+    console.log(this.props.match.url)
     console.log(`props:`);
     console.log(this.props)
     console.log('state')
     console.log(this.state)
-    const { match } = this.props;
     return (
       <div className="venue-container-component">
-
+        
       </div>
     )
   }
@@ -42,3 +41,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(VenuePage);
+
+// export default VenuePage;
