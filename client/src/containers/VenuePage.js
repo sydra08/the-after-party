@@ -3,22 +3,19 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
-import VenueList from '../components/venues/VenueList';
+import VenueShow from '../components/venues/VenueShow';
+import SuggestionList from '../components/suggestions/SuggestionList';
 
-class VenueContainer extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     venues: []
-  //   }
-  // }
+class VenuePage extends Component {
   componentDidMount() {
-    // fetch('/venues')
-    //   .then(response => response.json())
-    //   // .then(json => console.log(json)) remove this because it causes issues with data rendering
-    //   .then(json => this.setState({venues: json}))
-    this.props.fetchVenues()
+    // grab the piece from the URL and then pass it to a fetchVenue(id) action
+    console.log("match params from inside componentDidMount")
+    console.log(this.props.match.params)
+    const venueId = this.props.match.params
+    this.props.fetchVenue(venueId)
   }
+
+  // figure out which venue it is and then get the suggestions for it (i.e. venues.venueId.suggestions)
 
   render() {
     console.log(`props:`);
@@ -28,8 +25,7 @@ class VenueContainer extends Component {
     const { match } = this.props;
     return (
       <div className="venue-container-component">
-        <p>Venue List component</p>
-        <VenueList venues={this.props.venues} />
+    
       </div>
     )
   }
@@ -45,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(VenueContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(VenuePage);

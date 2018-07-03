@@ -1,12 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const VenueShow = ({ name, rating }) => {
+const VenueShow = ({ venue }) => {
   return (
     <div className="venue">
-      <h3>Name: {name}</h3>
-      <h4>Rating: {rating}</h4>
+      <h3>Name: {venue.name}</h3>
+      <h4>Rating: {venue.rating}</h4>
     </div>
   )
 }
 
-export default VenueShow;
+const mapStateToProps = (state, ownProps) => {
+  const venue = state.venues.find(v => v.id === ownProps.match.params.venueId);
+  if(venue){
+    return {venue}
+  } else {
+    return {venue: {}}
+  }
+};
+
+
+export default connect(mapStateToProps)(VenueShow);
