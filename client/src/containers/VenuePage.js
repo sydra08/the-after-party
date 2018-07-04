@@ -22,23 +22,18 @@ class VenuePage extends Component {
   }
   //
   // <VenueShow venue={venue} />
-  // <SuggestionList suggestions={venue.suggestions} />
+  // <SuggestionList suggestions={suggestions} />
   // according to the console.log when you render the component this.props.venues has 4 items
   // but when you try to find the correct one it comes up empty even though the numbers are correct
   render() {
-    // selectVenue returns a number and not something in the props
-    debugger
     const venue = this.selectVenue()
     const { suggestions, reviews } = venue;
     console.log(this.props.match.url)
     console.log(`props:`);
     console.log(this.props.venues)
-    console.log('state')
-    console.log(this.state)
-    // console.log(this.props.venue)
     return (
       <div className="venue-container-component">
-        <VenueShow venue={ venue } />
+        <VenueShow venue={venue} />
       </div>
     )
   }
