@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 const VenueShow = ({ venue }) => {
   return (
@@ -10,14 +9,4 @@ const VenueShow = ({ venue }) => {
   )
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//   const venue = state.venues.find(v => v.id === ownProps.match.params.venueId);
-//   if(venue){
-//     return {venue}
-//   } else {
-//     return {venue: {}}
-//   }
-// };
-
 export default VenueShow;
-// export default connect(mapStateToProps)(VenueShow);

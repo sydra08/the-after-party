@@ -9,13 +9,18 @@ class VenuePage extends Component {
   constructor(){
     super();
   }
-  // componentDidMount() {
-  //   if ( !this.props.venues.length ) {
-  //     this.props.fetchVenues();
-  //   }
-  // }
+
+  // page doesn't work properly if you don't come from /venues
+
+  componentDidMount() {
+    debugger
+    if (!this.props.venues.length) {
+      this.props.fetchVenues();
+    }
+  }
 
   selectVenue() {
+    // successfully get the correct venue
     console.log(this.props.match.params.venueId)
     return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId))
   }
@@ -25,7 +30,7 @@ class VenuePage extends Component {
 
   render() {
     const venue = this.selectVenue()
-    const { suggestions, reviews } = venue;
+    // const { suggestions, reviews } = venue;
     console.log(this.props.match.url)
     console.log(`props:`);
     console.log(this.props.venues)
@@ -43,8 +48,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
-// };
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
+};
 
 export default connect(mapStateToProps)(VenuePage);
