@@ -12,7 +12,6 @@ class VenuePage extends Component {
   }
 
   // page doesn't work properly if you don't come from /venues
-
   componentDidMount() {
     if (!this.props.venues.length) {
       this.props.fetchVenues();
@@ -24,9 +23,6 @@ class VenuePage extends Component {
     console.log(this.props.match.params.venueId)
     return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId))
   }
-  //
-  // <VenueShow venue={venue} />
-  // <SuggestionList suggestions={suggestions} />
 
   render() {
     const venue = this.selectVenue()

@@ -55,7 +55,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   [x] react-redux
   [x] redux
 [ ] React Components
-  [ ] homepage
+  [x] homepage
   + Venue
     [x] VenueListContainer
     [x] VenueList
@@ -76,25 +76,29 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [ ] hook up form submit with API
 [ ] add a loading icon/screen for pages while API data is being fetched
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
-[ ] set up routes in React w react-router (App.js)
-[ ] figure out where the props and state stuff goes
-[ ] start creating different pages for app https://reactjs.org/docs/thinking-in-react.html
-  [ ] Venue List - just a list of the venues as links
-  [ ] Venue Show - display the venue, reviews, and suggestions
-    [ ] Venue data
-    [ ] Review data
+[/] set up routes in React w react-router (App.js)
+[]/] figure out where the props and state stuff goes
+[/] start creating different pages for app https://reactjs.org/docs/thinking-in-react.html
+  [x] Venue List - just a list of the venues as links
+  [x] Venue Show - display the venue, reviews, and suggestions
+    [x] Venue data
+    [x] Review data
     [ ] Review form
-    [ ] Suggestion data
+    [x] Suggestion data
     [ ] Suggestion form
-  [ ] Homepage - static view
+  [x] Homepage - static view
 [ ] Redux - need to start using Redux so that I can set up the links properly
-  [ ] create store
+  [x] create store
   [ ] actions
     [ ] addReview
     [ ] addSuggestion
     [ ] updateSuggestion (when voting)
     [ ] updateVenue (rating)
+    [x] fetchVenues
   [ ] reducers
+    [/] venues
+    [ ] reviews
+    [ ] suggestions
 [ ] Design
   [ ] http://polaris.shopify.com/ - like a lot of the options, but not sure it's the right fit
     + like the filter options.
