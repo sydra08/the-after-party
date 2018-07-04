@@ -15,7 +15,6 @@ class VenuePage extends Component {
   //   }
   // }
 
-  // need to figure out why this doesn't return the venue from the props
   selectVenue() {
     console.log(this.props.match.params.venueId)
     return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId))
@@ -23,8 +22,7 @@ class VenuePage extends Component {
   //
   // <VenueShow venue={venue} />
   // <SuggestionList suggestions={suggestions} />
-  // according to the console.log when you render the component this.props.venues has 4 items
-  // but when you try to find the correct one it comes up empty even though the numbers are correct
+
   render() {
     const venue = this.selectVenue()
     const { suggestions, reviews } = venue;
@@ -39,15 +37,6 @@ class VenuePage extends Component {
   }
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//   const venue = state.venues.find(v => v.id === ownProps.match.params.venueId);
-//   if (venue){
-//     return { venue }
-//   } else {
-//     return {venue: {}}
-//   }
-// };
-
 const mapStateToProps = (state) => {
   return {
     venues: state.venues
@@ -59,5 +48,3 @@ const mapStateToProps = (state) => {
 // };
 
 export default connect(mapStateToProps)(VenuePage);
-
-// export default VenuePage;
