@@ -3,9 +3,9 @@ import React from 'react';
 const Suggestion = ({ name, category, upvotes, downvotes }) => {
   return (
     <div className="suggestion">
-      <h3>Name: {name}</h3>
-      <h4>Category: {category}</h4>
-      <h5>Upvotes: {upvotes} | Downvotes: {downvotes}</h5>
+      <h5>Name: {name}</h5>
+      <p>Category: {category}</p>
+      <p>Upvotes: {upvotes} | Downvotes: {downvotes}</p>
     </div>
   )
 }
