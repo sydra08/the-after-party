@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueShow from '../components/venues/VenueShow';
 import SuggestionList from '../components/suggestions/SuggestionList';
+import ReviewList from '../components/reviews/ReviewList';
 
 class VenuePage extends Component {
   constructor(){
@@ -38,6 +39,7 @@ class VenuePage extends Component {
       <div className="venue-container-component">
         <VenueShow venue={venue} />
         <SuggestionList suggestions={suggestions} />
+        <ReviewList reviews={reviews} />
       </div>
     )
   }
