@@ -13,7 +13,6 @@ class VenuePage extends Component {
   // page doesn't work properly if you don't come from /venues
 
   componentDidMount() {
-    debugger
     if (!this.props.venues.length) {
       this.props.fetchVenues();
     }
@@ -30,13 +29,15 @@ class VenuePage extends Component {
 
   render() {
     const venue = this.selectVenue()
-    // const { suggestions, reviews } = venue;
+    const { suggestions, reviews } = venue;
     console.log(this.props.match.url)
     console.log(`props:`);
     console.log(this.props.venues)
+    console.log(venue)
     return (
       <div className="venue-container-component">
         <VenueShow venue={venue} />
+        <SuggestionList suggestions={suggestions} />
       </div>
     )
   }
