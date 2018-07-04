@@ -8,7 +8,7 @@ const VenueShow = ({ venue }) => {
   return (
     <div className="venue" style={divStyle}>
       <h3>Name: {venue.name}</h3>
-      <h4>Rating: {venue.avg_rating}</h4>
+      <p>Rating: {venue.avg_rating}</p>
     </div>
   )
 }
