@@ -3,9 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home.js'
 import NavBar from './components/NavBar.js'
-import VenueContainer from './containers/VenueContainer.js';
-// import VenuePage from './containers/VenuePage.js';
-// import ReviewForm from './containers/ReviewForm';
+import VenuePage from './containers/VenuePage.js';
 
 class App extends Component {
   render() {
@@ -14,7 +12,7 @@ class App extends Component {
         <div>
           <NavBar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/venues" component={VenueContainer} />
+          <Route exact path="/venues" component={VenuePage} />
         </div>
       </Router>
     );

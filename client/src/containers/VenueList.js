@@ -6,7 +6,7 @@ import VenueIndex from '../components/venues/VenueIndex';
 
 // this is the venue index view that shows the venue list as links. probably add more functionality to it for filtering, search, etc later on
 
-class VenueContainer extends Component {
+class VenueList extends Component {
   // constructor() {
   //   super();
   //   this.state = {
@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(VenueContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(VenueList);
