@@ -12,6 +12,16 @@ class VenueList extends Component {
     this.props.fetchVenues()
   }
 
+  renderVenues() {
+    const { venues, isLoading } = this.props
+    if(!venues && !isLoading) {
+      return <p>Data is loading</p>
+    }
+    return (
+      <VenueIndex venues={venues} />
+    )
+  }
+
   render() {
     console.log(`props:`);
     console.log(this.props)
@@ -20,13 +30,10 @@ class VenueList extends Component {
 
     // if props.isLoading === true then show the is loading thing
     // if it === false then show the rest of the stuff
-
-    let renderVenues = !this.props.isLoading ? <p>Data is loading</p> : <VenueIndex venues={this.props.venues} />
-
     return (
       <div className="venue-container-component">
         <p>Venue List component</p>
-        { renderVenues }
+        { this.renderVenues() }
       </div>
     )
   }
@@ -34,8 +41,8 @@ class VenueList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    venues: state.venues
+    venues: state.venues.venues,
+    isLoading: state.venues.isLoading
   };
 };
 
