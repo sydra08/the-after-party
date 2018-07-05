@@ -9,28 +9,31 @@ import VenueItem from '../components/venues/VenueItem';
 
 // this is the page for the Venue details view - contains suggestions and reviews
 
+// when you load the page, the action isn't dispatched and the state is empty. no API call is being made...
+// updating it to be that fetchVenues() is always called didn't help, but it works for VenueList
+// when you navigate from the VenueList component here the state is intact, but the data doesnt render
+// how do you hook into component lifecycle events to make sure they are working
+
 class VenueShow extends Component {
   // page doesn't work properly if you don't come from /venues
-  // constructor(){
-  //   super();
-  //   this.state = {
-  //     review: {
-  //       content: '',
-  //       rating: null
-  //     }
-  //   }
-  // }
+  componentWillMount() {
+    console.log('the component will mount')
+  }
 
   componentDidMount() {
-    if (!this.props.venues) {
-      this.props.fetchVenues();
-    }
+    // if you go directly to the page from the url then componentDidMount doesn't get called
+    console.log('the component mounted')
+    // component does mount but doesn't do anything...seems like it's because venues has a length
+    // if(this.props.venues.length === 0) {
+    //   this.props.fetchVenues();
+    // }
+    this.props.fetchVenues();
   }
 
   selectVenue() {
     // successfully get the correct venue
     console.log(this.props.match.params.venueId)
-    return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId))
+    return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId, 10))
   }
 
   // <SuggestionList suggestions={suggestions} />
@@ -43,22 +46,23 @@ class VenueShow extends Component {
     console.log(`props:`);
     console.log(this.props.venues)
     console.log(venue)
-    console.log(`state:`);
-    console.log(this.state)
+    let renderVenue = venue ? <VenueItem venue={venue} /> : <p>Venue data not available</p>
     return (
       <div className="venue-container-component">
-        <VenueItem venue={venue} />
+        { renderVenue }
       </div>
     )
   }
 }
 
+// this connects it to the store so that it can get the venues if coming from /venues
 const mapStateToProps = (state) => {
   return {
     venues: state.venues
   }
 }
 
+// this should allow it to dispatch FETCH_VENUES action so that it can update the store, if necessary
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
 };
