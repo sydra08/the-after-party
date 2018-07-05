@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const VenueList = ({ venues }) => {
+const VenueIndex = ({ venues }) => {
   return (
     <div className="venue-list">
       <ul>
@@ -11,4 +11,4 @@ const VenueList = ({ venues }) => {
   );
 };
 
-export default VenueList;
+export default VenueIndex;

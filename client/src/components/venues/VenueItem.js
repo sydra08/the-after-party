@@ -4,7 +4,7 @@ const divStyle = {
   border: '1px solid'
 }
 
-const VenueShow = ({ venue }) => {
+const VenueItem = ({ venue }) => {
   return (
     <div className="venue" style={divStyle}>
       <h3>Name: {venue.name}</h3>
@@ -13,4 +13,4 @@ const VenueShow = ({ venue }) => {
   )
 }
 
-export default VenueShow;
+export default VenueItem;

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
-import VenueShow from '../components/venues/VenueShow';
-import SuggestionList from '../components/suggestions/SuggestionList';
-import ReviewList from '../components/reviews/ReviewList';
+import VenueItem from '../components/venues/VenueItem';
+// import SuggestionList from '../components/suggestions/SuggestionList';
+// import ReviewList from '../components/reviews/ReviewList';
 // import ReviewForm from './ReviewForm';
 
 // this is the page for the Venue details view - contains suggestions and reviews
@@ -33,10 +33,12 @@ class VenueShow extends Component {
     return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId))
   }
 
+  // <SuggestionList suggestions={suggestions} />
+  // <ReviewList reviews={reviews} />
   // add something to handle when data is empty
   render() {
     const venue = this.selectVenue()
-    const { suggestions, reviews } = venue;
+    // const { suggestions, reviews } = venue;
     console.log(this.props.match.url)
     console.log(`props:`);
     console.log(this.props.venues)
@@ -45,9 +47,7 @@ class VenueShow extends Component {
     console.log(this.state)
     return (
       <div className="venue-container-component">
-        <VenueShow venue={venue} />
-        <SuggestionList suggestions={suggestions} />
-        <ReviewList reviews={reviews} />
+        <VenueItem venue={venue} />
       </div>
     )
   }

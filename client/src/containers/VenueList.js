@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
-import VenueList from '../components/venues/VenueList';
+import VenueIndex from '../components/venues/VenueIndex';
 
 // this is the venue index view that shows the venue list as links. probably add more functionality to it for filtering, search, etc later on
 
@@ -29,7 +29,7 @@ class VenueContainer extends Component {
     return (
       <div className="venue-container-component">
         <p>Venue List component</p>
-        <VenueList venues={this.props.venues} />
+        <VenueIndex venues={this.props.venues} />
       </div>
     )
   }
