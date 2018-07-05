@@ -5,10 +5,20 @@ import { fetchVenues } from '../actions/venueActions';
 import VenueShow from '../components/venues/VenueShow';
 import SuggestionList from '../components/suggestions/SuggestionList';
 import ReviewList from '../components/reviews/ReviewList';
-import ReviewForm from '../components/reviews/ReviewForm';
+import ReviewForm from './ReviewForm';
 
 class VenuePage extends Component {
   // page doesn't work properly if you don't come from /venues
+  // constructor(){
+  //   super();
+  //   this.state = {
+  //     review: {
+  //       content: '',
+  //       rating: null
+  //     }
+  //   }
+  // }
+
   componentDidMount() {
     if (!this.props.venues) {
       this.props.fetchVenues();
@@ -29,6 +39,8 @@ class VenuePage extends Component {
     console.log(`props:`);
     console.log(this.props.venues)
     console.log(venue)
+    console.log(`state:`);
+    console.log(this.state)
     return (
       <div className="venue-container-component">
         <VenueShow venue={venue} />

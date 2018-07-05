@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addReview } from '../actions/reviewActions';
+
 
 class ReviewForm extends Component {
   constructor() {
@@ -13,6 +17,7 @@ class ReviewForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(this.state)
+    this.props.addReview(this.state)
   }
 
   handleInputChange = (event) => {
@@ -58,4 +63,8 @@ class ReviewForm extends Component {
   }
 }
 
-export default ReviewForm;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({addReview: addReview}, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(ReviewForm);
