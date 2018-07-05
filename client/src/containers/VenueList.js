@@ -7,17 +7,7 @@ import VenueIndex from '../components/venues/VenueIndex';
 // this is the venue index view that shows the venue list as links. probably add more functionality to it for filtering, search, etc later on
 
 class VenueList extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     venues: []
-  //   }
-  // }
   componentDidMount() {
-    // fetch('/venues')
-    //   .then(response => response.json())
-    //   // .then(json => console.log(json)) remove this because it causes issues with data rendering
-    //   .then(json => this.setState({venues: json}))
     this.props.fetchVenues()
   }
 
