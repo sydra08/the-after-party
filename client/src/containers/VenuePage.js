@@ -5,6 +5,7 @@ import { fetchVenues } from '../actions/venueActions';
 import VenueShow from '../components/venues/VenueShow';
 import SuggestionList from '../components/suggestions/SuggestionList';
 import ReviewList from '../components/reviews/ReviewList';
+import ReviewForm from '../components/reviews/ReviewForm';
 
 class VenuePage extends Component {
   // page doesn't work properly if you don't come from /venues
@@ -33,6 +34,7 @@ class VenuePage extends Component {
         <VenueShow venue={venue} />
         <SuggestionList suggestions={suggestions} />
         <ReviewList reviews={reviews} />
+        <ReviewForm />
       </div>
     )
   }
