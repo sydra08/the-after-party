@@ -10,7 +10,7 @@ class ReviewForm extends Component {
 
     this.state = {
       content: '',
-      rating: ''
+      rating: '',
     };
   }
 
@@ -29,11 +29,13 @@ class ReviewForm extends Component {
     const name = event.target.name;
 
     this.setState({
-      [name]: value
+      [name]: value,
+      venue_id: this.props.match.params.venueId
     });
   }
 
   render() {
+    console.log(this.props.match.params.venueId)
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
