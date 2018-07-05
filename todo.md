@@ -99,6 +99,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [/] venues
     [ ] reviews
     [ ] suggestions
+[ ] fix issue where if you load the /venues/:venueId page on its own and don't come from the /venues page, data doesn't load properly
 [ ] Design
   [ ] http://polaris.shopify.com/ - like a lot of the options, but not sure it's the right fit
     + like the filter options.

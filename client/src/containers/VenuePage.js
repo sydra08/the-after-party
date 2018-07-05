@@ -7,13 +7,9 @@ import SuggestionList from '../components/suggestions/SuggestionList';
 import ReviewList from '../components/reviews/ReviewList';
 
 class VenuePage extends Component {
-  constructor(){
-    super();
-  }
-
   // page doesn't work properly if you don't come from /venues
   componentDidMount() {
-    if (!this.props.venues.length) {
+    if (!this.props.venues) {
       this.props.fetchVenues();
     }
   }
@@ -24,6 +20,7 @@ class VenuePage extends Component {
     return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId))
   }
 
+  // add something to handle when data is empty
   render() {
     const venue = this.selectVenue()
     const { suggestions, reviews } = venue;
@@ -51,4 +48,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
 };
 
-export default connect(mapStateToProps)(VenuePage);
+export default connect(mapStateToProps, mapDispatchToProps)(VenuePage);
