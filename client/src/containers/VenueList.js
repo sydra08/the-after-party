@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueList from '../components/venues/VenueList';
 
+// this is the venue index view that shows the venue list as links. probably add more functionality to it for filtering, search, etc later on
+
 class VenueContainer extends Component {
   // constructor() {
   //   super();
