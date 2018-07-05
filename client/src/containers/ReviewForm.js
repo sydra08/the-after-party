@@ -16,8 +16,12 @@ class ReviewForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state)
-    this.props.addReview(this.state)
+    console.log(this.state);
+    this.props.addReview(this.state);
+    this.setState({
+      content: '',
+      rating: ''
+    });
   }
 
   handleInputChange = (event) => {
