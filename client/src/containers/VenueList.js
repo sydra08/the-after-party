@@ -8,6 +8,7 @@ import VenueIndex from '../components/venues/VenueIndex';
 
 class VenueList extends Component {
   componentDidMount() {
+    console.log('the component mounted')
     this.props.fetchVenues()
   }
 
@@ -16,10 +17,16 @@ class VenueList extends Component {
     console.log(this.props)
     console.log('state')
     console.log(this.state)
+
+    // if props.isLoading === true then show the is loading thing
+    // if it === false then show the rest of the stuff
+
+    let renderVenues = !this.props.isLoading ? <p>Data is loading</p> : <VenueIndex venues={this.props.venues} />
+
     return (
       <div className="venue-container-component">
         <p>Venue List component</p>
-        <VenueIndex venues={this.props.venues} />
+        { renderVenues }
       </div>
     )
   }
@@ -27,6 +34,7 @@ class VenueList extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    isLoading: state.isLoading,
     venues: state.venues
   };
 };

@@ -9,11 +9,6 @@ import VenueItem from '../components/venues/VenueItem';
 
 // this is the page for the Venue details view - contains suggestions and reviews
 
-// when you load the page, the action isn't dispatched and the state is empty. no API call is being made...
-// updating it to be that fetchVenues() is always called didn't help, but it works for VenueList
-// when you navigate from the VenueList component here the state is intact, but the data doesnt render
-// how do you hook into component lifecycle events to make sure they are working
-
 class VenueShow extends Component {
   // page doesn't work properly if you don't come from /venues
   componentWillMount() {
@@ -46,7 +41,8 @@ class VenueShow extends Component {
     console.log(`props:`);
     console.log(this.props.venues)
     console.log(venue)
-    let renderVenue = venue ? <VenueItem venue={venue} /> : <p>Venue data not available</p>
+    let renderVenue = venue ? <VenueItem venue={venue} /> : <p>Venue data not available</p>;
+
     return (
       <div className="venue-container-component">
         { renderVenue }
@@ -58,6 +54,7 @@ class VenueShow extends Component {
 // this connects it to the store so that it can get the venues if coming from /venues
 const mapStateToProps = (state) => {
   return {
+    isLoading: state.isLoading,
     venues: state.venues
   }
 }
