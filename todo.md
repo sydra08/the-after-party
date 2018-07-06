@@ -101,16 +101,27 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [ ] suggestions
 [ ] fix issue where if you load the /venues/:venueId page on its own and don't come from the /venues page, data doesn't load properly
 [ ] Design
-  [ ] http://polaris.shopify.com/ - like a lot of the options, but not sure it's the right fit
+  [x] look at different websites for inspiration before choosing a framework
+  [ ] Material Design https://material.io/
+  [x] https://github.com/armincifuentes/YDNAD (great resource)
+  * [ ] Material UI https://material-ui.com/  
+  [ ] Semantic UI https://react.semantic-ui.com/elements/button (has like buttons but doesn't use npm)
+  [x] http://polaris.shopify.com/ - like a lot of the options, but not sure it's the right fit
     + like the filter options.
     + could also consider doing a modal for the forms?
     + the list formats aren't bad either
     + like the loading design for pages with text
     + alerts style is nice
     + like the design principles too
-  [ ] https://react-bootstrap.github.io/ - never really had any success working with bootstrap, but willing to try
+  [x] https://react-bootstrap.github.io/ - never really had any success working with bootstrap, but willing to try
     + like the form validations
     + think that it's nice and basic and the Polaris one might get too complicated? It also looks really similar to the bootstrap stuff, just styled slightly differently at times
+
+having a loading indicator
+when component mounts it'll call fetchVenues()
+within fetchVenues() there will be a few actions
+1) LOADING_VENUES which will cause the state to be {isLoading: true, venues: []}
+2) FETCH_VENUES will send the request to the API and when it finishes it will update state to be {isLoading: false, venues: [venue data from API]}
 
     state = {
       venues: [

@@ -54,8 +54,8 @@ class VenueShow extends Component {
 // this connects it to the store so that it can get the venues if coming from /venues
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    venues: state.venues
+    venues: state.venues.venues,
+    isLoading: state.venues.isLoading
   }
 }
 
