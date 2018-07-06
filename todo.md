@@ -104,7 +104,10 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   [x] look at different websites for inspiration before choosing a framework
   [ ] Material Design https://material.io/
   [x] https://github.com/armincifuentes/YDNAD (great resource)
-  * [ ] Material UI https://material-ui.com/  
+  * [ ] Material UI https://material-ui.com/
+    + look here for support and tutorials
+    https://material.io/design/layout/responsive-layout-grid.html#
+    https://material.io/design/layout/responsive-layout-grid.html#
   [ ] Semantic UI https://react.semantic-ui.com/elements/button (has like buttons but doesn't use npm)
   [x] http://polaris.shopify.com/ - like a lot of the options, but not sure it's the right fit
     + like the filter options.
