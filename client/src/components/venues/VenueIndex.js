@@ -27,7 +27,7 @@ const VenueIndex = (props) => {
     <div className={classes.root}>
       <List component="nav">
         {venues.map((venue, index) => <ListItem button key={index} component="a" href={`/venues/${venue.id}`}>
-          <ListItemText primary={venue.name} />
+          <ListItemText primary={venue.name} secondary={venue.address.location.state} />
         </ListItem>)}
       </List>
     </div>
