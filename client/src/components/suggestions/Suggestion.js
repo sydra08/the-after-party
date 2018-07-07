@@ -30,15 +30,18 @@ const Suggestion = (props) => {
     <div className="suggestion">
       <Card className={classes.card}>
         <CardContent>
-          <Typography variant="headline" component="h2">
+          <Typography variant="title" gutterBottom>
             Name: {name}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             Address: {address.street} | Category: {category.name}
           </Typography>
           <Typography component="p">
-           Upvotes: {upvotes} | Downvotes: {downvotes}
-         </Typography>
+             Upvotes: {upvotes}
+           </Typography>
+         <Typography component="p">
+            Downvotes: {downvotes}
+          </Typography>
         </CardContent>
       </Card>
     </div>

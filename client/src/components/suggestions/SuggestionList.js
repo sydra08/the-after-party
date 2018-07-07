@@ -15,13 +15,11 @@ const styles = theme => ({
 const SuggestionList = (props) => {
   const { suggestions, classes } = props;
   return(
-    <div>
-      <Paper className={classes.root} elevation={1}>
-        <Typography variant="headline" component="h3">
-          Suggestions
-        </Typography>
-          {suggestions.map((suggestion, index) => <Suggestion key={index} name={suggestion.name} address={suggestion.address} category={suggestion.category} upvotes={suggestion.upvotes} downvotes={suggestion.downvotes} />)}
-      </Paper>
+    <div className={classes.root}>
+      <Typography variant="headline" component="h3">
+        Suggestions
+      </Typography>
+      {suggestions.map((suggestion, index) => <Suggestion key={index} name={suggestion.name} address={suggestion.address} category={suggestion.category} upvotes={suggestion.upvotes} downvotes={suggestion.downvotes} />)}
     </div>
   );
 }
