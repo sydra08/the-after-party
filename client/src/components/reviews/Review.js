@@ -1,12 +1,47 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
-const Review = ({ content, rating }) => {
+const styles = {
+  card: {
+    minWidth: 275,
+    marginBottom: 12,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    marginBottom: 16,
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+};
+
+const Review = (props) => {
+  const { content, rating, classes } = props;
   return (
     <div className="review">
-      <p>Content: {content}</p>
-      <p><strong>Rating: </strong>{rating}</p>
+      <Card className={classes.card}>
+        <CardContent>
+          <Typography variant="title" gutterBottom>
+            Content
+          </Typography>
+          <Typography component="p">
+            {content}
+           </Typography>
+           <Typography className={classes.pos} color="textSecondary">
+             Rating: {rating}
+           </Typography>
+        </CardContent>
+      </Card>
     </div>
   )
 }
 
-export default Review;
+export default withStyles(styles)(Review);
