@@ -28,7 +28,7 @@ class SuggestionsController < ApplicationController
   private
 
   def suggestion_params
-    params.require(:suggestion).permit(:name, :category, :avg_price, :upvotes, :downvotes)
+    params.require(:suggestion).permit(:name, category_attributes: [:name], :upvotes, address_attributes: [:street, :city, :state] :downvotes)
   end
 
 end
