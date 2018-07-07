@@ -34,7 +34,10 @@ const Suggestion = (props) => {
             Name: {name}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            Address: {address.street} | Category: {category.name}
+            Address: {address.street}
+          </Typography>
+          <Typography className={classes.pos} color="textSecondary">
+            Category: {category.name}
           </Typography>
           <Typography component="p">
              Upvotes: {upvotes}
