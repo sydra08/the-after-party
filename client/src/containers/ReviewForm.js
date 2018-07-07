@@ -5,12 +5,13 @@ import { addReview } from '../actions/reviewActions';
 
 
 class ReviewForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       content: '',
       rating: '',
+      venue_id: this.props.venueId
     };
   }
 
@@ -20,22 +21,20 @@ class ReviewForm extends Component {
     this.props.addReview(this.state);
     this.setState({
       content: '',
-      rating: ''
+      rating: '',
+      venue_id: this.props.venueId
     });
   }
 
   handleInputChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
-
     this.setState({
       [name]: value,
-      venue_id: this.props.match.params.venueId
     });
   }
 
   render() {
-    console.log(this.props.match.params.venueId)
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
