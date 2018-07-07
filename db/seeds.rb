@@ -1,18 +1,14 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-Location.create(city: "Morrison", state: "Colorado")
-Location.create(city: "Brooklyn", state: "New York")
-Location.create(city: "New York", state: "New York")
-
-Address.create(street: "18300 W Alameda Pkwy", location_id: 1)
-Address.create(street: "319 Frost St", location_id: 2)
-Address.create(street: "4 Pennsylvania Plaza", location_id: 3)
-Address.create(street: "17 Irving Pl,", location_id: 3)
-Address.create(street: "134 Kingsland Ave", location_id: 2)
-Address.create(street: "321 E 14th St", location_id: 3)
-Address.create(street: "307 E 14th St", location_id: 3)
-Address.create(street: "55 Irving Pl", location_id: 3)
+Address.create(street: "18300 W Alameda Pkwy", city: "Morrison", state: "Colorado")
+Address.create(street: "319 Frost St", city: "Brooklyn", state: "New York")
+Address.create(street: "4 Pennsylvania Plaza", city: "New York", state: "New York")
+Address.create(street: "17 Irving Pl,", city: "New York", state: "New York")
+Address.create(street: "134 Kingsland Ave", city: "Brooklyn", state: "New York")
+Address.create(street: "321 E 14th St", city: "New York", state: "New York")
+Address.create(street: "307 E 14th St", city: "New York", state: "New York")
+Address.create(street: "55 Irving Pl", city: "New York", state: "New York")
 
 Venue.create(name: "Red Rocks Amphitheater", address_id: 1, avg_rating: 5, capacity: 9525)
 Venue.create(name: "Brooklyn Steel", address_id: 2, avg_rating: 3.5, capacity: 1800)
