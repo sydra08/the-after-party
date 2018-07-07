@@ -12,7 +12,7 @@ const styles = theme => ({
   },
 });
 
-const ReviewList = (PropTypes) => {
+const ReviewList = (props) => {
   const { reviews, classes } = props;
   return(
     <div className={classes.root}>
