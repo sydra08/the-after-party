@@ -27,6 +27,7 @@ function NavBar(props) {
           </Typography>
           <Button component={Link} to='/venues' color="inherit">Venues</Button>
           <Button color="inherit">Suggestions</Button>
+          <Button color="inherit">Reviews</Button>
         </Toolbar>
       </AppBar>
     </div>
