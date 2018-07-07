@@ -76,6 +76,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [ ] hook up form submit with API
 [ ] add a loading icon/screen for pages while API data is being fetched
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
+https://www.npmjs.com/package/react-stars
 [/] set up routes in React w react-router (App.js)
 []/] figure out where the props and state stuff goes
 [/] start creating different pages for app https://reactjs.org/docs/thinking-in-react.html
