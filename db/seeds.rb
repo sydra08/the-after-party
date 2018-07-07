@@ -4,7 +4,7 @@
 Address.create(street: "18300 W Alameda Pkwy", city: "Morrison", state: "Colorado")
 Address.create(street: "319 Frost St", city: "Brooklyn", state: "New York")
 Address.create(street: "4 Pennsylvania Plaza", city: "New York", state: "New York")
-Address.create(street: "17 Irving Pl,", city: "New York", state: "New York")
+Address.create(street: "17 Irving Pl", city: "New York", state: "New York")
 Address.create(street: "134 Kingsland Ave", city: "Brooklyn", state: "New York")
 Address.create(street: "321 E 14th St", city: "New York", state: "New York")
 Address.create(street: "307 E 14th St", city: "New York", state: "New York")
