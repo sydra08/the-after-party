@@ -34,7 +34,7 @@ const Suggestion = (props) => {
             Name: {name}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
-            Address: {address.street}
+            Address: {address.street}, {address.city}, {address.state}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             Category: {category.name}

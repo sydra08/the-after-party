@@ -36,7 +36,7 @@ const VenueIndex = (props) => {
         </Typography>
         <List component="nav">
           {venues.map((venue, index) => <ListItem button key={index} component="a" href={`/venues/${venue.id}`}>
-            <ListItemText primary={venue.name} secondary={venue.address.location.state} />
+            <ListItemText primary={venue.name} secondary={venue.address.state} />
           </ListItem>)}
         </List>
       </Paper>

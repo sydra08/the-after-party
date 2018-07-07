@@ -16,7 +16,7 @@ const VenueItem = (props) => {
         Name: {venue.name}
       </Typography>
       <Typography align="center" gutterBottom>
-        Address: {venue.address.street}, {venue.address.location.city}, {venue.address.location.state}
+        Address: {venue.address.street}, {venue.address.city}, {venue.address.state}
       </Typography>
       <Typography variant="subheading" align="center" gutterBottom>
         Rating: {venue.avg_rating}
