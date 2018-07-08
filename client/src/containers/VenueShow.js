@@ -5,9 +5,6 @@ import { fetchVenues } from '../actions/venueActions';
 import VenueItem from '../components/venues/VenueItem';
 import SuggestionList from '../components/suggestions/SuggestionList';
 import ReviewContainer from './ReviewContainer';
-// import ReviewList from '../components/reviews/ReviewList';
-// import SuggestionNew from './SuggestionNew';
-// import ReviewForm from './ReviewForm';
 
 // this is the page for the Venue details view - contains suggestions and reviews
 
@@ -28,8 +25,6 @@ class VenueShow extends Component {
     return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId, 10))
   }
 
-  // <SuggestionList suggestions={suggestions} />
-  // <ReviewList reviews={reviews} />
   // add something to handle when data is empty
   render() {
     console.log("VenueShow component")
@@ -51,8 +46,6 @@ class VenueShow extends Component {
 // let renderVenue = venue ? (<div><VenueItem venue={venue} /> <SuggestionList suggestions={venue.suggestions} /><ReviewForm venueId={venue.id} /><ReviewList reviews={venue.reviews} /></div>) : <p>Venue data not available</p>;
 
 // this connects it to the store so that it can get the venues if coming from /venues
-
-// how do you make it so that when you add a new review for a venue it renders on the page?
 
 const mapStateToProps = (state) => {
   return {
