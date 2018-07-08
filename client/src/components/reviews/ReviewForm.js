@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-const ReviewForm = (props) => {
+const ReviewForm = ({ content, rating, handleSubmit, handleInputChange }) => {
   return (
-    <form onSubmit={this.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <label>
           Review:
           <textarea
             id="review-content"
             name="content"
-            value={this.content}
-            onChange={this.handleInputChange}
+            value={content}
+            onChange={handleInputChange}
           />
         </label>
       </div>
@@ -21,8 +21,8 @@ const ReviewForm = (props) => {
             id="review-rating"
             type="text"
             name="rating"
-            value={this.rating}
-            onChange={this.handleInputChange}
+            value={rating}
+            onChange={handleInputChange}
           />
         </label>
       </div>
