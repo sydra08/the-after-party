@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = @venue.reviews.build(review_params)
     if @review.save
       # 201 means created
-      render json: {status: 201, review: @review}, status: 201
+      render json: @review, status: 201
     else
       # 400 means bad request
       render json: {status: 400, message: "Error"}, status: 400
