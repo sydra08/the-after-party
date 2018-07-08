@@ -14,8 +14,8 @@ class ReviewContainer extends Component {
       content: '',
       rating: '',
       venue_id: this.props.venueId,
-      errorText: '',
-      isError: false
+      // errorText: '',
+      // isError: false
     };
   }
 
@@ -32,8 +32,8 @@ class ReviewContainer extends Component {
       content: '',
       rating: '',
       venue_id: this.props.venueId,
-      errorText: '',
-      isError: false
+      // errorText: '',
+      // isError: false
     });
   }
 
@@ -65,10 +65,18 @@ class ReviewContainer extends Component {
 
   render() {
     console.log("ReviewContainer component")
+    console.log("ReviewContainer props")
+    console.log(this.props)
+    let errorMsg = null;
+    if(this.props.isError) {
+      errorMsg = "There was an error submitting your review. Please try again"
+    };
+
     return (
       <div className="review-container-component">
+        <p>{ errorMsg }</p>
         <ReviewList reviews={this.props.reviews} />
-        <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} content={this.state.content} rating={this.state.rating} errorText={this.state.errorText} isError={this.state.isError} />
+        <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} content={this.state.content} rating={this.state.rating} />
       </div>
     )
   }
@@ -77,7 +85,8 @@ class ReviewContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     reviews: state.reviews.reviews,
-    isLoading: state.reviews.isLoading
+    isLoading: state.reviews.isLoading,
+    isError: state.reviews.isError
   }
 }
 
