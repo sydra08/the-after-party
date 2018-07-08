@@ -74,7 +74,10 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [ ] rating element
       [ ] send venue data with form
       [ ] hook up form submit with API
-[ ] add a loading icon/screen for pages while API data is being fetched
+[ ] add a loading icon/screen for pages while API data is being fetched - need to fix this so that it actually displays (use componentWillUpdate?)
+[ ] ReviewForm - error handleInputChange
+  [ ] when there's an error don't update the ReviewList
+  [ ] don't clear out the form, show what the inputs were
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
 https://www.npmjs.com/package/react-stars
 [/] set up routes in React w react-router (App.js)
@@ -91,7 +94,7 @@ https://www.npmjs.com/package/react-stars
 [ ] Redux - need to start using Redux so that I can set up the links properly
   [x] create store
   [ ] actions
-    [ ] addReview
+    [/] addReview
     [ ] addSuggestion
     [ ] updateSuggestion (when voting)
     [ ] updateVenue (rating)
@@ -100,16 +103,16 @@ https://www.npmjs.com/package/react-stars
     [/] venues
     [ ] reviews
     [ ] suggestions
-[ ] fix issue where if you load the /venues/:venueId page on its own and don't come from the /venues page, data doesn't load properly
+[x] fix issue where if you load the /venues/:venueId page on its own and don't come from the /venues page, data doesn't load properly
 [ ] Design
   [x] look at different websites for inspiration before choosing a framework
-  [ ] Material Design https://material.io/
+  [x] Material Design https://material.io/
   [x] https://github.com/armincifuentes/YDNAD (great resource)
   * [ ] Material UI https://material-ui.com/
     + look here for support and tutorials
     https://material.io/design/layout/responsive-layout-grid.html#
     https://material.io/design/layout/responsive-layout-grid.html#
-  [ ] Semantic UI https://react.semantic-ui.com/elements/button (has like buttons but doesn't use npm)
+  [x] Semantic UI https://react.semantic-ui.com/elements/button (has like buttons but doesn't use npm)
   [x] http://polaris.shopify.com/ - like a lot of the options, but not sure it's the right fit
     + like the filter options.
     + could also consider doing a modal for the forms?
