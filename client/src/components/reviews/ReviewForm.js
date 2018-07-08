@@ -7,8 +7,6 @@ import Typography from '@material-ui/core/Typography';
 
 // need to use the star ratings thing here for the ratings selector
 
-// need to figure out how to make the Paper component
-
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
@@ -25,10 +23,12 @@ const styles = theme => ({
   }
 });
 
+// need to add validation errors here
+
 const ReviewForm = (props) => {
   console.log("ReviewForm component")
   console.log(props)
-  const { content, rating, handleSubmit, handleInputChange, classes } = props;
+  const { content, rating, isError, errorText, handleSubmit, handleInputChange, classes } = props;
   return (
     <div className={classes.root}>
       <Card>
@@ -54,12 +54,15 @@ const ReviewForm = (props) => {
               label="Rate the venue: 1 (low) - 5 (high)"
               className={classes.textField}
               value={rating}
+              error={isError}
+              helperText={errorText}
               onChange={handleInputChange}
               margin="normal"
               fullWidth
+              required
             />
             <div>
-              <button type="submit">Submit Review</button>
+              <button disabled={isError} type="submit">Submit Review</button>
             </div>
           </form>
         </CardContent>

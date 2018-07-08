@@ -48,7 +48,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
 [x] update README with proper install and usage instructions
 [x] packages
   [x] isomorphic fetch
-  [x] es6 promise (?)
+  [ ] es6 promise (?)
   [ ] prop-types
   [x] react-router
   [x] redux thunk
