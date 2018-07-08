@@ -25,6 +25,7 @@ const styles = {
 
 
 const Suggestion = (props) => {
+  console.log("Suggestion component")
   const { name, category, address, upvotes, downvotes, classes } = props;
   return (
     <div className="suggestion">

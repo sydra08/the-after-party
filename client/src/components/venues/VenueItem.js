@@ -9,6 +9,7 @@ const styles = {
 };
 
 const VenueItem = (props) => {
+  console.log("VenueItem component")
   const { venue, classes } = props;
   return (
     <div className={classes.root}>

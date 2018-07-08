@@ -34,7 +34,6 @@ class ReviewContainer extends Component {
   }
 
   handleInputChange = (event) => {
-    // this seems to work ok
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
@@ -43,6 +42,7 @@ class ReviewContainer extends Component {
   }
 
   render() {
+    console.log("ReviewContainer component")
     return (
       <div className="review-container-component">
         <ReviewList reviews={this.props.reviews} />

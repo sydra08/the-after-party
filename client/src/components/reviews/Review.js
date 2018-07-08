@@ -20,6 +20,7 @@ const styles = {
 
 const Review = (props) => {
   const { content, rating, classes } = props;
+  console.log("Review component")
   return (
     <div className="review">
       <Card className={classes.card}>

@@ -32,6 +32,7 @@ class VenueShow extends Component {
   // <ReviewList reviews={reviews} />
   // add something to handle when data is empty
   render() {
+    console.log("VenueShow component")
     const venue = this.selectVenue()
     console.log(this.props.match.url)
     console.log(`props:`);

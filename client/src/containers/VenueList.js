@@ -29,6 +29,7 @@ class VenueList extends Component {
   // }
 
   render() {
+    console.log("VenueList component")
     console.log(`props:`);
     console.log(this.props)
     console.log('state')

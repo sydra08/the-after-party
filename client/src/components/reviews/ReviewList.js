@@ -13,6 +13,7 @@ const styles = theme => ({
 });
 
 const ReviewList = (props) => {
+  console.log("ReviewList component")
   const { reviews, classes } = props;
   return(
     <div className={classes.root}>

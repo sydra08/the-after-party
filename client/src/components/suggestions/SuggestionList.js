@@ -12,6 +12,7 @@ const styles = theme => ({
 });
 
 const SuggestionList = (props) => {
+  console.log("SuggestionList component")
   const { suggestions, classes } = props;
   return(
     <div className={classes.root}>

@@ -27,6 +27,7 @@ const styles = theme => ({
 // </div>
 
 const VenueIndex = (props) => {
+  console.log("VenueIndex component")
   const { venues, classes } = props;
   return (
     <div>

@@ -6,6 +6,7 @@ import VenueShow from './VenueShow';
 // this contains the routes for the venue list and venue show components
 
 const VenuePage = () => {
+  console.log("VenuePage component")
   return(
     <div>
       <Switch>
