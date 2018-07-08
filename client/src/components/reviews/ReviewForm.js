@@ -54,15 +54,15 @@ const ReviewForm = (props) => {
               label="Rate the venue: 1 (low) - 5 (high)"
               className={classes.textField}
               value={rating}
-              error={isError}
-              helperText={errorText}
+              // error={isError}
+              // helperText={errorText}
               onChange={handleInputChange}
               margin="normal"
               fullWidth
               required
             />
             <div>
-              <button disabled={isError} type="submit">Submit Review</button>
+              <button type="submit">Submit Review</button>
             </div>
           </form>
         </CardContent>

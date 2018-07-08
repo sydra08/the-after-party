@@ -38,38 +38,29 @@ class ReviewContainer extends Component {
   }
 
   handleInputChange = (event) => {
+    // so if you go somewhere else and change the input then it
     const value = event.target.value;
     const name = event.target.name;
-    // if(name === "rating" && !regEx.test(parseInt(value,10))) {
-    //   return this.setState({
+    // this only works when you change the input in the content field and the input is valid
+    // if(name === "rating" && !regEx.test(value)){
+    //   console.log('invalid input')
+    //   console.log(regEx.test(parseInt(value)))
+    //   this.setState({
     //     [name]: value,
     //     errorText: "Must be a number between 1 and 5",
     //     isError: true
     //   })
+    // } else {
+    //   console.log('valid input')
+    //   this.setState({
+    //     [name]: value,
+    //     errorText: '',
+    //     isError: false
+    //   });
     // }
-    // this.setState({
-    //   [name]: value,
-    //   errorText: '',
-    //   isError: false
-    // });
-    this.validateForm(name, value)
-  }
-
-  validateForm = (name, value) => {
-    const regEx = /([1-4][.][0-9])|([1-5])\s/g
-    if(name === "rating" && !regEx.test(parseInt(value,10))) {
-      return this.setState({
-        [name]: value,
-        errorText: "Must be a number between 1 and 5",
-        isError: true
-      })
-    }
-    return this.setState({
-      [name]: value,
-      errorText: '',
-      isError: false
-    });
-    // /([1-4][.][0-9])|([1-5])\s/g regex for 1-5 including decimals
+    this.setState({
+      [name]: value
+    })
   }
 
   render() {
