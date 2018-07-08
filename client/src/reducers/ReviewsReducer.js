@@ -8,6 +8,16 @@ function ReviewsReducer(state = null, action) {
       console.log('new state is')
       console.log(action.payload)
       return action.payload
+    case 'FETCH_REVIEWS':
+      console.log("FETCH_REVIEWS was called")
+      console.log("state is...")
+      console.log(state)
+      return {...state, isLoading: true};
+    case 'RECEIVED_REVIEWS':
+      console.log("RECEIVED_REVIEWS was called")
+      console.log("state is...")
+      console.log(state)
+      return {reviews: action.payload, isLoading: false};
     default:
       return state;
   }

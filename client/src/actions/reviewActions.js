@@ -14,3 +14,12 @@ export function addReview(reviewData) {
     .then(review => dispatch({type: 'ADD_REVIEW', payload: review}))
   }
 }
+
+export function fetchReviews(venueId) {
+  return function(dispatch) {
+    dispatch({type: 'FETCH_REVIEWS'})
+    return fetch(`/venues/${venueId}/reviews`)
+      .then(response => response.json())
+      .then(reviews => dispatch({type: 'RECEIVED_REVIEWS', payload: reviews}))
+  }
+}
