@@ -23,7 +23,9 @@ class ReviewContainer extends Component {
   }
 
   handleSubmit = (event) => {
+    // this isn't happening bc when you submit the page refreshes
     event.preventDefault();
+    // this isn't being hit when you submit the form
     debugger
     console.log(this.state);
     this.props.addReview(this.state);
@@ -35,16 +37,13 @@ class ReviewContainer extends Component {
   }
 
   handleInputChange = (event) => {
+    // this seems to work ok
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
       [name]: value,
     });
   }
-
-  // connect to the store to get the review data as well as the fetchReviews and addReview actions
-
-  // pass the form actions as props
 
   render() {
     return (
