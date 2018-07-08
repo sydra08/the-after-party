@@ -1,7 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
 export function addReview(reviewData) {
-  debugger
   return (dispatch) => {
     fetch(`/venues/${reviewData.venue_id}/reviews`, {
     method: 'POST',

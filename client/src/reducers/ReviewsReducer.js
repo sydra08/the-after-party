@@ -7,7 +7,7 @@ function ReviewsReducer(state = {reviews: [], isLoading: false}, action) {
       console.log(state)
       console.log('new state is')
       console.log(action.payload)
-      return Object.assign({}, state, { reviews: state.reviews.concat(action.payload), isLoading: true})
+      return Object.assign({}, state, { reviews: state.reviews.concat(action.payload), isLoading: false})
     case 'FETCH_REVIEWS':
       console.log("FETCH_REVIEWS was called")
       console.log("state is...")

@@ -27,6 +27,7 @@ const styles = theme => ({
 
 const ReviewForm = (props) => {
   console.log("ReviewForm component")
+  console.log(props)
   const { content, rating, handleSubmit, handleInputChange, classes } = props;
   return (
     <div className={classes.root}>
@@ -38,6 +39,7 @@ const ReviewForm = (props) => {
           <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
             <TextField
               id="review-content"
+              name="content"
               multiline
               rows="4"
               value={content}
@@ -48,6 +50,7 @@ const ReviewForm = (props) => {
             />
             <TextField
               id="review-rating"
+              name="rating"
               label="Rate the venue: 1 (low) - 5 (high)"
               className={classes.textField}
               value={rating}
