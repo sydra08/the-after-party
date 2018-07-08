@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addReview, fetchReviews } from '../actions/reviewActions';
 import ReviewList from '../components/reviews/ReviewList.js';
-import ReviewForm from './ReviewForm.js';
+import ReviewForm from '../components/reviews/ReviewForm.js';
 
 class ReviewContainer extends Component {
   // called from the VenueShow component, it will be passed the venueId as a prop
@@ -24,6 +24,7 @@ class ReviewContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    debugger
     console.log(this.state);
     this.props.addReview(this.state);
     this.setState({
@@ -48,8 +49,8 @@ class ReviewContainer extends Component {
   render() {
     return (
       <div className="review-container-component">
-        <p>this is a test of the Review container component</p>
-        <ReviewForm handleSubmit={this.handleSubmit()} handleInputChange={this.handleInputChange()} content={this.state.content} rating={this.state.rating} />
+        <ReviewList reviews={this.props.reviews} />
+        <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} content={this.state.content} rating={this.state.rating} />
       </div>
     )
   }
@@ -57,7 +58,7 @@ class ReviewContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    reviews: state.reviews,
+    reviews: state.reviews.reviews,
     isLoading: state.reviews.isLoading
   }
 }
