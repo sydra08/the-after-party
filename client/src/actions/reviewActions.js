@@ -20,10 +20,7 @@ export function addReview(reviewData) {
       console.log(response.status)
       return response.json()
     })
-    // this still gets called if there is an error
-    .then(json => console.log(json))
-    // .then(json => console.log(json.status))
-    // .then(review => dispatch({type: 'ADD_REVIEW', payload: review}))
+    .then(review => dispatch({type: 'ADD_REVIEW', payload: review}))
   }
 }
 
