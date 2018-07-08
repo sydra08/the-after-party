@@ -13,12 +13,7 @@ import ReviewContainer from './ReviewContainer';
 
 class VenueShow extends Component {
   // page doesn't work properly if you don't come from /venues
-  componentWillMount() {
-    console.log('the component will mount')
-  }
-
   componentDidMount() {
-    // if you go directly to the page from the url then componentDidMount doesn't get called
     console.log('the component mounted')
     // component does mount but doesn't do anything...seems like it's because venues has a length
     // if(this.props.venues.length === 0) {

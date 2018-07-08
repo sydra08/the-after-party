@@ -21,32 +21,33 @@ class VenueList extends Component {
     this.props.fetchVenues()
   }
 
-  renderVenues() {
-    const { classes, venues, isLoading } = this.props
-    if(!venues && !isLoading) {
-      return (
-        <div>
-          <CircularProgress className={classes.progress} size={50} />
-        </div>
-      );
-    }
-    return (
-      <VenueIndex venues={venues} />
-    )
-  }
+  // renderVenues() {
+  //   const { classes, venues, isLoading } = this.props
+  //   return (
+  //     <VenueIndex venues={venues} />
+  //   )}
+  // }
 
   render() {
     console.log(`props:`);
     console.log(this.props)
     console.log('state')
     console.log(this.state)
-
+    const { classes, venues, isLoading } = this.props
+    if(!isLoading && !venues) {
+      console.log('loading page...')
+      return (
+        <div>
+          <CircularProgress className={classes.progress} size={50} />
+        </div>
+      );
+    }
     // if props.isLoading === true then show the is loading thing
     // if it === false then show the rest of the stuff
     return (
       <div className="venue-container-component">
         <p>Venue List component</p>
-        { this.renderVenues() }
+        <VenueIndex venues={venues} />
       </div>
     )
   }
