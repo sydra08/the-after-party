@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 export function addReview(reviewData) {
   return (dispatch) => {
+    // debugger
     fetch(`/venues/${reviewData.venue_id}/reviews`, {
     method: 'POST',
     body: JSON.stringify(reviewData),
@@ -9,8 +10,20 @@ export function addReview(reviewData) {
       'Content-Type': 'application/json'
     }
   })
-    .then(res => res.json())
-    .then(review => dispatch({type: 'ADD_REVIEW', payload: review}))
+    .then(function(response) {
+      if(response.status >= 400){
+        console.log('Error:')
+        console.log(response.status)
+        return response.json()
+      }
+      console.log('Success')
+      console.log(response.status)
+      return response.json()
+    })
+    // this still gets called if there is an error
+    .then(json => console.log(json))
+    // .then(json => console.log(json.status))
+    // .then(review => dispatch({type: 'ADD_REVIEW', payload: review}))
   }
 }
 

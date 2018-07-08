@@ -13,7 +13,9 @@ class ReviewContainer extends Component {
     this.state = {
       content: '',
       rating: '',
-      venue_id: this.props.venueId
+      venue_id: this.props.venueId,
+      errorText: '',
+      isError: false
     };
   }
 
@@ -29,16 +31,45 @@ class ReviewContainer extends Component {
     this.setState({
       content: '',
       rating: '',
-      venue_id: this.props.venueId
+      venue_id: this.props.venueId,
+      errorText: '',
+      isError: false
     });
   }
 
   handleInputChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
-    this.setState({
+    // if(name === "rating" && !regEx.test(parseInt(value,10))) {
+    //   return this.setState({
+    //     [name]: value,
+    //     errorText: "Must be a number between 1 and 5",
+    //     isError: true
+    //   })
+    // }
+    // this.setState({
+    //   [name]: value,
+    //   errorText: '',
+    //   isError: false
+    // });
+    this.validateForm(name, value)
+  }
+
+  validateForm = (name, value) => {
+    const regEx = /([1-4][.][0-9])|([1-5])\s/g
+    if(name === "rating" && !regEx.test(parseInt(value,10))) {
+      return this.setState({
+        [name]: value,
+        errorText: "Must be a number between 1 and 5",
+        isError: true
+      })
+    }
+    return this.setState({
       [name]: value,
+      errorText: '',
+      isError: false
     });
+    // /([1-4][.][0-9])|([1-5])\s/g regex for 1-5 including decimals
   }
 
   render() {
@@ -46,7 +77,7 @@ class ReviewContainer extends Component {
     return (
       <div className="review-container-component">
         <ReviewList reviews={this.props.reviews} />
-        <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} content={this.state.content} rating={this.state.rating} />
+        <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} content={this.state.content} rating={this.state.rating} errorText={this.state.errorText} isError={this.state.isError} />
       </div>
     )
   }
