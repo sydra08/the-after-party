@@ -37,7 +37,6 @@ class VenueShow extends Component {
   // add something to handle when data is empty
   render() {
     const venue = this.selectVenue()
-    // const { suggestions, reviews } = venue;
     console.log(this.props.match.url)
     console.log(`props:`);
     console.log(this.props.venues)
@@ -53,9 +52,13 @@ class VenueShow extends Component {
 }
 
 // this connects it to the store so that it can get the venues if coming from /venues
+
+// how do you make it so that when you add a new review for a venue it renders on the page?
+
 const mapStateToProps = (state) => {
   return {
     venues: state.venues.venues,
+    reviews: state.reviews,
     isLoading: state.venues.isLoading
   }
 }

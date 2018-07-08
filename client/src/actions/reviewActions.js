@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch';
+
 export function addReview(reviewData) {
   debugger
   return (dispatch) => {
