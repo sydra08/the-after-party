@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from "@material-ui/core/TextField";
+import Typography from '@material-ui/core/Typography';
 
 // need to use the star ratings thing here for the ratings selector
 
@@ -21,7 +22,6 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200
   }
 });
 
@@ -29,26 +29,32 @@ const ReviewForm = (props) => {
   const { content, rating, handleSubmit, handleInputChange, classes } = props;
   return (
     <div className={classes.root}>
-      <Card className={classes.card}>
+      <Card>
         <CardContent>
-          <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+          <Typography variant="title" gutterBottom>
+            Leave a review:
+          </Typography>
+          <form noValidate autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
             <TextField
               id="review-content"
-              label="Content"
+              defaultValue="Enter your review"
               multiline
               rows="4"
               value={content}
               onChange={handleInputChange}
-              // className={classes.textField}
+              className={classes.textField}
               margin="normal"
+              fullWidth
             />
             <TextField
               id="review-rating"
-              label="Rating"
-              // className={classes.textField}
+              label="Rate the venue"
+              helperText="Scale of 1 (low) - 5 (high)"
+              className={classes.textField}
               value={rating}
               onChange={handleInputChange}
               margin="normal"
+              fullWidth
             />
             <div>
               <button type="submit">Submit Review</button>
