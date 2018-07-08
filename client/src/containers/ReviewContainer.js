@@ -23,10 +23,7 @@ class ReviewContainer extends Component {
   }
 
   handleSubmit = (event) => {
-    // this isn't happening bc when you submit the page refreshes
     event.preventDefault();
-    // this isn't being hit when you submit the form
-    debugger
     console.log(this.state);
     this.props.addReview(this.state);
     this.setState({
