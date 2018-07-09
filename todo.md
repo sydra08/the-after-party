@@ -72,26 +72,29 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [x] Review (is this where the form goes?)
     [ ] ReviewNew (the form)
       [ ] rating element
-      [ ] send venue data with form
-      [ ] hook up form submit with API
+      [x] send venue data with form
+      [x] hook up form submit with API
+      [/] handle errors - right now only using an error message, eventually want to have the form not clear out when you fail to submit properly
+        [x] when there's an error don't update the ReviewList
+        [ ] don't clear out the form, show what the inputs were
+        [ ] have client-side validation errors?
+      [ ] fix submit button styling
+      [ ] figure out how to trigger the venue rating update
 [ ] add a loading icon/screen for pages while API data is being fetched - need to fix this so that it actually displays (use componentWillUpdate?)
-[ ] ReviewForm - error handleInputChange
-  [ ] when there's an error don't update the ReviewList
-  [ ] don't clear out the form, show what the inputs were
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
 https://www.npmjs.com/package/react-stars
-[/] set up routes in React w react-router (App.js)
-[]/] figure out where the props and state stuff goes
+[x] set up routes in React w react-router (App.js)
+[/] figure out where the props and state stuff goes
 [/] start creating different pages for app https://reactjs.org/docs/thinking-in-react.html
   [x] Venue List - just a list of the venues as links
   [x] Venue Show - display the venue, reviews, and suggestions
     [x] Venue data
     [x] Review data
-    [ ] Review form
+    [x] Review form
     [x] Suggestion data
     [ ] Suggestion form
   [x] Homepage - static view
-[ ] Redux - need to start using Redux so that I can set up the links properly
+[/] Redux - need to start using Redux so that I can set up the links properly
   [x] create store
   [ ] actions
     [/] addReview
@@ -101,7 +104,7 @@ https://www.npmjs.com/package/react-stars
     [x] fetchVenues
   [ ] reducers
     [/] venues
-    [ ] reviews
+    [/] reviews
     [ ] suggestions
 [x] fix issue where if you load the /venues/:venueId page on its own and don't come from the /venues page, data doesn't load properly
 [ ] Design
