@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueItem from '../components/venues/VenueItem';
-// import SuggestionList from '../components/suggestions/SuggestionList';
+import SuggestionList from '../components/suggestions/SuggestionList';
 import ReviewContainer from './ReviewContainer';
 import SuggestionContainer from './SuggestionContainer';
 

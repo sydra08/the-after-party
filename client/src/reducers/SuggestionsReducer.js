@@ -4,12 +4,12 @@ function SuggestionsReducer(state = {suggestions: [], isLoading: false, isError:
       console.log("FETCH_SUGGESTIONS was called")
       console.log("state is...")
       console.log(state)
-      return { ...state, isLoading: true };
+      return {...state, isLoading: true};
     case 'RECEIVED_SUGGESTIONS':
       console.log("RECEIVED_SUGGESTIONS was called")
       console.log("state is...")
       console.log(state)
-      return { suggestions: action.payload, isLoading: false };
+      return {suggestions: action.payload, isLoading: false, isError: false};
     default:
       return state;
   }
