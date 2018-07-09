@@ -57,9 +57,14 @@ class SuggestionNew extends Component {
   }
 
   handleSelectChange = (event) => {
+    // this works but if you keep changing the selection then both upvote and downvote could be set to 1
     event.stopPropagation()
     const value = event.target.value;
-    this.setState(Object.assign({}, this.state, {[value]: 1}))
+    if (value === "upvote"){
+      this.setState(Object.assign({}, this.state, {upvote: 1, downvote: 0}))
+    } else if (value === "downvote"){
+      this.setState(Object.assign({}, this.state, {upvote: 0, downvote: 1}))
+    }
   }
 
   render() {
