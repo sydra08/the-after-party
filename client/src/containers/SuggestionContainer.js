@@ -16,6 +16,7 @@ class SuggestionContainer extends Component {
       <div className="suggestion-container-component">
         <p>this is a test of the Suggestion container component</p>
         <SuggestionList suggestions={this.props.suggestions} />
+        <SuggestionForm />
       </div>
     )
   }

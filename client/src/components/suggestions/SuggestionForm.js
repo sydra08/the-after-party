@@ -20,8 +20,8 @@ class SuggestionNew extends Component {
         city: '',
         state: ''
       },
-      upvotes: '',
-      downvotes: ''
+      upvote: '',
+      downvote: ''
     };
   }
 
@@ -56,7 +56,15 @@ class SuggestionNew extends Component {
     });
   }
 
+  handleSelectChange = (event) => {
+    event.stopPropagation()
+    const value = event.target.value;
+    this.setState(Object.assign({}, this.state, {[value]: 1}))
+  }
+
   render() {
+    console.log("SuggestionForm state...")
+    console.log(this.state)
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
@@ -64,26 +72,23 @@ class SuggestionNew extends Component {
             Name:
             <textarea
               id="suggestion-name"
-              name="content"
-              value={this.state.content}
+              name="name"
+              value={this.state.name}
               onChange={(event) => this.handleInputChange(event)}
             />
           </label>
         </div>
         <div>
           <label>
-            Rating:
-            <input
-              id="review-rating"
-              type="text"
-              name="rating"
-              value={this.state.rating}
-              onChange={this.handleInputChange}
-            />
+            Upvote/Downvote:
+            <select value={this.state.value} onChange={(event) => this.handleSelectChange(event)}>
+              <option value="upvote">Like</option>
+              <option value="downvote">Dislike</option>
+            </select>
           </label>
         </div>
         <div>
-          <button type="submit">Submit Review</button>
+          <button type="submit">Submit Suggestion</button>
         </div>
       </form>
     );
