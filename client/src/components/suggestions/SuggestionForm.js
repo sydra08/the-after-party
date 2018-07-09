@@ -56,7 +56,7 @@ class SuggestionNew extends Component {
     });
   }
 
-  handleSelectChange = (event) => {
+  handleVoteChange = (event) => {
     // this works but if you keep changing the selection then both upvote and downvote could be set to 1
     event.stopPropagation()
     const value = event.target.value;
@@ -67,6 +67,12 @@ class SuggestionNew extends Component {
     }
   }
 
+  handleCategoryChange = (event) => {
+    event.stopPropagation()
+    const value = event.target.value;
+    this.setState(Object.assign({}, this.state, { category: {name: value}}))
+  }
+
   render() {
     console.log("SuggestionForm state...")
     console.log(this.state)
@@ -75,18 +81,69 @@ class SuggestionNew extends Component {
         <div>
           <label>
             Name:
-            <textarea
+            <input
               id="suggestion-name"
               name="name"
+              type="text"
               value={this.state.name}
               onChange={(event) => this.handleInputChange(event)}
             />
           </label>
         </div>
+        <fieldset>
+          <legend>Address</legend>
+          <div>
+            <label>
+              Street:
+              <input
+                id="suggestion-address-street"
+                name="address[street]"
+                type="text"
+                value={this.state.address.street}
+                onChange={(event) => this.handleInputChange(event)}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              City:
+              <input
+                id="suggestion-address-city"
+                name="address[city]"
+                type="text"
+                value={this.state.address.city}
+                onChange={(event) => this.handleInputChange(event)}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              State:
+              <input
+                id="suggestion-address-state"
+                name="address[state]"
+                type="text"
+                value={this.state.address.state}
+                onChange={(event) => this.handleInputChange(event)}
+              />
+            </label>
+          </div>
+        </fieldset>
+        <div>
+          <label>
+            Category:
+            <select value={this.state.value} onChange={(event) => this.handleCategoryChange(event)}>
+              <option value="fast casual">Fast Casual</option>
+              <option value="beer bar">Beer Bar</option>
+              <option value="cocktail bar">Cocktail Bar</option>
+              <option value="fast food">Fast Food</option>
+            </select>
+          </label>
+        </div>
         <div>
           <label>
             Upvote/Downvote:
-            <select value={this.state.value} onChange={(event) => this.handleSelectChange(event)}>
+            <select value={this.state.value} onChange={(event) => this.handleVoteChange(event)}>
               <option value="upvote">Like</option>
               <option value="downvote">Dislike</option>
             </select>
