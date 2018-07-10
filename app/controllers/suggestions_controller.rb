@@ -12,7 +12,7 @@ class SuggestionsController < ApplicationController
       render json: @suggestion, status: 201
     else
       # 400 means bad request
-      render json: @suggestion, status: 400
+      render json: {status: 400, message: "Error"}, status: 400
     end
   end
 
