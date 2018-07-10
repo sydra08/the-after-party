@@ -6,59 +6,71 @@ import { bindActionCreators } from 'redux';
 
 // need to figure out how to handle the nested form parts - how do they get added to state and how does that translate into the json that's sent to the API?
 
-class SuggestionNew extends Component {
+class SuggestionForm extends Component {
   constructor() {
     super();
 
     this.state = {
       name: '',
-      category: {
-        name: ''
+      category_attributes: {
+        name: "fast casual"
       },
-      address: {
+      address_attributes: {
         street: '',
         city: '',
         state: ''
       },
-      upvote: '',
+      upvote: 1,
       downvote: ''
     };
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log("suggestion was submitted")
     console.log(this.state);
     // this.props.addReview(this.state);
-    this.emptyAddress = {
-      street: '',
-      city: '',
-      state: ''
-    }
-
-    this.emptyCategory = {
-      name: ''
-    }
-    this.setState({
-      name: '',
-      category_attributes: [Object.assign({}, this.emptyCategory)],
-      address_attributes: [Object.assign({}, this.emptyAddress)],
-      upvotes: '',
-      downvotes: ''
-    });
+    // this.emptyAddress = {
+    //   street: '',
+    //   city: '',
+    //   state: ''
+    // }
+    //
+    // this.emptyCategory = {
+    //   name: ''
+    // }
+    //
+    // this.setState({
+    //   name: '',
+    //   category_attributes: [Object.assign({}, this.emptyCategory)],
+    //   address_attributes: [Object.assign({}, this.emptyAddress)],
+    //   upvotes: '',
+    //   downvotes: ''
+    // });
   }
 
-  handleInputChange = (event) => {
+  handleNameChange = (event) => {
+    // this works fine
     const value = event.target.value;
     const name = event.target.name;
 
     this.setState({
-      [name]: value,
+      name: value,
     });
   }
 
+  handleAddressChange = (event) => {
+    // this only adds the last field you enter into state
+    // need to figure out how to deal with the nested attributes
+    // don't want to have an event handler for each property
+    const value = event.target.value;
+    const name = event.target.name;
+
+    this.setState(Object.assign({}, this.state, { address_attributes: {[name]: value }}));
+  }
+
   handleVoteChange = (event) => {
-    // this works but if you keep changing the selection then both upvote and downvote could be set to 1
-    event.stopPropagation()
+    // this works fine
     const value = event.target.value;
     if (value === "upvote"){
       this.setState(Object.assign({}, this.state, {upvote: 1, downvote: 0}))
@@ -68,9 +80,9 @@ class SuggestionNew extends Component {
   }
 
   handleCategoryChange = (event) => {
-    event.stopPropagation()
+    // this only sets a value if you choose something other than the default
     const value = event.target.value;
-    this.setState(Object.assign({}, this.state, { category: {name: value}}))
+    this.setState(Object.assign({}, this.state, { category_attributes: {name: value}}))
   }
 
   render() {
@@ -86,7 +98,7 @@ class SuggestionNew extends Component {
               name="name"
               type="text"
               value={this.state.name}
-              onChange={(event) => this.handleInputChange(event)}
+              onChange={(event) => this.handleNameChange(event)}
             />
           </label>
         </div>
@@ -97,10 +109,10 @@ class SuggestionNew extends Component {
               Street:
               <input
                 id="suggestion-address-street"
-                name="address[street]"
+                name="street"
                 type="text"
-                value={this.state.address.street}
-                onChange={(event) => this.handleInputChange(event)}
+                value={this.state.address_attributes.street}
+                onChange={(event) => this.handleAddressChange(event)}
               />
             </label>
           </div>
@@ -109,10 +121,10 @@ class SuggestionNew extends Component {
               City:
               <input
                 id="suggestion-address-city"
-                name="address[city]"
+                name="city"
                 type="text"
-                value={this.state.address.city}
-                onChange={(event) => this.handleInputChange(event)}
+                value={this.state.address_attributes.city}
+                onChange={(event) => this.handleAddressChange(event)}
               />
             </label>
           </div>
@@ -121,10 +133,10 @@ class SuggestionNew extends Component {
               State:
               <input
                 id="suggestion-address-state"
-                name="address[state]"
+                name="state"
                 type="text"
-                value={this.state.address.state}
-                onChange={(event) => this.handleInputChange(event)}
+                value={this.state.address_attributes.state}
+                onChange={(event) => this.handleAddressChange(event)}
               />
             </label>
           </div>
@@ -132,7 +144,7 @@ class SuggestionNew extends Component {
         <div>
           <label>
             Category:
-            <select value={this.state.value} onChange={(event) => this.handleCategoryChange(event)}>
+            <select value={this.state.category_attributes.name} onChange={(event) => this.handleCategoryChange(event)}>
               <option value="fast casual">Fast Casual</option>
               <option value="beer bar">Beer Bar</option>
               <option value="cocktail bar">Cocktail Bar</option>
@@ -157,9 +169,9 @@ class SuggestionNew extends Component {
   }
 }
 
-export default SuggestionNew;
+export default SuggestionForm;
 // const mapDispatchToProps = (dispatch) => {
 //   return bindActionCreators({addReview: addReview}, dispatch);
 // };
 //
-// export default connect(null, mapDispatchToProps)(SuggestionNew);
+// export default connect(null, mapDispatchToProps)(SuggestionForm);
