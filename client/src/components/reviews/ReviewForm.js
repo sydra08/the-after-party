@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -28,7 +28,7 @@ const styles = theme => ({
 const ReviewForm = (props) => {
   console.log("ReviewForm component")
   console.log(props)
-  const { content, rating, isError, errorText, handleSubmit, handleInputChange, classes } = props;
+  const { content, rating, handleSubmit, handleInputChange, classes } = props;
   return (
     <div className={classes.root}>
       <Card>
@@ -54,8 +54,6 @@ const ReviewForm = (props) => {
               label="Rate the venue: 1 (low) - 5 (high)"
               className={classes.textField}
               value={rating}
-              // error={isError}
-              // helperText={errorText}
               onChange={handleInputChange}
               margin="normal"
               fullWidth

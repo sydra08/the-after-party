@@ -41,23 +41,7 @@ class ReviewContainer extends Component {
     // so if you go somewhere else and change the input then it
     const value = event.target.value;
     const name = event.target.name;
-    // this only works when you change the input in the content field and the input is valid
-    // if(name === "rating" && !regEx.test(value)){
-    //   console.log('invalid input')
-    //   console.log(regEx.test(parseInt(value)))
-    //   this.setState({
-    //     [name]: value,
-    //     errorText: "Must be a number between 1 and 5",
-    //     isError: true
-    //   })
-    // } else {
-    //   console.log('valid input')
-    //   this.setState({
-    //     [name]: value,
-    //     errorText: '',
-    //     isError: false
-    //   });
-    // }
+
     this.setState({
       [name]: value
     })
