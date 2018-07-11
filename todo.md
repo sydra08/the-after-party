@@ -66,10 +66,11 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [x] Suggestion (is this where the form goes?)
     [ ] SuggestionNew (the form)
       + need to understand nested forms and components in order to do this. Does the address part of the form mean it gets it's own component that just displays within the Suggestion form components?
-      [ ] need to fix the address event handler so that what you type continuously updates state properly
+      [x] need to fix the address event handler so that what you type continuously updates state properly
+      [ ] when you submit a form there's always an error now...
       [ ] fix form styling
       [ ] figure out how to do radio buttons
-      [ ] move things into SuggestionContainer/make it stateless
+      [x] move things into SuggestionContainer/make it stateless
   + Review
     [x] ReviewListContainer
     [x] ReviewList
