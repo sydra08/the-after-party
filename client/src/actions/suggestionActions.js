@@ -14,7 +14,7 @@ export function addSuggestion(suggestionData) {
     // debugger
     fetch(`/venues/${suggestionData.venue_id}/suggestions`, {
     method: 'POST',
-    body: JSON.stringify(reviewData),
+    body: JSON.stringify(suggestionData),
     headers: {
       'Content-Type': 'application/json'
     }

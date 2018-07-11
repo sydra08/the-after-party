@@ -9,7 +9,7 @@ const SuggestionForm = (props) => {
   handleStateChange, category, handleCategoryChange, vote,   handleVoteChange } = props;
 
   return (
-    <form onSubmit={this.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <label>
           Name:

@@ -3,14 +3,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSuggestions, addSuggestion } from '../actions/suggestionActions';
 import SuggestionList from '../components/suggestions/SuggestionList.js';
-import SuggestionForm from '../components/suggestions/SuggestionList.js';
+import SuggestionForm from '../components/suggestions/SuggestionForm.js';
 
 class SuggestionContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       name: '',
+      upvote: 1,
+      downvote: 0,
+      venue_id: this.props.venueId,
       category_attributes: {
         name: "fast casual"
       },
@@ -18,10 +21,7 @@ class SuggestionContainer extends Component {
         street: '',
         city: '',
         state: ''
-      },
-      upvote: 1,
-      downvote: 0,
-      // venue_id: this.props.venueId
+      }
     };
   }
 
@@ -122,7 +122,7 @@ class SuggestionContainer extends Component {
           handleCategoryChange={this.handleCategoryChange}
           vote={this.state.value}
           handleVoteChange={this.handleVoteChange}
-           />
+          />
       </div>
     )
   }
