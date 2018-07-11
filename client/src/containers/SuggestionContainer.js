@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSuggestions } from '../actions/suggestionActions';
 import SuggestionList from '../components/suggestions/SuggestionList.js';
-import SuggestionForm from '../components/suggestions/SuggestionForm.js';
+import SuggestionForm from './SuggestionForm.js';
 
 class SuggestionContainer extends Component {
 
@@ -16,7 +16,7 @@ class SuggestionContainer extends Component {
       <div className="suggestion-container-component">
         <p>this is a test of the Suggestion container component</p>
         <SuggestionList suggestions={this.props.suggestions} />
-        <SuggestionForm />
+        <SuggestionForm venueId={this.props.venueId}/>
       </div>
     )
   }
