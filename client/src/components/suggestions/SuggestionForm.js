@@ -65,10 +65,10 @@ const SuggestionForm = (props) => {
         <label>
           Category:
           <select value={category} onChange={handleCategoryChange}>
-            <option value="fast casual">Fast Casual</option>
-            <option value="beer bar">Beer Bar</option>
-            <option value="cocktail bar">Cocktail Bar</option>
-            <option value="fast food">Fast Food</option>
+            <option value="Fast Casual">Fast Casual</option>
+            <option value="Beer Bar">Beer Bar</option>
+            <option value="Cocktail Bar">Cocktail Bar</option>
+            <option value="Fast Food">Fast Food</option>
           </select>
         </label>
       </div>

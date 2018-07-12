@@ -16,7 +16,7 @@ class SuggestionContainer extends Component {
       vote: "Like",
       venue_id: this.props.venueId,
       category_attributes: {
-        name: "fast casual"
+        name: "Fast Casual"
       },
       address_attributes: {
         street: '',
@@ -34,23 +34,28 @@ class SuggestionContainer extends Component {
     event.preventDefault();
     console.log("suggestion was submitted")
     console.log(this.state);
-    this.props.addSuggestion(this.state);
-    this.emptyAddress = {
-
-    }
-
-    this.emptyCategory = {
-      name: ''
-    }
+    // const suggestionData = Object.assign({}, {name: this.state.name, upvotes: this.state.upvote, downvotes: this.state.downvote, venue_id: this.props.venueId,
+    // category_attributes: {
+    //   name: this.state.category_attributes.name
+    // },
+    // address_attributes: {
+    //   street: this.state.address_attributes.street,
+    //   city: this.state.address_attributes.city,
+    //   state: this.state.address_attributes.state
+    // }
+    // })
+    // console.log(suggestionData)
+    // this.props.addSuggestion(suggestionData);
+    this.props.addSuggestion(this.state)
 
     this.setState({
       name: '',
-      upvote: 1,
-      downvote: 0,
+      upvote: "1",
+      downvote: "0",
       vote: "Like",
       venue_id: this.props.venueId,
       category_attributes: {
-        name: "fast casual"
+        name: "Fast Casual"
       },
       address_attributes: {
         street: '',
@@ -100,9 +105,9 @@ class SuggestionContainer extends Component {
     // this works fine
     const value = event.target.value;
     if (value === "upvote"){
-      this.setState(Object.assign({}, this.state, {upvote: 1, downvote: 0, vote: "Like"}))
+      this.setState(Object.assign({}, this.state, {upvote: "1", downvote: "0", vote: "Like"}))
     } else if (value === "downvote"){
-      this.setState(Object.assign({}, this.state, {upvote: 0, downvote: 1, vote: "Dislike"}))
+      this.setState(Object.assign({}, this.state, {upvote: "0", downvote: "1", vote: "Dislike"}))
     }
   }
 
