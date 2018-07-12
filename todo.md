@@ -74,6 +74,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [x] address is only picking up the last thing again
       [ ] figure out how to submit nested data
         + was able to submit data via Postman but the custom writers don't seem to have worked
+        + `[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash` - tried removing the location_id column and that didn't stop the error. when you use Postman it seems to work just fine so there's gotta be something in the data that I'm submitting directly from State that is causing the error...Also why does it keep saying "Suggestion Exists" - Removing the validation in the model made that go away but still getting the error. Is it because Category stuff is null?
   + Review
     [x] ReviewListContainer
     [x] ReviewList
