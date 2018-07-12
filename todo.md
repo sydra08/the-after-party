@@ -71,6 +71,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [ ] fix form styling
       [ ] figure out how to do radio buttons
       [x] move things into SuggestionContainer/make it stateless
+      [ ] address is only picking up the last thing again
   + Review
     [x] ReviewListContainer
     [x] ReviewList

@@ -13,6 +13,7 @@ class SuggestionContainer extends Component {
       name: '',
       upvote: 1,
       downvote: 0,
+      vote: "Like",
       venue_id: this.props.venueId,
       category_attributes: {
         name: "fast casual"
@@ -69,7 +70,7 @@ class SuggestionContainer extends Component {
     // don't want to have an event handler for each property
     const value = event.target.value;
 
-    this.setState(Object.assign({}, this.state, { address_attributes: { street: value, city: this.state.address_attributes.addressCity, state: this.state.address_attributes.addressState }}));
+    this.setState(Object.assign({}, this.state, { address_attributes: { street: value, city: this.state.address_attributes.city, state: this.state.address_attributes.state }}));
   }
 
   handleCityChange = (event) => {
@@ -78,7 +79,7 @@ class SuggestionContainer extends Component {
     // don't want to have an event handler for each property
     const value = event.target.value;
 
-    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.addressStreet, city: value, state: this.state.address_attributes.addressState }}));
+    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: value, state: this.state.address_attributes.state }}));
   }
 
   handleStateChange = (event) => {
@@ -87,16 +88,16 @@ class SuggestionContainer extends Component {
     // don't want to have an event handler for each property
     const value = event.target.value;
 
-    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.addressStreet, city: this.state.address_attributes.addressCity,state: value }}));
+    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: this.state.address_attributes.city,state: value }}));
   }
 
   handleVoteChange = (event) => {
     // this works fine
     const value = event.target.value;
     if (value === "upvote"){
-      this.setState(Object.assign({}, this.state, {upvote: 1, downvote: 0}))
+      this.setState(Object.assign({}, this.state, {upvote: 1, downvote: 0, vote: "Like"}))
     } else if (value === "downvote"){
-      this.setState(Object.assign({}, this.state, {upvote: 0, downvote: 1}))
+      this.setState(Object.assign({}, this.state, {upvote: 0, downvote: 1, vote: "Dislike"}))
     }
   }
 
@@ -120,7 +121,7 @@ class SuggestionContainer extends Component {
           handleStateChange={this.handleStateChange}
           category={this.state.category_attributes.name}
           handleCategoryChange={this.handleCategoryChange}
-          vote={this.state.value}
+          vote={this.state.vote}
           handleVoteChange={this.handleVoteChange}
           />
       </div>
