@@ -36,9 +36,7 @@ class SuggestionContainer extends Component {
     console.log(this.state);
     this.props.addSuggestion(this.state);
     this.emptyAddress = {
-      street: '',
-      city: '',
-      state: ''
+
     }
 
     this.emptyCategory = {
@@ -47,11 +45,18 @@ class SuggestionContainer extends Component {
 
     this.setState({
       name: '',
-      category_attributes: [Object.assign({}, this.emptyCategory)],
-      address_attributes: [Object.assign({}, this.emptyAddress)],
-      upvotes: '',
-      downvotes: '',
-      venue_id: this.props.venueId
+      upvote: 1,
+      downvote: 0,
+      vote: "Like",
+      venue_id: this.props.venueId,
+      category_attributes: {
+        name: "fast casual"
+      },
+      address_attributes: {
+        street: '',
+        city: '',
+        state: ''
+      }
     });
   }
 
