@@ -5,12 +5,17 @@ class SuggestionsController < ApplicationController
   end
 
   def create
+    binding.pry
     @venue = Venue.find_by(id: params[:venue_id])
+    binding.pry
     @suggestion = @venue.suggestions.build(suggestion_params)
+    binding.pry
     if @suggestion.save
+      binding.pry
       # 201 means created
       render json: @suggestion, status: 201
     else
+      binding.pry
       # 400 means bad request
       render json: {status: 400, message: "Error"}, status: 400
     end
@@ -28,7 +33,7 @@ class SuggestionsController < ApplicationController
   private
 
   def suggestion_params
-    params.require(:suggestion).permit(:name, :upvotes, :downvotes, :venue_id, category_attributes: [:name], address_attributes: [:street, :city, :state])
+    params.permit(:name, :upvotes, :downvotes, :venue_id, category_attributes: [:id, :name], address_attributes: [:id, :street, :city, :state])
   end
 
 end
