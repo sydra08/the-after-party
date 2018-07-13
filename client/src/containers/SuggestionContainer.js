@@ -11,8 +11,8 @@ class SuggestionContainer extends Component {
 
     this.state = {
       name: '',
-      upvote: 1,
-      downvote: 0,
+      upvotes: 1,
+      downvotes: 0,
       vote: "Like",
       venue_id: this.props.venueId,
       category_attributes: {

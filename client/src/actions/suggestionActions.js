@@ -11,6 +11,7 @@ export function fetchSuggestions(venueId) {
 
 export function addSuggestion(suggestionData) {
   return (dispatch) => {
+    console.log(JSON.stringify(suggestionData))
     fetch(`/venues/${suggestionData.venue_id}/suggestions`, {
     method: 'POST',
     body: JSON.stringify(suggestionData),
