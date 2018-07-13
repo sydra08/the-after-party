@@ -5,17 +5,12 @@ class SuggestionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @venue = Venue.find_by(id: params[:suggestion][:venue_id])
-    binding.pry
     @suggestion = @venue.suggestions.build(suggestion_params)
-    binding.pry
     if @suggestion.save
-      binding.pry
       # 201 means created
       render json: @suggestion, status: 201
     else
-      binding.pry
       # 400 means bad request
       render json: {status: 400, message: "Error"}, status: 400
     end
