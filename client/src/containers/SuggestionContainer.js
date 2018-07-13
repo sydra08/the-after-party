@@ -34,19 +34,19 @@ class SuggestionContainer extends Component {
     event.preventDefault();
     console.log("suggestion was submitted")
     console.log(this.state);
-    const suggestionData = Object.assign({}, {name: this.state.name, upvotes: this.state.upvote, downvotes: this.state.downvote, venue_id: this.props.venueId,
-    category_attributes: {
-      name: this.state.category_attributes.name
-    },
-    address_attributes: {
-      street: this.state.address_attributes.street,
-      city: this.state.address_attributes.city,
-      state: this.state.address_attributes.state
-    }
-    })
-    console.log(suggestionData)
-    this.props.addSuggestion({suggestion: suggestionData});
-    // this.props.addSuggestion(this.state)
+    // const suggestionData = Object.assign({}, {name: this.state.name, upvotes: this.state.upvote, downvotes: this.state.downvote, venue_id: this.props.venueId,
+    // category_attributes: {
+    //   name: this.state.category_attributes.name
+    // },
+    // address_attributes: {
+    //   street: this.state.address_attributes.street,
+    //   city: this.state.address_attributes.city,
+    //   state: this.state.address_attributes.state
+    // }
+    // })
+    // console.log(suggestionData)
+    // this.props.addSuggestion({suggestion: suggestionData});
+    this.props.addSuggestion({suggestion: this.state})
 
     this.setState({
       name: '',
