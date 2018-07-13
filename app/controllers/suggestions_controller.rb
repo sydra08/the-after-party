@@ -6,7 +6,7 @@ class SuggestionsController < ApplicationController
 
   def create
     binding.pry
-    @venue = Venue.find_by(id: params[:venue_id])
+    @venue = Venue.find_by(id: params[:suggestion][:venue_id])
     binding.pry
     @suggestion = @venue.suggestions.build(suggestion_params)
     binding.pry
@@ -33,7 +33,7 @@ class SuggestionsController < ApplicationController
   private
 
   def suggestion_params
-    params.permit(:name, :upvotes, :downvotes, :venue_id, category_attributes: [:id, :name], address_attributes: [:id, :street, :city, :state])
+    params.require(:suggestion).permit(:name, :upvotes, :downvotes, :venue_id, category_attributes: [:id, :name], address_attributes: [:id, :street, :city, :state])
   end
 
 end
