@@ -1,91 +1,132 @@
 import React from 'react';
+import { withStyles } from "@material-ui/core/styles";
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import TextField from "@material-ui/core/TextField";
+import Typography from '@material-ui/core/Typography';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
-// need to figure out how to handle the nested form parts - how do they get added to state and how does that translate into the json that's sent to the API?
+const styles = theme => ({
+  root: {
+    ...theme.mixins.gutters(),
+     display: 'flex',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+  },
+  container: {
+    display: "flex",
+    flexWrap: "wrap"
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+  formControl: {
+    margin: theme.spacing.unit * 3,
+  },
+  group: {
+    margin: `${theme.spacing.unit}px 0`,
+  }
+});
 
 const SuggestionForm = (props) => {
   console.log("SuggestionForm component")
   console.log(props)
   const { handleSubmit,name, handleNameChange, addressStreet, handleStreetChange, addressCity, handleCityChange, addressState,
-  handleStateChange, category, handleCategoryChange, vote,   handleVoteChange } = props;
+  handleStateChange, category, handleCategoryChange, vote,   handleVoteChange, classes } = props;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          Name:
-          <input
-            id="suggestion-name"
-            name="name"
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-          />
-        </label>
-      </div>
-      <fieldset>
-        <legend>Address</legend>
-        <div>
-          <label>
-            Street:
-            <input
+    <div className={classes.root}>
+      <Card>
+        <CardContent>
+          <Typography variant="title" gutterBottom>
+            Leave a review:
+          </Typography>
+          <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
+            <TextField
+              id="suggestion-name"
+              name="name"
+              label="Suggestion Name"
+              value={name}
+              onChange={handleNameChange}
+              className={classes.textField}
+              margin="normal"
+              fullWidth
+            />
+            <Typography variant="body2" gutterBottom>
+              Address:
+            </Typography>
+            <TextField
               id="suggestion-address-street"
               name="street"
-              type="text"
+              label="Street"
               value={addressStreet}
               onChange={handleStreetChange}
+              className={classes.textField}
+              margin="normal"
+              fullWidth
             />
-          </label>
-        </div>
-        <div>
-          <label>
-            City:
-            <input
+            <TextField
               id="suggestion-address-city"
               name="city"
-              type="text"
+              label="City"
               value={addressCity}
               onChange={handleCityChange}
+              className={classes.textField}
+              margin="normal"
+              fullWidth
             />
-          </label>
-        </div>
-        <div>
-          <label>
-            State:
-            <input
+            <TextField
               id="suggestion-address-state"
               name="state"
-              type="text"
+              label="State"
               value={addressState}
               onChange={handleStateChange}
+              className={classes.textField}
+              margin="normal"
+              fullWidth
             />
-          </label>
-        </div>
-      </fieldset>
-      <div>
-        <label>
-          Category:
-          <select value={category} onChange={handleCategoryChange}>
-            <option value="Fast Casual">Fast Casual</option>
-            <option value="Beer Bar">Beer Bar</option>
-            <option value="Cocktail Bar">Cocktail Bar</option>
-            <option value="Fast Food">Fast Food</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Upvote/Downvote:
-          <select value={vote} onChange={handleVoteChange}>
-            <option value="upvote">Like</option>
-            <option value="downvote">Dislike</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <button type="submit">Submit Suggestion</button>
-      </div>
-    </form>
+            <FormControl component="fieldset" className={classes.formControl}>
+             <FormLabel component="legend">Category</FormLabel>
+             <RadioGroup
+               aria-label="category"
+               name="category"
+               className={classes.group}
+               value={category}
+               onChange={handleCategoryChange}
+             >
+               <FormControlLabel value="Fast Casual" control={<Radio />} label="Fast Casual" />
+               <FormControlLabel value="Fast Food" control={<Radio />} label="Fast Food" />
+               <FormControlLabel value="Beer Bar" control={<Radio />} label="Beer Bar" />
+               <FormControlLabel value="Cocktail Bar" control={<Radio />} label="Cocktail Bar" />
+             </RadioGroup>
+           </FormControl>
+           <FormControl component="fieldset" className={classes.formControl}>
+           <FormLabel component="legend">Vote</FormLabel>
+            <RadioGroup
+              aria-label="vote"
+              name="vote"
+              className={classes.group}
+              value={vote}
+              onChange={handleVoteChange}
+            >
+              <FormControlLabel value="upvote" control={<Radio />} label="Like" />
+              <FormControlLabel value="downvote" control={<Radio />} label="Dislike" />
+            </RadioGroup>
+          </FormControl>
+            <div>
+              <button type="submit">Submit Suggestion</button>
+            </div>
+          </form>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
 
-export default SuggestionForm;
+export default withStyles(styles)(SuggestionForm);
