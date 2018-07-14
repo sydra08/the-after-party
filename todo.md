@@ -67,14 +67,16 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [ ] SuggestionNew (the form)
       + need to understand nested forms and components in order to do this. Does the address part of the form mean it gets it's own component that just displays within the Suggestion form components?
       [x] need to fix the address event handler so that what you type continuously updates state properly
-      [ ] when you submit a form there's always an error now...
       [ ] fix form styling
-      [ ] figure out how to do radio buttons
+        [ ] Vote radio buttons not displaying properly
+      [x] figure out how to do radio buttons
       [x] move things into SuggestionContainer/make it stateless
       [x] address is only picking up the last thing again
       [ ] figure out how to submit nested data
         + was able to submit data via Postman but the custom writers don't seem to have worked
-        + `[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash` - tried removing the location_id column and that didn't stop the error. when you use Postman it seems to work just fine so there's gotta be something in the data that I'm submitting directly from State that is causing the error...Also why does it keep saying "Suggestion Exists" - Removing the validation in the model made that go away but still getting the error. Is it because Category stuff is null? No the suggestion_params still aren't capturing the category_attributes and address_attributes even when you don't just pass through state and pass through an object. Somehow it's not coming through as a permitted param
+        + `[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash` - tried removing the location_id column and that didn't stop the error. when you use Postman it seems to work just fine so there's gotta be something in the data that I'm submitting directly from State that is causing the error...Also why does it keep saying "Suggestion Exists" - Removing the validation in the model made that go away but still getting the error. Is it because Category stuff is null? No the suggestion_params still aren't capturing the category_attributes and address_attributes even when you don't just pass through state and pass through an object. Somehow it's not coming through as a permitted param.
+        + Figure out how to get the category and address attributes passed into the suggestion_params. They are in the regular params but don't get include in the strong params for some reason. If you remove `require(:suggestion)` then you don't have an issue with creating a suggestion.
+      + it works if i pass {suggestion: suggestionData}. not sure if that's the best way to solve the problem in the end, but works for now.
   + Review
     [x] ReviewListContainer
     [x] ReviewList
