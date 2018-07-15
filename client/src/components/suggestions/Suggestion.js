@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { upvoteSuggestion, downvoteSuggestion } from '../actions/suggestionActions';
+import { bindActionCreators, compose } from 'redux';
+import { upvoteSuggestion, downvoteSuggestion } from '../../actions/suggestionActions';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -42,43 +42,30 @@ const styles = theme => ({
 });
 
 class Suggestion extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      suggestionId: this.props.suggestionId,
-      upvotes: this.props.upvotes,
-      downvotes: this.props.downvotes
-    }
-  }
-
-  handleUpvote = (event) => {
+  handleUpvote = (event, suggestion) => {
     // how do you even tell it what the new total of votes is?
     // how come the state update isn't logging properly?
     console.log("old total")
-    console.log(this.state.upvotes)
+    console.log(suggestion.upvotes)
     console.log("Like button was pressed")
-    const newUpvoteTotal = (this.state.upvotes) + 1;
-    this.setState(Object.assign({}, this.state, {upvotes: newUpvoteTotal}))
-    console.log("new total")
-    console.log(this.state.upvotes)
-    // need to send the suggestionId when you call upvote
+    const newUpvoteTotal = suggestion.upvotes + 1;
+    this.props.upvoteSuggestion(suggestion, newUpvoteTotal);
   }
 
-  handleDownvote = (event) => {
+  handleDownvote = (event, suggestion) => {
     console.log("old total")
     console.log(this.state.downvotes)
     console.log("Dislike button was pressed")
-    const newDownvoteToal = (this.state.downvotes) + 1;
-    this.setState(Object.assign({}, this.state, {downvotes: newDownvoteToal}))
-    console.log("new total")
-    console.log(this.state.downvotes)
+    const newDownvoteTotal = suggestion.downvotes + 1;
+    this.props.downvoteSuggestion(suggestion, newDownvoteTotal);
     // need to send the suggestionId when you call downvote
   }
 
   render(){
-    console.log("Suggestion component")
-    const { name, category, address, upvotes, downvotes, classes } = this.props;
+    console.log("Suggestion component props")
+    console.log(this.props)
+    const { suggestion, classes } = this.props;
+    const { name, category, address, upvotes, downvotes } = suggestion;
     return (
       <div className={classes.root}>
         <Card className={classes.card}>
@@ -100,11 +87,11 @@ class Suggestion extends Component {
             </Typography>
             <Divider />
             <div align="center">
-              <Button variant="contained" color="primary" className={classes.button} onClick={this.handleUpvote}>
+              <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleUpvote(event, suggestion)}>
                 <ThumbUpIcon className={classes.leftIcon} />
                 Like
               </Button>
-              <Button variant="contained" color="primary" className={classes.button} onClick={this.handleDownvote}>
+              <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleDownvote(event, suggestion)}>
                 <ThumbDownIcon className={classes.leftIcon} />
                 Dislike
               </Button>
@@ -116,4 +103,9 @@ class Suggestion extends Component {
   }
 }
 
-export default withStyles(styles)(Suggestion);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({upvoteSuggestion: upvoteSuggestion, downvoteSuggestion: downvoteSuggestion}, dispatch);
+};
+
+export default compose(
+   withStyles(styles), connect(null, mapDispatchToProps))(Suggestion);

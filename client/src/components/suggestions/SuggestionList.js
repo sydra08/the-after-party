@@ -15,7 +15,7 @@ const styles = theme => ({
 
 const SuggestionList = (props) => {
   console.log("SuggestionList component")
-  const { suggestions, classes, handleUpvote, handleDownvote } = props;
+  const { suggestions, classes } = props;
   return(
     <div className={classes.root}>
       <Typography variant="headline" component="h3">
