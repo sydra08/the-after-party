@@ -6,7 +6,6 @@ import TextField from "@material-ui/core/TextField";
 import Typography from '@material-ui/core/Typography';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -103,24 +102,26 @@ const SuggestionForm = (props) => {
                className={classes.group}
                value={category}
                onChange={handleCategoryChange}
+               row
                >
                <FormControlLabel value="Fast Casual" control={<Radio />} label="Fast Casual" />
                <FormControlLabel value="Fast Food" control={<Radio />} label="Fast Food" />
                <FormControlLabel value="Beer Bar" control={<Radio />} label="Beer Bar" />
                <FormControlLabel value="Cocktail Bar" control={<Radio />} label="Cocktail Bar" />
               </RadioGroup>
-             </FormControl>
-             <FormControl component="fieldset" className={classes.formControl}>
-             <FormLabel component="legend">Vote</FormLabel>
+            </FormControl>
+            <FormControl component="fieldset" className={classes.formControl}>
+              <FormLabel component="legend">Vote</FormLabel>
               <RadioGroup
                 aria-label="vote"
                 name="vote"
                 className={classes.group}
                 value={vote}
                 onChange={handleVoteChange}
+                row
               >
-                <FormControlLabel value="Like" control={<Radio />} label="Like" />
-                <FormControlLabel value="Dislike" control={<Radio />} label="Dislike" />
+              <FormControlLabel value="Like" control={<Radio />} label="Like" />
+              <FormControlLabel value="Dislike" control={<Radio />} label="Dislike" />
               </RadioGroup>
             </FormControl>
             <Button className={classes.button} type="submit">Submit</Button>
