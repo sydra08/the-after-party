@@ -54,11 +54,11 @@ const Suggestion = (props) => {
           <Typography className={classes.pos} color="textSecondary">
             Category: {category.name}
           </Typography>
-          <Typography component="p">
-             Upvotes: {upvotes}
-          </Typography>
           <Typography component="p" className={classes.pos}>
-            Downvotes: {downvotes}
+            <ThumbUpIcon className={classes.leftIcon} />
+            Likes: {upvotes} &nbsp;
+            <ThumbDownIcon className={classes.leftIcon} />
+            Dislikes: {downvotes}
           </Typography>
           <Divider />
           <Button variant="contained" color="primary" className={classes.button} onClick={handleUpvote}>
