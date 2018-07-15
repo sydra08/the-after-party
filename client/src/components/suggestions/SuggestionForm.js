@@ -49,7 +49,7 @@ const SuggestionForm = (props) => {
       <Card>
         <CardContent>
           <Typography variant="title" gutterBottom>
-            Leave a review:
+            Leave a suggestion:
           </Typography>
           <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
             <TextField

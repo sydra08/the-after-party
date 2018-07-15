@@ -2,10 +2,12 @@ import React from 'react';
 import Review from './Review.js'
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
+    flexgrow: 1,
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
   },
@@ -19,7 +21,9 @@ const ReviewList = (props) => {
       <Typography variant="headline" component="h3">
         Reviews
       </Typography>
-      {reviews.map((review, index) => <Review key={index} content={review.content} rating={review.rating} />)}
+      <Grid container spacing={24}>
+        {reviews.map((review, index) => <Grid item xs={6} sm={3}><Review key={index} content={review.content} rating={review.rating} /></Grid>)}
+      </Grid>
     </div>
   );
 }
