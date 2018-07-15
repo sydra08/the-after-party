@@ -61,14 +61,16 @@ const Suggestion = (props) => {
             Dislikes: {downvotes}
           </Typography>
           <Divider />
-          <Button variant="contained" color="primary" className={classes.button} onClick={handleUpvote}>
-            <ThumbUpIcon className={classes.leftIcon} />
-            Like
-          </Button>
-          <Button variant="contained" color="primary" className={classes.button} onClick={handleDownvote}>
-            <ThumbDownIcon className={classes.leftIcon} />
-            Dislike
-          </Button>
+          <div align="center">
+            <Button variant="contained" color="primary" className={classes.button} onClick={handleUpvote}>
+              <ThumbUpIcon className={classes.leftIcon} />
+              Like
+            </Button>
+            <Button variant="contained" color="primary" className={classes.button} onClick={handleDownvote}>
+              <ThumbDownIcon className={classes.leftIcon} />
+              Dislike
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </div>
