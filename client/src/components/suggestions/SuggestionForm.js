@@ -15,7 +15,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
-     display: 'flex',
+    display: 'flex',
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
   },

@@ -20,7 +20,7 @@ const styles = {
   },
   pos: {
     marginBottom: 12,
-  },
+  }
 };
 
 
@@ -28,7 +28,7 @@ const Suggestion = (props) => {
   console.log("Suggestion component")
   const { name, category, address, upvotes, downvotes, classes } = props;
   return (
-    <div className="suggestion">
+    <div className={"suggestion"}>
       <Card className={classes.card}>
         <CardContent>
           <Typography variant="title" gutterBottom>
