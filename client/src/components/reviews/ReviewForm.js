@@ -4,6 +4,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from "@material-ui/core/TextField";
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
 
 // need to use the star ratings thing here for the ratings selector
 
@@ -20,6 +22,9 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
+  },
+  button: {
+    margin: theme.spacing.unit,
   }
 });
 
@@ -59,9 +64,7 @@ const ReviewForm = (props) => {
               fullWidth
               required
             />
-            <div>
-              <button type="submit">Submit Review</button>
-            </div>
+            <Button className={classes.button} type="submit">Submit</Button>
           </form>
         </CardContent>
       </Card>

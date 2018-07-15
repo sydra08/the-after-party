@@ -10,6 +10,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -31,6 +32,9 @@ const styles = theme => ({
   },
   group: {
     margin: `${theme.spacing.unit}px 0`,
+  },
+  button: {
+    margin: theme.spacing.unit,
   }
 });
 
@@ -119,9 +123,7 @@ const SuggestionForm = (props) => {
                 <FormControlLabel value="Dislike" control={<Radio />} label="Dislike" />
               </RadioGroup>
             </FormControl>
-            <div>
-              <button type="submit">Submit Suggestion</button>
-            </div>
+            <Button className={classes.button} type="submit">Submit</Button>
           </form>
         </CardContent>
       </Card>
