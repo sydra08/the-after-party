@@ -1,5 +1,5 @@
 import React from 'react';
-import Suggestion from './Suggestion.js';
+import Suggestion from '../../containers/Suggestion.js';
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from '@material-ui/core/Grid';
@@ -22,7 +22,7 @@ const SuggestionList = (props) => {
         Suggestions
       </Typography>
       <Grid container spacing={24}>
-        {suggestions.map((suggestion, index) => <Grid item key={index} xs={6} sm={3}><Suggestion name={suggestion.name} address={suggestion.address} category={suggestion.category} upvotes={suggestion.upvotes} downvotes={suggestion.downvotes} handleUpvote={handleUpvote} handleDownvote={handleDownvote}/></Grid>)}
+        {suggestions.map((suggestion, index) => <Grid item key={index} xs={6} sm={3}><Suggestion suggestionId={suggestion.id} name={suggestion.name} address={suggestion.address} category={suggestion.category} upvotes={suggestion.upvotes} downvotes={suggestion.downvotes} handleUpvote={handleUpvote} handleDownvote={handleDownvote}/></Grid>)}
       </Grid>
     </div>
   );

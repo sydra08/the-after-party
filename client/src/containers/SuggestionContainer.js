@@ -104,24 +104,11 @@ class SuggestionContainer extends Component {
     this.setState(Object.assign({}, this.state, { category_attributes: {name: value}}))
   }
 
-  handleUpvote = (event) => {
-    // how do you even tell it what the new total of votes is? 
-    console.log("Like button was pressed")
-    console.log("now there are")
-    console.log()
-    // need to send the suggestionId when you call upvote
-  }
-
-  handleDownvote = (event) => {
-    console.log("Dislike button was pressed")
-    // need to send the suggestionId when you call downvote
-  }
-
   render() {
     return (
       <div className="suggestion-container-component">
         <p>this is a test of the Suggestion container component</p>
-        <SuggestionList suggestions={this.props.suggestions} handleUpvote={this.handleUpvote} handleDownvote={this.handleDownvote} />
+        <SuggestionList suggestions={this.props.suggestions} />
         <SuggestionForm
           handleSubmit={this.handleSubmit}
           name={this.state.name} handleNameChange={this.handleNameChange} addressStreet={this.state.address_attributes.street} handleStreetChange={this.handleStreetChange}
