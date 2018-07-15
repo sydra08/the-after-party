@@ -5,7 +5,6 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 
@@ -35,13 +34,13 @@ const styles = theme => ({
   },
   leftIcon: {
     marginRight: theme.spacing.unit,
-    fontSize: 14,
+    fontSize: 16,
   }
 });
 
 const Suggestion = (props) => {
   console.log("Suggestion component")
-  const { name, category, address, upvotes, downvotes, classes } = props;
+  const { name, category, address, upvotes, downvotes, classes, handleUpvote, handleDownvote } = props;
   return (
     <div className={classes.root}>
       <Card className={classes.card}>
@@ -62,11 +61,11 @@ const Suggestion = (props) => {
             Downvotes: {downvotes}
           </Typography>
           <Divider />
-          <Button variant="contained" color="primary" className={classes.button}>
+          <Button variant="contained" color="primary" className={classes.button} onClick={handleUpvote}>
             <ThumbUpIcon className={classes.leftIcon} />
             Like
           </Button>
-          <Button variant="contained" color="primary" className={classes.button}>
+          <Button variant="contained" color="primary" className={classes.button} onClick={handleDownvote}>
             <ThumbDownIcon className={classes.leftIcon} />
             Dislike
           </Button>

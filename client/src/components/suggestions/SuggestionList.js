@@ -15,14 +15,14 @@ const styles = theme => ({
 
 const SuggestionList = (props) => {
   console.log("SuggestionList component")
-  const { suggestions, classes } = props;
+  const { suggestions, classes, handleUpvote, handleDownvote } = props;
   return(
     <div className={classes.root}>
       <Typography variant="headline" component="h3">
         Suggestions
       </Typography>
       <Grid container spacing={24}>
-        {suggestions.map((suggestion, index) => <Grid item key={index} xs={6} sm={3}><Suggestion name={suggestion.name} address={suggestion.address} category={suggestion.category} upvotes={suggestion.upvotes} downvotes={suggestion.downvotes} /></Grid>)}
+        {suggestions.map((suggestion, index) => <Grid item key={index} xs={6} sm={3}><Suggestion name={suggestion.name} address={suggestion.address} category={suggestion.category} upvotes={suggestion.upvotes} downvotes={suggestion.downvotes} handleUpvote={handleUpvote} handleDownvote={handleDownvote}/></Grid>)}
       </Grid>
     </div>
   );
