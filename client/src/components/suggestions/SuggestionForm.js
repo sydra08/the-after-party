@@ -99,26 +99,26 @@ const SuggestionForm = (props) => {
                className={classes.group}
                value={category}
                onChange={handleCategoryChange}
-             >
+               >
                <FormControlLabel value="Fast Casual" control={<Radio />} label="Fast Casual" />
                <FormControlLabel value="Fast Food" control={<Radio />} label="Fast Food" />
                <FormControlLabel value="Beer Bar" control={<Radio />} label="Beer Bar" />
                <FormControlLabel value="Cocktail Bar" control={<Radio />} label="Cocktail Bar" />
-             </RadioGroup>
-           </FormControl>
-           <FormControl component="fieldset" className={classes.formControl}>
-           <FormLabel component="legend">Vote</FormLabel>
-            <RadioGroup
-              aria-label="vote"
-              name="vote"
-              className={classes.group}
-              value={vote}
-              onChange={handleVoteChange}
-            >
-              <FormControlLabel value="upvote" control={<Radio />} label="Like" />
-              <FormControlLabel value="downvote" control={<Radio />} label="Dislike" />
-            </RadioGroup>
-          </FormControl>
+              </RadioGroup>
+             </FormControl>
+             <FormControl component="fieldset" className={classes.formControl}>
+             <FormLabel component="legend">Vote</FormLabel>
+              <RadioGroup
+                aria-label="vote"
+                name="vote"
+                className={classes.group}
+                value={vote}
+                onChange={handleVoteChange}
+              >
+                <FormControlLabel value="Like" control={<Radio />} label="Like" />
+                <FormControlLabel value="Dislike" control={<Radio />} label="Dislike" />
+              </RadioGroup>
+            </FormControl>
             <div>
               <button type="submit">Submit Suggestion</button>
             </div>
