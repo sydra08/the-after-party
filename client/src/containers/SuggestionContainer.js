@@ -105,11 +105,16 @@ class SuggestionContainer extends Component {
   }
 
   handleUpvote = (event) => {
+    // how do you even tell it what the new total of votes is? 
     console.log("Like button was pressed")
+    console.log("now there are")
+    console.log()
+    // need to send the suggestionId when you call upvote
   }
 
   handleDownvote = (event) => {
     console.log("Dislike button was pressed")
+    // need to send the suggestionId when you call downvote
   }
 
   render() {
