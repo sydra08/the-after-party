@@ -63,16 +63,23 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   + Suggestion
     [x] SuggestionListContainer
     [x] SuggestionList
-    [x] Suggestion (is this where the form goes?)
-    [ ] SuggestionNew (the form)
+    [/] Suggestion (is this where the form goes?)
+      [x] update upvote/downvote to like/dislike display
+      [ ] add functionality for liking/disliking a suggestion
+        [x] buttons with icons
+        [x] triggers updateSuggestion action that updates the number of likes/dislikes
+        [ ] why is it "new headers" and not just "header" in PATCH action?
+        [ ] need to fix request params. they are not being passed properly so the update is rejected
+        [ ] add error messaging when update isn't possible
+    [/] SuggestionNew (the form)
       + need to understand nested forms and components in order to do this. Does the address part of the form mean it gets it's own component that just displays within the Suggestion form components?
       [x] need to fix the address event handler so that what you type continuously updates state properly
-      [ ] fix form styling
-        [ ] Vote radio buttons not displaying properly
+      [x] fix form styling
+        [x] Vote radio buttons not displaying properly
       [x] figure out how to do radio buttons
       [x] move things into SuggestionContainer/make it stateless
       [x] address is only picking up the last thing again
-      [ ] figure out how to submit nested data
+      [x] figure out how to submit nested data
         + was able to submit data via Postman but the custom writers don't seem to have worked
         + `[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash` - tried removing the location_id column and that didn't stop the error. when you use Postman it seems to work just fine so there's gotta be something in the data that I'm submitting directly from State that is causing the error...Also why does it keep saying "Suggestion Exists" - Removing the validation in the model made that go away but still getting the error. Is it because Category stuff is null? No the suggestion_params still aren't capturing the category_attributes and address_attributes even when you don't just pass through state and pass through an object. Somehow it's not coming through as a permitted param.
         + Figure out how to get the category and address attributes passed into the suggestion_params. They are in the regular params but don't get include in the strong params for some reason. If you remove `require(:suggestion)` then you don't have an issue with creating a suggestion.
@@ -80,7 +87,8 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   + Review
     [x] ReviewListContainer
     [x] ReviewList
-    [x] Review (is this where the form goes?)
+    [/] Review (is this where the form goes?)
+      [x] have the text wrap within the Card
     [ ] ReviewNew (the form)
       [ ] rating element
       [x] send venue data with form
@@ -89,11 +97,15 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
         [x] when there's an error don't update the ReviewList
         [ ] don't clear out the form, show what the inputs were
         [ ] have client-side validation errors?
-      [ ] fix submit button styling
+      [x] fix submit button styling
       [ ] figure out how to trigger the venue rating update
 [ ] add a loading icon/screen for pages while API data is being fetched - need to fix this so that it actually displays (use componentWillUpdate?)
+[ ] use snackbars for error/success messages in forms (https://material-ui.com/demos/snackbars/)
+[ ] consider autocomplete for things: (https://material-ui.com/demos/autocomplete/)
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
 https://www.npmjs.com/package/react-stars
+[ ] make pages responsive. Cards start to overlap at different browser widths
+[ ] add prop-types for the Material-UI stuff?
 [x] set up routes in React w react-router (App.js)
 [/] figure out where the props and state stuff goes
 [/] start creating different pages for app https://reactjs.org/docs/thinking-in-react.html
@@ -103,20 +115,20 @@ https://www.npmjs.com/package/react-stars
     [x] Review data
     [x] Review form
     [x] Suggestion data
-    [ ] Suggestion form
+    [x] Suggestion form
   [x] Homepage - static view
 [/] Redux - need to start using Redux so that I can set up the links properly
   [x] create store
   [ ] actions
     [/] addReview
-    [ ] addSuggestion
-    [ ] updateSuggestion (when voting)
+    [x] addSuggestion
+    [/] updateSuggestion (when voting)
     [ ] updateVenue (rating)
     [x] fetchVenues
   [ ] reducers
     [/] venues
     [/] reviews
-    [ ] suggestions
+    [/] suggestions
 [x] fix issue where if you load the /venues/:venueId page on its own and don't come from the /venues page, data doesn't load properly
 [ ] Design
   [x] look at different websites for inspiration before choosing a framework
