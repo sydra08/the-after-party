@@ -20,6 +20,12 @@ function SuggestionsReducer(state = {suggestions: [], isLoading: false, isError:
       console.log("state is...")
       console.log(state)
       return {suggestions: action.payload, isLoading: false, isError: false};
+    case 'UPDATE_SUGGESTION':
+      console.log("UPDATE_SUGGESTION was called")
+      console.log("state is...")
+      console.log(state)
+      const updatedSuggestions = state.suggestions.map(s => s.id === action.payload.id ? action.payload : s)
+      return {suggestions: updatedSuggestions, isLoading: false, isError: false};
     default:
       return state;
   }
