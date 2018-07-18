@@ -43,22 +43,19 @@ const styles = theme => ({
 
 class Suggestion extends Component {
   handleUpvote = (event, suggestion) => {
-    // how do you even tell it what the new total of votes is?
-    // how come the state update isn't logging properly?
     console.log("old total")
     console.log(suggestion.upvotes)
     console.log("Like button was pressed")
     const newUpvoteTotal = suggestion.upvotes + 1;
     this.props.upvoteSuggestion(suggestion, newUpvoteTotal);
   }
-
+Data
   handleDownvote = (event, suggestion) => {
     console.log("old total")
-    console.log(this.state.downvotes)
+    console.log(suggestion.downvotes)
     console.log("Dislike button was pressed")
     const newDownvoteTotal = suggestion.downvotes + 1;
     this.props.downvoteSuggestion(suggestion, newDownvoteTotal);
-    // need to send the suggestionId when you call downvote
   }
 
   render(){
