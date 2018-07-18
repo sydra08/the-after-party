@@ -65,11 +65,11 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [x] SuggestionList
     [/] Suggestion (is this where the form goes?)
       [x] update upvote/downvote to like/dislike display
-      [ ] add functionality for liking/disliking a suggestion
+      [/] add functionality for liking/disliking a suggestion
         [x] buttons with icons
         [x] triggers updateSuggestion action that updates the number of likes/dislikes
         [ ] why is it "new headers" and not just "header" in PATCH action?
-        [ ] need to fix request params. they are not being passed properly so the update is rejected
+        [x] need to fix request params. they are not being passed properly so the update is rejected
         [ ] add error messaging when update isn't possible
     [/] SuggestionNew (the form)
       + need to understand nested forms and components in order to do this. Does the address part of the form mean it gets it's own component that just displays within the Suggestion form components?
@@ -84,12 +84,15 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
         + `[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash` - tried removing the location_id column and that didn't stop the error. when you use Postman it seems to work just fine so there's gotta be something in the data that I'm submitting directly from State that is causing the error...Also why does it keep saying "Suggestion Exists" - Removing the validation in the model made that go away but still getting the error. Is it because Category stuff is null? No the suggestion_params still aren't capturing the category_attributes and address_attributes even when you don't just pass through state and pass through an object. Somehow it's not coming through as a permitted param.
         + Figure out how to get the category and address attributes passed into the suggestion_params. They are in the regular params but don't get include in the strong params for some reason. If you remove `require(:suggestion)` then you don't have an issue with creating a suggestion.
       + it works if i pass {suggestion: suggestionData}. not sure if that's the best way to solve the problem in the end, but works for now.
+      [ ] figure out how to have a text field but also the list of categories
+        [ ] use react-select for the autosuggest?
+
   + Review
     [x] ReviewListContainer
     [x] ReviewList
     [/] Review (is this where the form goes?)
       [x] have the text wrap within the Card
-    [ ] ReviewNew (the form)
+    [/] ReviewNew (the form)
       [ ] rating element
       [x] send venue data with form
       [x] hook up form submit with API
