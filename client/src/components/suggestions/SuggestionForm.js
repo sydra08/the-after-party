@@ -10,6 +10,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const styles = theme => ({
   root: {
@@ -34,6 +35,9 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
+  },
+  menu: {
+    width: 200,
   }
 });
 
@@ -42,6 +46,25 @@ const SuggestionForm = (props) => {
   console.log(props)
   const { handleSubmit,name, handleNameChange, addressStreet, handleStreetChange, addressCity, handleCityChange, addressState,
   handleStateChange, category, handleCategoryChange, vote,   handleVoteChange, classes } = props;
+
+  const categories = [
+  {
+    value: 'Fast Casual',
+    label: 'Fast Casual',
+  },
+  {
+    value: 'Fast Food',
+    label: 'Fast Food',
+  },
+  {
+    value: 'Beer Bar',
+    label: 'Beer Bar',
+  },
+  {
+    value: 'Cocktail Bar',
+    label: 'Cocktail Bar',
+  },
+];
 
   return (
     <div className={classes.root}>
@@ -110,6 +133,27 @@ const SuggestionForm = (props) => {
                <FormControlLabel value="Cocktail Bar" control={<Radio />} label="Cocktail Bar" />
               </RadioGroup>
             </FormControl>
+            <TextField
+              id="select-category"
+              select
+              label="Select"
+              className={classes.textField}
+              value={category}
+              onChange={handleCategoryChange}
+              SelectProps={{
+                MenuProps: {
+                  className: classes.menu,
+                },
+              }}
+              helperText="Please select a category"
+              margin="normal"
+            >
+              {categories.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
             <FormControl component="fieldset" className={classes.formControl}>
               <FormLabel component="legend">Vote</FormLabel>
               <RadioGroup

@@ -34,7 +34,7 @@ class SuggestionContainer extends Component {
     event.preventDefault();
     console.log("suggestion was submitted")
     console.log(this.state);
-    this.props.addSuggestion({suggestion: this.state})
+    this.props.addSuggestion(this.state)
 
     this.setState({
       name: '',
