@@ -33,7 +33,8 @@ class SuggestionsController < ApplicationController
   private
 
   def suggestion_params
-    params.require(:suggestion).permit(:name, :upvotes, :downvotes, :venue_id, category_attributes: [:id, :name], address_attributes: [:id, :street, :city, :state])
+    # if you remove the require() then it's fine
+    params.permit(:name, :upvotes, :downvotes, :venue_id, category_attributes: [:id, :name], address_attributes: [:id, :street, :city, :state])
   end
 
 end
