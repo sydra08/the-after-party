@@ -21,7 +21,7 @@ function ReviewsReducer(state = {reviews: [], isLoading: false, isError: false},
       console.log("RECEIVED_REVIEWS was called")
       console.log("state is...")
       console.log(state)
-      return {reviews: action.payload, isLoading: false, isError: false };
+      return {reviews: action.payload, isLoading: false, isError: false};
     default:
       return state;
   }
