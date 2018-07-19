@@ -28,7 +28,11 @@ class SuggestionContainer extends Component {
   }
 
   componentDidMount() {
+    // is the component mounting 2x bc there are 2 fetch calls?
     this.props.fetchSuggestions(this.props.venueId);
+    // this doesn't work even when fetchSuggestions() isn't called
+    // when you use postman the api call works...
+    // even when you remove suggestions from the game it doesn't work
     this.props.fetchCategories();
   }
 
@@ -131,9 +135,9 @@ class SuggestionContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     suggestions: state.suggestions.suggestions,
+    categories: state.categories.categories,
     isLoading: state.suggestions.isLoading,
-    isError: state.suggestions.isError,
-    categories: state.categories.categories
+    isError: state.suggestions.isError
   }
 }
 

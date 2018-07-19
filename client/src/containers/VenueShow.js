@@ -5,6 +5,7 @@ import { fetchVenues } from '../actions/venueActions';
 import VenueItem from '../components/venues/VenueItem';
 import ReviewContainer from './ReviewContainer';
 import SuggestionContainer from './SuggestionContainer';
+import CategoryContainer from './CategoryContainer';
 
 // this is the page for the Venue details view - contains suggestions and reviews
 
@@ -33,7 +34,7 @@ class VenueShow extends Component {
     console.log(`props:`);
     console.log(this.props.venues)
     console.log(venue)
-    let renderVenue = venue ? (<div><VenueItem venue={venue} /> <SuggestionContainer venueId={venue.id} /><ReviewContainer venueId={venue.id} /></div>) : <p>Venue data not available</p>;
+    let renderVenue = venue ? (<div><VenueItem venue={venue} /> <SuggestionContainer venueId={venue.id} /><ReviewContainer venueId={venue.id} /><CategoryContainer /></div>) : <p>Venue data not available</p>;
 
     return (
       <div className="venue-container-component">

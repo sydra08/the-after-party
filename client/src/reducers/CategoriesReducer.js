@@ -1,16 +1,16 @@
-function CategoriesReducer(state = {categories: [], isLoading: false}, action) {
+function CategoriesReducer(state = {categories: []}, action) {
   console.log(action);
   switch(action.type){
     case 'FETCH_CATEGORIES':
       console.log("FETCH_CATEGORIES was called")
       console.log("state is...")
       console.log(state)
-      return {...state, isLoading: true};
+      return {...state};
     case 'RECEIVED_CATEGORIES"':
       console.log("RECEIVED_CATEGORIES was called")
       console.log("state is...")
       console.log(state)
-      return Object.assign({}, state, { categories: action.payload, isLoading: false, isError: false })
+      return { categories: action.payload }
     default:
       console.log("default called")
       return state;
