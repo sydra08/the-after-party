@@ -17,7 +17,7 @@ class SuggestionContainer extends Component {
       vote: "Like",
       venue_id: this.props.venueId,
       category_attributes: {
-        name: "Fast Casual"
+        name: ""
       },
       address_attributes: {
         street: '',
@@ -111,6 +111,9 @@ class SuggestionContainer extends Component {
   }
 
   render() {
+    console.log("Suggestion Container component")
+    console.log(this.props)
+    console.log(this.props.categories[0])
     return (
       <div className="suggestion-container-component">
         <p>this is a test of the Suggestion container component</p>
@@ -126,6 +129,7 @@ class SuggestionContainer extends Component {
           handleCategoryChange={this.handleCategoryChange}
           vote={this.state.vote}
           handleVoteChange={this.handleVoteChange}
+          categories={this.props.categories}
           />
       </div>
     )
@@ -135,9 +139,7 @@ class SuggestionContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     suggestions: state.suggestions.suggestions,
-    categories: state.categories.categories,
-    isLoading: state.suggestions.isLoading,
-    isError: state.suggestions.isError
+    categories: state.categories.categories
   }
 }
 

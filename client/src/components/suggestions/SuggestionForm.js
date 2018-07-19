@@ -41,7 +41,7 @@ const SuggestionForm = (props) => {
   console.log("SuggestionForm component")
   console.log(props)
   const { handleSubmit,name, handleNameChange, addressStreet, handleStreetChange, addressCity, handleCityChange, addressState,
-  handleStateChange, category, handleCategoryChange, vote,   handleVoteChange, classes } = props;
+  handleStateChange, category, handleCategoryChange, vote,   handleVoteChange, classes, categories } = props;
 
   return (
     <div className={classes.root}>
