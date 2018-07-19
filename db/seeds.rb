@@ -15,9 +15,15 @@ Venue.create(name: "Brooklyn Steel", address_id: 2, avg_rating: 3.5, capacity: 1
 Venue.create(name: "Madison Square Garden", address_id: 3, avg_rating: 4, capacity: 20789)
 Venue.create(name: "Irving Plaza", address_id: 4, avg_rating: 4, capacity: 1025)
 
-Category.create(name: "Cocktail Bar", description: "upscale bar")
 Category.create(name: "Beer Bar", description: "focuses on beer")
+Category.create(name: "Cocktail Bar", description: "upscale bar")
+Category.create(name: "Wine Bar", description: "focuses on wine")
+Category.create(name: "Brewpub", description: "pub style food and drink")
 Category.create(name: "Fast Casual", description: "no table service")
+Category.create(name: "Fast Food", description: "fast food")
+Category.create(name: "Fancy Restaurant", description: "upscale sit down restaurant")
+
+
 
 Suggestion.create(venue_id: 2, address_id: 5, name: "One Stop Beer Shop", category_id: 2, upvotes: 25, downvotes: 2)
 Suggestion.create(venue_id: 4, address_id: 6, name: "Artichoke Pizza", category_id: 3, upvotes: 100, downvotes: 15)
