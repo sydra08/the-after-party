@@ -29,7 +29,7 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
   },
   formControl: {
-    margin: theme.spacing.unit * 3,
+    margin: theme.spacing.unit,
   },
   group: {
     margin: `${theme.spacing.unit}px 0`,
@@ -59,16 +59,15 @@ const SuggestionForm = (props) => {
             <TextField
               id="suggestion-name"
               name="name"
-              label="Suggestion Name"
+              label="Name"
               value={name}
               onChange={handleNameChange}
               className={classes.textField}
               margin="normal"
               fullWidth
+              required
             />
-            <Typography variant="body2" gutterBottom>
-              Address:
-            </Typography>
+
             <TextField
               id="suggestion-address-street"
               name="street"
@@ -87,7 +86,7 @@ const SuggestionForm = (props) => {
               onChange={handleCityChange}
               className={classes.textField}
               margin="normal"
-              fullWidth
+              // fullWidth
             />
             <TextField
               id="suggestion-address-state"
@@ -97,7 +96,7 @@ const SuggestionForm = (props) => {
               onChange={handleStateChange}
               className={classes.textField}
               margin="normal"
-              fullWidth
+              // fullWidth
             />
             <FormControl className={classes.formControl}>
               <FormLabel component="legend">Category</FormLabel>
@@ -109,7 +108,7 @@ const SuggestionForm = (props) => {
                 className={classes.selectEmpty}
               >
               <MenuItem value="" disabled>
-                Category
+                Select...
               </MenuItem>
               {categories.map(category => <MenuItem value={category.name}>{category.name}</MenuItem>)}
               </Select>
