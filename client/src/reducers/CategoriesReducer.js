@@ -10,7 +10,7 @@ function CategoriesReducer(state = {categories: [], isLoading: false}, action) {
       console.log("RECEIVED_CATEGORIES was called")
       console.log("state is...")
       console.log(state)
-      return {categories: action.payload, isLoading: false};
+      return Object.assign({}, state, { categories: action.payload, isLoading: false, isError: false })
     default:
       console.log("default called")
       return state;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSuggestions, addSuggestion } from '../actions/suggestionActions';
+import { fetchCategories } from '../actions/categoryActions';
 import SuggestionList from '../components/suggestions/SuggestionList.js';
 import SuggestionForm from '../components/suggestions/SuggestionForm.js';
 
@@ -28,6 +29,7 @@ class SuggestionContainer extends Component {
 
   componentDidMount() {
     this.props.fetchSuggestions(this.props.venueId);
+    this.props.fetchCategories();
   }
 
   handleSubmit = (event) => {
@@ -130,12 +132,13 @@ const mapStateToProps = (state) => {
   return {
     suggestions: state.suggestions.suggestions,
     isLoading: state.suggestions.isLoading,
-    isError: state.suggestions.isError
+    isError: state.suggestions.isError,
+    categories: state.categories.categories
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchSuggestions: fetchSuggestions, addSuggestion: addSuggestion}, dispatch);
+  return bindActionCreators({fetchSuggestions: fetchSuggestions, addSuggestion: addSuggestion, fetchCategories: fetchCategories}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SuggestionContainer);
