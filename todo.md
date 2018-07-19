@@ -86,7 +86,12 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       + it works if i pass {suggestion: suggestionData}. not sure if that's the best way to solve the problem in the end, but works for now.
       [ ] figure out how to have a text field but also the list of categories
         [ ] use react-select for the autosuggest?
-      [ ] fetch the list of categories and have the radio buttons feed off of that
+      [x] fetch the list of categories and have the radio buttons feed off of that
+      [ ] could have a text field that appears if you select "Other"?
+    [ ] fix styling
+        [ ] have the submit button be on the last line
+        [ ] figure out where to put the address label
+        [ ] fix alignment of dropdown and radio buttons
 
   + Review
     [x] ReviewListContainer
@@ -103,10 +108,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
         [ ] have client-side validation errors?
       [x] fix submit button styling
       [ ] figure out how to trigger the venue rating update
-    + Category
-      [ ] CategoryContainer
-        [ ] fetch list of categories from API
-        [ ] figure out why the categories fetch isn't working properly
+        + when you submit a review it triggers ADD_REVIEW. Then after the review is processed there should be a check in the background of what the new venue rating should be. If the new venue rating is different than the current then the venue should update. When the venue updates it might update the entire page though (which is less than ideal)...
 [ ] add a loading icon/screen for pages while API data is being fetched - need to fix this so that it actually displays (use componentWillUpdate?)
 [ ] use snackbars for error/success messages in forms (https://material-ui.com/demos/snackbars/)
 [ ] consider autocomplete for things: (https://material-ui.com/demos/autocomplete/)

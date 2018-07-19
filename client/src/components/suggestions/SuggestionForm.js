@@ -52,7 +52,7 @@ const SuggestionForm = (props) => {
     <div className={classes.root}>
       <Card>
         <CardContent>
-          <Typography variant="title" gutterBottom>
+          <Typography variant="title" align="center" gutterBottom>
             Leave a suggestion:
           </Typography>
           <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
@@ -67,7 +67,6 @@ const SuggestionForm = (props) => {
               fullWidth
               required
             />
-
             <TextField
               id="suggestion-address-street"
               name="street"
@@ -76,7 +75,7 @@ const SuggestionForm = (props) => {
               onChange={handleStreetChange}
               className={classes.textField}
               margin="normal"
-              fullWidth
+              // fullWidth
             />
             <TextField
               id="suggestion-address-city"
@@ -99,7 +98,6 @@ const SuggestionForm = (props) => {
               // fullWidth
             />
             <FormControl className={classes.formControl}>
-              <FormLabel component="legend">Category</FormLabel>
               <Select
                 value={category}
                 onChange={handleCategoryChange}
@@ -108,7 +106,7 @@ const SuggestionForm = (props) => {
                 className={classes.selectEmpty}
               >
               <MenuItem value="" disabled>
-                Select...
+                Select Category...
               </MenuItem>
               {categories.map(category => <MenuItem value={category.name}>{category.name}</MenuItem>)}
               </Select>
