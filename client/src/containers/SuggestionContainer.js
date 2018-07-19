@@ -114,10 +114,15 @@ class SuggestionContainer extends Component {
     console.log("Suggestion Container component")
     console.log(this.props)
     console.log(this.props.categories[0])
+    let errorMsg = null;
+    if(this.props.isError) {
+      errorMsg = "There was an error submitting your suggestion. Please try again"
+    };
     return (
       <div className="suggestion-container-component">
         <p>this is a test of the Suggestion container component</p>
         <SuggestionList suggestions={this.props.suggestions} />
+        <p>{ errorMsg }</p>
         <SuggestionForm
           handleSubmit={this.handleSubmit}
           name={this.state.name} handleNameChange={this.handleNameChange} addressStreet={this.state.address_attributes.street} handleStreetChange={this.handleStreetChange}
@@ -139,7 +144,8 @@ class SuggestionContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     suggestions: state.suggestions.suggestions,
-    categories: state.categories.categories
+    categories: state.categories.categories,
+    isError: state.suggestions.isError
   }
 }
 

@@ -3,7 +3,7 @@ class Suggestion < ApplicationRecord
   belongs_to :venue
   belongs_to :address
 
-  # validates :name, uniqueness: { case_sensitive: false }, presence: true
+  validates :name, uniqueness: { case_sensitive: false }, presence: true
 
   scope :by_venue, ->(venue_id) { where(venue: venue_id) }
 
