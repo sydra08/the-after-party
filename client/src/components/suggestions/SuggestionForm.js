@@ -104,10 +104,7 @@ const SuggestionForm = (props) => {
                onChange={handleCategoryChange}
                row
                >
-               <FormControlLabel value="Fast Casual" control={<Radio />} label="Fast Casual" />
-               <FormControlLabel value="Fast Food" control={<Radio />} label="Fast Food" />
-               <FormControlLabel value="Beer Bar" control={<Radio />} label="Beer Bar" />
-               <FormControlLabel value="Cocktail Bar" control={<Radio />} label="Cocktail Bar" />
+               {categories.map(category => <FormControlLabel value={category.name} control={<Radio />} label={category.name} />)}
               </RadioGroup>
             </FormControl>
             <FormControl component="fieldset" className={classes.formControl}>
