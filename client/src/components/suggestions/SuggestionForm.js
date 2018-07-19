@@ -6,10 +6,12 @@ import TextField from "@material-ui/core/TextField";
 import Typography from '@material-ui/core/Typography';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
+import MenuItem from '@material-ui/core/MenuItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
+import Select from '@material-ui/core/Select';
 
 const styles = theme => ({
   root: {
@@ -34,6 +36,9 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing.unit * 2,
   },
 });
 
@@ -94,18 +99,20 @@ const SuggestionForm = (props) => {
               margin="normal"
               fullWidth
             />
-            <FormControl component="fieldset" className={classes.formControl}>
-             <FormLabel component="legend">Category</FormLabel>
-             <RadioGroup
-               aria-label="category"
-               name="category"
-               className={classes.group}
-               value={category}
-               onChange={handleCategoryChange}
-               row
-               >
-               {categories.map(category => <FormControlLabel value={category.name} control={<Radio />} label={category.name} />)}
-              </RadioGroup>
+            <FormControl className={classes.formControl}>
+              <FormLabel component="legend">Category</FormLabel>
+              <Select
+                value={category}
+                onChange={handleCategoryChange}
+                displayEmpty
+                name="Category"
+                className={classes.selectEmpty}
+              >
+              <MenuItem value="" disabled>
+                Category
+              </MenuItem>
+              {categories.map(category => <MenuItem value={category.name}>{category.name}</MenuItem>)}
+              </Select>
             </FormControl>
             <FormControl component="fieldset" className={classes.formControl}>
               <FormLabel component="legend">Vote</FormLabel>
