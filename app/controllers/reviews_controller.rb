@@ -8,9 +8,8 @@ class ReviewsController < ApplicationController
     @venue = Venue.find_by(id: params[:venue_id])
     @review = @venue.reviews.build(review_params)
     if @review.save
-      # after you add a new review, it should update the avg_rating of the venue but doesn't necessarily need to create a POST request to do so. OR do you have it add a review and then fire another request to UPDATE_VENUE if the average changes? Where does this happen?
-      # call the update average thing here?
-      # @venue.update_rating
+      @venue.update_rating
+      @venue.save
       # 201 means created
       render json: @review, status: 201
     else

@@ -4,7 +4,6 @@ class Venue < ApplicationRecord
   has_many :reviews
 
   def update_rating()
-    binding.pry
     ratings = self.reviews.collect { |r| r.rating }
     self.avg_rating = (ratings.sum()/ratings.length)
   end
