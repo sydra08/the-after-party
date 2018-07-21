@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import StarRatingComponent from 'react-star-rating-component';
 
 const styles = {
   root: {
@@ -14,14 +15,18 @@ const VenueItem = (props) => {
   return (
     <div className={classes.root}>
       <Typography variant="headline" align="center" gutterBottom>
-        Name: {venue.name}
+        {venue.name}
       </Typography>
       <Typography align="center" gutterBottom>
-        Address: {venue.address.street}, {venue.address.city}, {venue.address.state}
+        {venue.address.street}, {venue.address.city}, {venue.address.state}
       </Typography>
-      <Typography variant="subheading" align="center" gutterBottom>
-        Rating: {venue.avg_rating}
-      </Typography>
+      <div align="center">
+        <StarRatingComponent
+          name="rating"
+          starCount={5}
+          value={venue.avg_rating}
+        />
+      </div>
     </div>
   )
 }
