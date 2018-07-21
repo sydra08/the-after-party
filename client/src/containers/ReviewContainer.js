@@ -38,12 +38,20 @@ class ReviewContainer extends Component {
   }
 
   handleInputChange = (event) => {
+    console.log(event.target.value)
     const value = event.target.value;
     const name = event.target.name;
 
     this.setState({
       [name]: value
     })
+  }
+
+  onStarClick = (event) => {
+    console.log(event)
+    this.setState({
+      rating: event
+    });
   }
 
   render() {
@@ -59,7 +67,8 @@ class ReviewContainer extends Component {
       <div className="review-container-component">
         <p>{ errorMsg }</p>
         <ReviewList reviews={this.props.reviews} />
-        <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} content={this.state.content} rating={this.state.rating} />
+        <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}
+        handleStarChange={this.onStarClick} content={this.state.content} rating={this.state.rating} />
       </div>
     )
   }

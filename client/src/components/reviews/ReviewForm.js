@@ -1,11 +1,10 @@
 import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
+import StarRatingComponent from 'react-star-rating-component';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from "@material-ui/core/TextField";
-// import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
 
 // need to use the star ratings thing here for the ratings selector
 
@@ -33,7 +32,7 @@ const styles = theme => ({
 const ReviewForm = (props) => {
   console.log("ReviewForm component")
   console.log(props)
-  const { content, rating, handleSubmit, handleInputChange, classes } = props;
+  const { content, rating, handleSubmit, handleInputChange, handleStarChange, classes } = props;
   return (
     <div className={classes.root}>
       <Card>
@@ -50,16 +49,11 @@ const ReviewForm = (props) => {
               margin="normal"
               fullWidth
             />
-            <TextField
-              id="review-rating"
+            <StarRatingComponent
               name="rating"
-              label="Rate the venue: 1 (low) - 5 (high)"
-              className={classes.textField}
+              starCount={5}
               value={rating}
-              onChange={handleInputChange}
-              margin="normal"
-              fullWidth
-              required
+              onStarClick={handleStarChange}
             />
             <Button className={classes.button} type="submit">Submit</Button>
           </form>
