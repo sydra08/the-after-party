@@ -38,7 +38,6 @@ class ReviewContainer extends Component {
   }
 
   handleInputChange = (event) => {
-    // so if you go somewhere else and change the input then it
     const value = event.target.value;
     const name = event.target.name;
 

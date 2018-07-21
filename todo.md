@@ -110,6 +110,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [ ] figure out how to trigger the venue rating update
         + when you submit a review it triggers ADD_REVIEW. Then after the review is processed there should be a check in the background of what the new venue rating should be. If the new venue rating is different than the current then the venue should update. When the venue updates it might update the entire page though (which is less than ideal)...
 [ ] add a loading icon/screen for pages while API data is being fetched - need to fix this so that it actually displays (use componentWillUpdate?)
+[ ] remove labels from things
 [ ] use snackbars for error/success messages in forms (https://material-ui.com/demos/snackbars/)
 [ ] consider autocomplete for things: (https://material-ui.com/demos/autocomplete/)
 [ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  

@@ -9,13 +9,8 @@ import SuggestionContainer from './SuggestionContainer';
 // this is the page for the Venue details view - contains suggestions and reviews
 
 class VenueShow extends Component {
-  // page doesn't work properly if you don't come from /venues
   componentDidMount() {
     console.log('the component mounted')
-    // component does mount but doesn't do anything...seems like it's because venues has a length
-    // if(this.props.venues.length === 0) {
-    //   this.props.fetchVenues();
-    // }
     this.props.fetchVenues();
   }
 
@@ -42,8 +37,6 @@ class VenueShow extends Component {
     )
   }
 }
-
-// let renderVenue = venue ? (<div><VenueItem venue={venue} /> <SuggestionList suggestions={venue.suggestions} /><ReviewForm venueId={venue.id} /><ReviewList reviews={venue.reviews} /></div>) : <p>Venue data not available</p>;
 
 // this connects it to the store so that it can get the venues if coming from /venues
 
