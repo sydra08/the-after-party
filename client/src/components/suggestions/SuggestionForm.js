@@ -53,7 +53,7 @@ const SuggestionForm = (props) => {
       <Card>
         <CardContent>
           <Typography variant="title" align="left" gutterBottom>
-            Leave a suggestion:
+            Share a suggestion:
           </Typography>
           <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
             <TextField
@@ -75,7 +75,6 @@ const SuggestionForm = (props) => {
               onChange={handleStreetChange}
               className={classes.textField}
               margin="normal"
-              // fullWidth
             />
             <TextField
               id="suggestion-address-city"
@@ -85,7 +84,6 @@ const SuggestionForm = (props) => {
               onChange={handleCityChange}
               className={classes.textField}
               margin="normal"
-              // fullWidth
             />
             <TextField
               id="suggestion-address-state"
@@ -95,7 +93,6 @@ const SuggestionForm = (props) => {
               onChange={handleStateChange}
               className={classes.textField}
               margin="normal"
-              // fullWidth
             />
             <FormControl className={classes.formControl}>
               <Select
@@ -112,7 +109,6 @@ const SuggestionForm = (props) => {
               </Select>
             </FormControl>
             <FormControl component="fieldset" className={classes.formControl}>
-              <FormLabel component="legend">Vote</FormLabel>
               <RadioGroup
                 aria-label="vote"
                 name="vote"
