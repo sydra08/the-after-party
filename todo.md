@@ -100,6 +100,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [x] have the text wrap within the Card
     [/] ReviewNew (the form)
       [ ] rating element
+        [ ] add a label
       [x] send venue data with form
       [x] hook up form submit with API
       [/] handle errors - right now only using an error message, eventually want to have the form not clear out when you fail to submit properly
@@ -107,13 +108,14 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
         [ ] don't clear out the form, show what the inputs were
         [ ] have client-side validation errors?
       [x] fix submit button styling
-      [ ] figure out how to trigger the venue rating update
+      [x] figure out how to trigger the venue rating update
         + when you submit a review it triggers ADD_REVIEW. Then after the review is processed there should be a check in the background of what the new venue rating should be. If the new venue rating is different than the current then the venue should update. When the venue updates it might update the entire page though (which is less than ideal)...
+        + decided on just having the venue avg rating update when you submit a review and when you next visit the venue show page it will display the updated rating
 [ ] add a loading icon/screen for pages while API data is being fetched - need to fix this so that it actually displays (use componentWillUpdate?)
-[ ] remove labels from things
+[/] remove labels from things
 [ ] use snackbars for error/success messages in forms (https://material-ui.com/demos/snackbars/)
 [ ] consider autocomplete for things: (https://material-ui.com/demos/autocomplete/)
-[ ] ratings (https://www.npmjs.com/package/react-star-rating-component)  
+[x] ratings (https://www.npmjs.com/package/react-star-rating-component)  
 https://www.npmjs.com/package/react-stars
 [ ] make pages responsive. Cards start to overlap at different browser widths
 [ ] add prop-types for the Material-UI stuff?
