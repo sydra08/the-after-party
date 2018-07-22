@@ -61,6 +61,10 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
     [x] VenueList
     [x] Venue - contains the venue data (this can be reused in the list view and on the broader page since the layout will be the same)
   + Suggestion
+    [ ] SuggestionPage
+      [ ] decide if there's a need for a page that's just the suggestsions
+      [ ] add filter based on city/state
+      [ ] add filter based on category
     [x] SuggestionListContainer
     [x] SuggestionList
     [/] Suggestion (is this where the form goes?)
