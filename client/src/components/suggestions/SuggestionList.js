@@ -22,7 +22,7 @@ const SuggestionList = (props) => {
         Suggestions
       </Typography>
       <Grid container spacing={24}>
-        {suggestions.map((suggestion, index) => <Grid item key={index} xs={6} sm={3}><Suggestion suggestion={suggestion} /></Grid>)}
+        {suggestions.map((suggestion, index) => <Grid item key={index} xs><Suggestion suggestion={suggestion} /></Grid>)}
       </Grid>
     </div>
   );

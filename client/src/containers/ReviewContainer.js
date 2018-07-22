@@ -12,7 +12,7 @@ class ReviewContainer extends Component {
 
     this.state = {
       content: '',
-      rating: '',
+      rating: 0,
       venue_id: this.props.venueId,
       // errorText: '',
       // isError: false
@@ -30,7 +30,7 @@ class ReviewContainer extends Component {
     this.props.addReview(this.state);
     this.setState({
       content: '',
-      rating: '',
+      rating: 0,
       venue_id: this.props.venueId,
       // errorText: '',
       // isError: false

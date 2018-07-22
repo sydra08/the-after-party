@@ -20,12 +20,6 @@ const styles = theme => ({
   }
 });
 
-// <div className="venue-list">
-//   <ul>
-//     {venues.map((venue, index) => <li key={index}><Link style={{ marginRight: '12px' }} to={`/venues/${venue.id}`}>{venue.name}</Link></li>)}
-//   </ul>
-// </div>
-
 const VenueIndex = (props) => {
   console.log("VenueIndex component")
   const { venues, classes } = props;

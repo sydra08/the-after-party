@@ -52,7 +52,7 @@ const SuggestionForm = (props) => {
     <div className={classes.root}>
       <Card>
         <CardContent>
-          <Typography variant="title" align="center" gutterBottom>
+          <Typography variant="title" align="left" gutterBottom>
             Leave a suggestion:
           </Typography>
           <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
@@ -108,7 +108,7 @@ const SuggestionForm = (props) => {
               <MenuItem value="" disabled>
                 Select Category...
               </MenuItem>
-              {categories.map(category => <MenuItem value={category.name}>{category.name}</MenuItem>)}
+              {categories.map((category, index) => <MenuItem key={index} value={category.name}>{category.name}</MenuItem>)}
               </Select>
             </FormControl>
             <FormControl component="fieldset" className={classes.formControl}>

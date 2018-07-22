@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from "@material-ui/core/TextField";
 import Button from '@material-ui/core/Button';
+import Typography from "@material-ui/core/Typography";
 
 // need to use the star ratings thing here for the ratings selector
 
@@ -49,6 +50,9 @@ const ReviewForm = (props) => {
               margin="normal"
               fullWidth
             />
+            <Typography variant="body1" component="p">
+              Rate the venue:
+            </Typography>
             <StarRatingComponent
               name="rating"
               starCount={5}
