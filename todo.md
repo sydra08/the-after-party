@@ -55,7 +55,11 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
   [x] react-redux
   [x] redux
 [ ] React Components
-  [x] homepage
+  [/] homepage
+    [ ] add image
+    [ ] add short description
+    [ ] add links to the relevant pages
+    [ ] maybe highlight the highest rated venue?
   + Venue
     [x] VenueListContainer
     [x] VenueList
