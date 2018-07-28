@@ -7,8 +7,6 @@ import TextField from "@material-ui/core/TextField";
 import Button from '@material-ui/core/Button';
 import Typography from "@material-ui/core/Typography";
 
-// need to use the star ratings thing here for the ratings selector
-
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),

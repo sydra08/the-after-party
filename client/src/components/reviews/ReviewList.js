@@ -22,7 +22,7 @@ const ReviewList = (props) => {
         Reviews
       </Typography>
       <Grid container spacing={24}>
-        {reviews.map((review, index) => <Grid item key={index} xs ><Review content={review.content} rating={review.rating} /></Grid>)}
+        {reviews.map((review, index) => <Grid item key={index} xs ><Review content={review.content} rating={review.rating} created={review.created_at} /></Grid>)}
       </Grid>
     </div>
   );

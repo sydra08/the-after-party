@@ -20,7 +20,7 @@ const styles = {
 };
 
 const Review = (props) => {
-  const { content, rating, classes } = props;
+  const { content, rating, classes, created } = props;
   console.log("Review component")
   return (
     <div className="review">
@@ -34,6 +34,9 @@ const Review = (props) => {
             starCount={5}
             value={rating}
           />
+          <Typography component="p">
+            {created}
+          </Typography>
         </CardContent>
       </Card>
     </div>
