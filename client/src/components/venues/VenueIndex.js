@@ -6,7 +6,9 @@ import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Typography from "@material-ui/core/Typography";
+import StarRatingComponent from 'react-star-rating-component';
 
 // set the styles here and then use withStyles() to conect it to the component
 const styles = theme => ({
@@ -30,8 +32,23 @@ const VenueIndex = (props) => {
           Venues
         </Typography>
         <List component="nav">
-          {venues.map((venue, index) => <ListItem button key={index} component="a" href={`/venues/${venue.id}`}>
-            <ListItemText primary={venue.name} secondary={venue.address.state} />
+          {venues.map((venue, index) =>
+            <ListItem
+              button
+              key={index}
+              component="a"
+              href={`/venues/${venue.id}`}>
+            <ListItemText
+              primary={venue.name}
+              secondary={venue.address.state}
+              />
+            <ListItemSecondaryAction>
+              <StarRatingComponent
+                name="rating"
+                starCount={5}
+                value={venue.avg_rating}
+              />
+            </ListItemSecondaryAction>
           </ListItem>)}
         </List>
       </Paper>
