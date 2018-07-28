@@ -16,9 +16,11 @@ const styles = theme => ({
     width: '100%',
   },
   card: {
-    marginLeft: 20,
+    // marginLeft: 20,
     width: 300,
-    height: 250,
+    // minWidth: 275,
+    maxHeight: 250,
+    // height: 250,
     marginBottom: 12,
   },
   title: {

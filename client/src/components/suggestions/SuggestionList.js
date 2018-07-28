@@ -18,9 +18,9 @@ const SuggestionList = (props) => {
   const { suggestions, classes } = props;
   return(
     <div className={classes.root}>
-      <Grid container justify="center" spacing={8}>
+      <Grid container spacing={8}>
         {suggestions.map((suggestion, index) =>
-          <Grid item key={index} xs>
+          <Grid item key={index} sm>
             <Suggestion suggestion={suggestion} />
           </Grid>)}
       </Grid>

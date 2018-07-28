@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 import { addReview, fetchReviews } from '../actions/reviewActions';
 import ReviewList from '../components/reviews/ReviewList.js';
 import ReviewForm from '../components/reviews/ReviewForm.js';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    padding: theme.spacing.unit * 8
+  }
+});
+
 
 class ReviewContainer extends Component {
   // called from the VenueShow component, it will be passed the venueId as a prop
@@ -58,13 +69,14 @@ class ReviewContainer extends Component {
     console.log("ReviewContainer component")
     console.log("ReviewContainer props")
     console.log(this.props)
+    const { classes, isError } = this.props;
     let errorMsg = null;
-    if(this.props.isError) {
+    if(isError) {
       errorMsg = "There was an error submitting your review. Please try again"
     };
 
     return (
-      <div className="review-container-component">
+      <div className={classes.root}>
         <p>{ errorMsg }</p>
         <ReviewList reviews={this.props.reviews} />
         <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}
@@ -86,4 +98,5 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({addReview: addReview, fetchReviews: fetchReviews}, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewContainer);
+export default compose(
+   withStyles(styles), connect(mapStateToProps, mapDispatchToProps))(ReviewContainer);
