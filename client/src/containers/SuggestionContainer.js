@@ -131,6 +131,9 @@ class SuggestionContainer extends Component {
     };
     return (
       <div className={classes.root}>
+        <Typography variant="title" gutterBottom>
+          Check out suggestions
+        </Typography>
         <SuggestionList suggestions={this.props.suggestions} />
 
         <SuggestionForm

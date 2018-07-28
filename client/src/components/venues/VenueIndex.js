@@ -42,7 +42,7 @@ const VenueIndex = (props) => {
               primary={venue.name}
               secondary={venue.address.state}
               />
-            <ListItemSecondaryAction>
+            <ListItemSecondaryAction style={{fontSize: 24}}>
               <StarRatingComponent
                 name="rating"
                 starCount={5}

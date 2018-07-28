@@ -35,12 +35,15 @@ const ReviewForm = (props) => {
   return (
     <div className={classes.root}>
       <Card>
-        <CardContent>
+        <CardContent style={{fontSize: 24}}>
+          <Typography variant="title" align="left" gutterBottom>
+            Leave a review:
+          </Typography>
           <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
             <TextField
               id="review-content"
               name="content"
-              label="Leave a review"
+              label="Your review"
               multiline
               value={content}
               onChange={handleInputChange}

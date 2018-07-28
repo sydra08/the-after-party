@@ -12,15 +12,9 @@ import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-  },
   card: {
-    // marginLeft: 20,
     width: 300,
-    // minWidth: 275,
     maxHeight: 250,
-    // height: 250,
     marginBottom: 12,
   },
   title: {
@@ -47,7 +41,7 @@ class Suggestion extends Component {
     const newUpvoteTotal = suggestion.upvotes + 1;
     this.props.upvoteSuggestion(suggestion, newUpvoteTotal);
   }
-Data
+
   handleDownvote = (event, suggestion) => {
     console.log("old total")
     console.log(suggestion.downvotes)
@@ -62,20 +56,20 @@ Data
     const { suggestion, classes } = this.props;
     const { name, category, address, upvotes, downvotes } = suggestion;
     return (
-      <div className={classes.root}>
+      <div className="suggestion">
         <Card className={classes.card}>
           <CardContent>
             <Typography variant="title" gutterBottom>
               {name}
+            </Typography>
+            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
+              {category.name}
             </Typography>
             <Typography variant="subheading" component="textSecondary" className={classes.pos}>
               <ThumbUpIcon className={classes.leftIcon} />
               Likes: {upvotes} &nbsp; | &nbsp;
               <ThumbDownIcon className={classes.leftIcon} />
               Dislikes: {downvotes}
-            </Typography>
-            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
-              {category.name}
             </Typography>
             <Typography variant="subheading" color="textSecondary" className={classes.pos}>
               {address.street}, {address.city}, {address.state}

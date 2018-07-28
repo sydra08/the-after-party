@@ -20,7 +20,7 @@ const VenueItem = (props) => {
       <Typography align="center" gutterBottom>
         {venue.address.street}, {venue.address.city}, {venue.address.state}
       </Typography>
-      <div align="center">
+      <div align="center" style={{fontSize: 24}}>
         <StarRatingComponent
           name="rating"
           starCount={5}
