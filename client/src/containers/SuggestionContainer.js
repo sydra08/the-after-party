@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 import { fetchSuggestions, addSuggestion } from '../actions/suggestionActions';
 import { fetchCategories } from '../actions/categoryActions';
 import SuggestionList from '../components/suggestions/SuggestionList.js';
 import SuggestionForm from '../components/suggestions/SuggestionForm.js';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+});
 
 class SuggestionContainer extends Component {
   constructor(props) {
@@ -114,15 +128,15 @@ class SuggestionContainer extends Component {
     console.log("Suggestion Container component")
     console.log(this.props)
     console.log(this.props.categories[0])
+    const { classes, isError } = this.props;
     let errorMsg = null;
-    if(this.props.isError) {
+    if(isError) {
       errorMsg = "There was an error submitting your suggestion. Please try again"
     };
     return (
-      <div className="suggestion-container-component">
-        <p>this is a test of the Suggestion container component</p>
+      <div className={classes.root}>
         <SuggestionList suggestions={this.props.suggestions} />
-        <p>{ errorMsg }</p>
+
         <SuggestionForm
           handleSubmit={this.handleSubmit}
           name={this.state.name} handleNameChange={this.handleNameChange} addressStreet={this.state.address_attributes.street} handleStreetChange={this.handleStreetChange}
@@ -153,4 +167,5 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({fetchSuggestions: fetchSuggestions, addSuggestion: addSuggestion, fetchCategories: fetchCategories}, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SuggestionContainer);
+export default compose(
+   withStyles(styles), connect(mapStateToProps, mapDispatchToProps))(SuggestionContainer);

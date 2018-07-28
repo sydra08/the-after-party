@@ -7,7 +7,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-// import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
@@ -18,14 +17,9 @@ const styles = theme => ({
   },
   card: {
     marginLeft: 20,
-    width: 275,
-    maxHeight: 250,
+    width: 300,
+    height: 250,
     marginBottom: 12,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
   },
   title: {
     marginBottom: 16,
@@ -72,16 +66,16 @@ Data
             <Typography variant="title" gutterBottom>
               {name}
             </Typography>
-            <Typography component="textSecondary" className={classes.pos}>
+            <Typography variant="subheading" component="textSecondary" className={classes.pos}>
               <ThumbUpIcon className={classes.leftIcon} />
               Likes: {upvotes} &nbsp; | &nbsp;
               <ThumbDownIcon className={classes.leftIcon} />
               Dislikes: {downvotes}
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
+            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
               {category.name}
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
+            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
               {address.street}, {address.city}, {address.state}
             </Typography>
           </CardContent>

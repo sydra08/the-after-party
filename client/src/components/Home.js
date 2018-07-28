@@ -1,11 +1,25 @@
 import React from 'react';
 import '../App.css';
+import { withStyles } from "@material-ui/core/styles";
+// import Card from '@material-ui/core/Card';
+// import CardContent from '@material-ui/core/CardContent';
+import Typography from "@material-ui/core/Typography";
+
+const styles = theme => ({
+  root: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+  }
+});
 
 const Home = () => {
   return (
     <div className="home">
       <div id="banner">
-        <h1>The After Party</h1>
+        <Typography variant="headline" component="h1">
+          The After Party
+        </Typography>
       </div>
       <p>include a short description of the site - similar to beer me</p>
       <p>Have links to the venues list and the suggestions list</p>
@@ -14,4 +28,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default withStyles(styles)(Home);
