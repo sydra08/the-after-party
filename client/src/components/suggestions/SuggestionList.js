@@ -1,7 +1,7 @@
 import React from 'react';
 import Suggestion from './Suggestion.js';
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
@@ -18,11 +18,11 @@ const SuggestionList = (props) => {
   const { suggestions, classes } = props;
   return(
     <div className={classes.root}>
-      <Typography variant="headline" component="h3">
-        Suggestions
-      </Typography>
-      <Grid container spacing={24}>
-        {suggestions.map((suggestion, index) => <Grid item key={index} xs><Suggestion suggestion={suggestion} /></Grid>)}
+      <Grid container justify="center" spacing={8}>
+        {suggestions.map((suggestion, index) =>
+          <Grid item key={index} xs>
+            <Suggestion suggestion={suggestion} />
+          </Grid>)}
       </Grid>
     </div>
   );

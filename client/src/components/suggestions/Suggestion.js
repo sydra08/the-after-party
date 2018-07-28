@@ -5,8 +5,9 @@ import { upvoteSuggestion, downvoteSuggestion } from '../../actions/suggestionAc
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+// import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
@@ -14,10 +15,11 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 360,
   },
   card: {
-    minWidth: 275,
+    marginLeft: 20,
+    width: 275,
+    maxHeight: 250,
     marginBottom: 12,
   },
   bullet: {
@@ -30,7 +32,7 @@ const styles = theme => ({
     fontSize: 14,
   },
   pos: {
-    marginBottom: 12,
+    marginBottom: 8
   },
   button: {
     margin: theme.spacing.unit,
@@ -68,32 +70,31 @@ Data
         <Card className={classes.card}>
           <CardContent>
             <Typography variant="title" gutterBottom>
-              Name: {name}
+              {name}
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              Address: {address.street}, {address.city}, {address.state}
-            </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              Category: {category.name}
-            </Typography>
-            <Typography component="p" className={classes.pos}>
+            <Typography component="textSecondary" className={classes.pos}>
               <ThumbUpIcon className={classes.leftIcon} />
               Likes: {upvotes} &nbsp; | &nbsp;
               <ThumbDownIcon className={classes.leftIcon} />
               Dislikes: {downvotes}
             </Typography>
-            <Divider />
-            <div align="center">
-              <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleUpvote(event, suggestion)}>
-                <ThumbUpIcon className={classes.leftIcon} />
-                Like
-              </Button>
-              <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleDownvote(event, suggestion)}>
-                <ThumbDownIcon className={classes.leftIcon} />
-                Dislike
-              </Button>
-            </div>
+            <Typography className={classes.pos} color="textSecondary">
+              {category.name}
+            </Typography>
+            <Typography className={classes.pos} color="textSecondary">
+              {address.street}, {address.city}, {address.state}
+            </Typography>
           </CardContent>
+          <CardActions>
+            <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleUpvote(event, suggestion)}>
+              <ThumbUpIcon className={classes.leftIcon} />
+              Like
+            </Button>
+            <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleDownvote(event, suggestion)}>
+              <ThumbDownIcon className={classes.leftIcon} />
+              Dislike
+            </Button>
+          </CardActions>
         </Card>
       </div>
     )
