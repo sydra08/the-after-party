@@ -21,8 +21,8 @@ const Home = () => {
           The After Party
         </Typography>
       </div>
-      <p>include a short description of the site - similar to beer me</p>
-      <p>Have links to the venues list and the suggestions list</p>
+      <p>Check out reviews for different concert venues.</p>
+      <p>Get ideas for where to go before or after the show.</p>
       <p>Images: <a href="https://www.pexels.com/">Pexels</a></p>
     </div>
   )

@@ -47,7 +47,6 @@ class VenueList extends Component {
     // if it === false then show the rest of the stuff
     return (
       <div className="venue-container-component">
-        <p>Venue List component</p>
         <VenueIndex venues={venues} />
       </div>
     )
