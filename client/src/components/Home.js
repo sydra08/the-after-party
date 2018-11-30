@@ -20,10 +20,16 @@ const Home = () => {
         <Typography variant="headline" component="h1">
           The After Party
         </Typography>
+        <Typography variant="subheading" component="subtitle2">
+          Your source for concert venue reviews
+        </Typography>
+        <Typography variant="subheading" component="subtitle2">
+          and where to go before and after the show.
+        </Typography>
+        <Typography variant="caption" component="caption">
+          Images: <a href="https://www.pexels.com/">Pexels</a>
+        </Typography>
       </div>
-      <p>Check out reviews for different concert venues.</p>
-      <p>Get ideas for where to go before or after the show.</p>
-      <p>Images: <a href="https://www.pexels.com/">Pexels</a></p>
     </div>
   )
 }
