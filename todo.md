@@ -70,7 +70,9 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
       [ ] add filter based on city/state
       [ ] add filter based on category
     [x] SuggestionListContainer
-    [x] SuggestionList
+    [/] SuggestionList
+      [ ] add filters for the different categories...maybe use tabs? https://material-ui.com/demos/tabs/
+      [ ] have the padding change when you hit the smallest breakpoint
     [/] Suggestion (is this where the form goes?)
       [x] update upvote/downvote to like/dislike display
       [/] add functionality for liking/disliking a suggestion
@@ -79,6 +81,7 @@ https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with
         [ ] why is it "new headers" and not just "header" in PATCH action?
         [x] need to fix request params. they are not being passed properly so the update is rejected
         [ ] add error messaging when update isn't possible
+        [ ] consider having just the icons instead of the text in the buttons
     [/] SuggestionNew (the form)
       + need to understand nested forms and components in order to do this. Does the address part of the form mean it gets it's own component that just displays within the Suggestion form components?
       [x] need to fix the address event handler so that what you type continuously updates state properly
