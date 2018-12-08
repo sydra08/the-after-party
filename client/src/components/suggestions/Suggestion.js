@@ -66,11 +66,11 @@ class Suggestion extends Component {
               {category.name}
             </Typography>
 
-            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
+            <Typography variant="body2" color="textSecondary" className={classes.pos}>
               {address.street}, {address.city}, {address.state}
             </Typography>
 
-            <Typography variant="subheading" color="primary" className={classes.pos}>
+            <Typography variant="body2" className={classes.pos}>
               <ThumbUpIcon className={classes.leftIcon} />
               Likes: {upvotes} &nbsp; | &nbsp;
               <ThumbDownIcon className={classes.leftIcon} />
