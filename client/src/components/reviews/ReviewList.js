@@ -18,7 +18,7 @@ const ReviewList = (props) => {
   const { reviews, classes } = props;
   return(
     <div className={classes.root}>
-      <Typography variant="headline" component="h3">
+      <Typography variant="headline">
         Reviews
       </Typography>
       <Grid container spacing={24}>

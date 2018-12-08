@@ -131,12 +131,12 @@ class SuggestionContainer extends Component {
     };
     return (
       <div className={classes.root}>
-        <Typography variant="title" gutterBottom>
+        <Typography variant="headline" gutterBottom>
           Check out suggestions
         </Typography>
         <SuggestionList suggestions={this.props.suggestions} />
 
-        <Typography variant="subheading" align="center" color="secondary">
+        <Typography variant="subheading" align="center" color="error">
           { errorMsg }
         </Typography>
 

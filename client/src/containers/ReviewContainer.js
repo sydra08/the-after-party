@@ -74,7 +74,7 @@ class ReviewContainer extends Component {
       <div className={classes.root}>
         <ReviewList reviews={this.props.reviews} />
 
-        <Typography variant="subheading" align="center" color="secondary">
+        <Typography variant="subheading" align="center" color="error">
           { errorMsg }
         </Typography>
 

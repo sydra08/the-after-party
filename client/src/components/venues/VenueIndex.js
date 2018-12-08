@@ -28,7 +28,7 @@ const VenueIndex = (props) => {
   return (
     <div>
       <Paper className={classes.root} elevation={1}>
-        <Typography variant="headline" component="h3">
+        <Typography variant="headline">
           Venues
         </Typography>
         <List component="nav">

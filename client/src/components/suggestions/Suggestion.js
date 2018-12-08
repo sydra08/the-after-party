@@ -62,18 +62,21 @@ class Suggestion extends Component {
             <Typography variant="title" gutterBottom>
               {name}
             </Typography>
-            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
+            <Typography variant="button" color="textSecondary" className={classes.pos}>
               {category.name}
             </Typography>
-            <Typography variant="subheading" component="textSecondary" className={classes.pos}>
+
+            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
+              {address.street}, {address.city}, {address.state}
+            </Typography>
+
+            <Typography variant="subheading" color="primary" className={classes.pos}>
               <ThumbUpIcon className={classes.leftIcon} />
               Likes: {upvotes} &nbsp; | &nbsp;
               <ThumbDownIcon className={classes.leftIcon} />
               Dislikes: {downvotes}
             </Typography>
-            <Typography variant="subheading" color="textSecondary" className={classes.pos}>
-              {address.street}, {address.city}, {address.state}
-            </Typography>
+
           </CardContent>
           <CardActions>
             <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleUpvote(event, suggestion)}>
