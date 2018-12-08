@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueItem from '../components/venues/VenueItem';
 import ReviewContainer from './ReviewContainer';
@@ -48,8 +47,4 @@ const mapStateToProps = (state) => {
 }
 
 // this should allow it to dispatch FETCH_VENUES action so that it can update the store, if necessary
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(VenueShow);
+export default connect(mapStateToProps, { fetchVenues })(VenueShow);

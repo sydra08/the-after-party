@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, compose } from 'redux';
+import { compose } from 'redux';
 import { addReview, fetchReviews } from '../actions/reviewActions';
 import ReviewList from '../components/reviews/ReviewList.js';
 import ReviewForm from '../components/reviews/ReviewForm.js';
@@ -94,9 +94,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({addReview: addReview, fetchReviews: fetchReviews}, dispatch);
-};
-
 export default compose(
-   withStyles(styles), connect(mapStateToProps, mapDispatchToProps))(ReviewContainer);
+   withStyles(styles), connect(mapStateToProps, { addReview, fetchReviews }))(ReviewContainer);

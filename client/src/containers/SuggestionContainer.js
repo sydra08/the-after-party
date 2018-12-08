@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, compose } from 'redux';
+import { compose } from 'redux';
 import { fetchSuggestions, addSuggestion } from '../actions/suggestionActions';
 import { fetchCategories } from '../actions/categoryActions';
 import SuggestionList from '../components/suggestions/SuggestionList.js';
@@ -162,9 +162,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchSuggestions: fetchSuggestions, addSuggestion: addSuggestion, fetchCategories: fetchCategories}, dispatch);
-};
-
 export default compose(
-   withStyles(styles), connect(mapStateToProps, mapDispatchToProps))(SuggestionContainer);
+   withStyles(styles), connect(mapStateToProps, { fetchSuggestions, addSuggestion, fetchCategories }))(SuggestionContainer);

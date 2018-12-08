@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, compose } from 'redux';
+import { compose } from 'redux';
 import { upvoteSuggestion, downvoteSuggestion } from '../../actions/suggestionActions';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -91,9 +91,5 @@ class Suggestion extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({upvoteSuggestion: upvoteSuggestion, downvoteSuggestion: downvoteSuggestion}, dispatch);
-};
-
 export default compose(
-   withStyles(styles), connect(null, mapDispatchToProps))(Suggestion);
+   withStyles(styles), connect(null, { upvoteSuggestion, downvoteSuggestion }))(Suggestion);

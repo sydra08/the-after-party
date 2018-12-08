@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, compose } from 'redux';
+import { compose } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueIndex from '../components/venues/VenueIndex';
 import { withStyles } from '@material-ui/core/styles';
@@ -60,9 +60,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchVenues: fetchVenues}, dispatch);
-};
-
 export default compose(
-   withStyles(styles), connect(mapStateToProps, mapDispatchToProps))(VenueList);
+   withStyles(styles), connect(mapStateToProps, { fetchVenues }))(VenueList);
