@@ -6,7 +6,7 @@ import { fetchCategories } from '../actions/categoryActions';
 import SuggestionList from '../components/suggestions/SuggestionList.js';
 import SuggestionForm from '../components/suggestions/SuggestionForm.js';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({

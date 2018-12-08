@@ -5,8 +5,7 @@ import { addReview, fetchReviews } from '../actions/reviewActions';
 import ReviewList from '../components/reviews/ReviewList.js';
 import ReviewForm from '../components/reviews/ReviewForm.js';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
