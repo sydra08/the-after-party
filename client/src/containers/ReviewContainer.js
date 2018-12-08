@@ -5,7 +5,7 @@ import { addReview, fetchReviews } from '../actions/reviewActions';
 import ReviewList from '../components/reviews/ReviewList.js';
 import ReviewForm from '../components/reviews/ReviewForm.js';
 import { withStyles } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
@@ -23,9 +23,7 @@ class ReviewContainer extends Component {
     this.state = {
       content: '',
       rating: 0,
-      venue_id: this.props.venueId,
-      // errorText: '',
-      // isError: false
+      venue_id: this.props.venueId
     };
   }
 
@@ -41,9 +39,7 @@ class ReviewContainer extends Component {
     this.setState({
       content: '',
       rating: 0,
-      venue_id: this.props.venueId,
-      // errorText: '',
-      // isError: false
+      venue_id: this.props.venueId
     });
   }
 
@@ -76,8 +72,12 @@ class ReviewContainer extends Component {
 
     return (
       <div className={classes.root}>
-        <p>{ errorMsg }</p>
         <ReviewList reviews={this.props.reviews} />
+
+        <Typography variant="subheading" align="center" color="secondary">
+          { errorMsg }
+        </Typography>
+
         <ReviewForm handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}
         handleStarChange={this.onStarClick} content={this.state.content} rating={this.state.rating} />
       </div>

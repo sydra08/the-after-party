@@ -46,7 +46,7 @@ const SuggestionForm = (props) => {
   console.log("SuggestionForm component")
   console.log(props)
   const { handleSubmit,name, handleNameChange, addressStreet, handleStreetChange, addressCity, handleCityChange, addressState,
-  handleStateChange, category, handleCategoryChange, vote,   handleVoteChange, classes, categories, error } = props;
+  handleStateChange, category, handleCategoryChange, vote,   handleVoteChange, classes, categories } = props;
 
   return (
     <div className={classes.root}>
@@ -55,9 +55,7 @@ const SuggestionForm = (props) => {
           <Typography variant="title" align="left" gutterBottom>
             Share a suggestion:
           </Typography>
-          <Typography variant="title" align="left" gutterBottom>
-            { error }
-          </Typography>
+
           <form autoComplete="off" onSubmit={handleSubmit} className={classes.container}>
             <TextField
               id="suggestion-name"

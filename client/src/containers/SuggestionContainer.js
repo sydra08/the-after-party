@@ -136,6 +136,10 @@ class SuggestionContainer extends Component {
         </Typography>
         <SuggestionList suggestions={this.props.suggestions} />
 
+        <Typography variant="subheading" align="center" color="secondary">
+          { errorMsg }
+        </Typography>
+
         <SuggestionForm
           handleSubmit={this.handleSubmit}
           name={this.state.name} handleNameChange={this.handleNameChange} addressStreet={this.state.address_attributes.street} handleStreetChange={this.handleStreetChange}
@@ -148,7 +152,6 @@ class SuggestionContainer extends Component {
           vote={this.state.vote}
           handleVoteChange={this.handleVoteChange}
           categories={this.props.categories}
-          error={errorMsg}
           />
       </div>
     )
