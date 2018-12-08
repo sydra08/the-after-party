@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { fetchVenues } from '../actions/venueActions';
 import VenueItem from '../components/venues/VenueItem';
 import ReviewContainer from './ReviewContainer';
 import SuggestionContainer from './SuggestionContainer';
+import { withStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // this is the page for the Venue details view - contains suggestions and reviews
+
+const styles = theme => ({
+  progress: {
+    margin: theme.spacing.unit * 2,
+  },
+});
 
 class VenueShow extends Component {
   componentDidMount() {
@@ -23,11 +32,11 @@ class VenueShow extends Component {
   render() {
     console.log("VenueShow component")
     const venue = this.selectVenue()
-    console.log(this.props.match.url)
-    console.log(`props:`);
-    console.log(this.props.venues)
-    console.log(venue)
-    let renderVenue = venue ? (<div><VenueItem venue={venue} /> <SuggestionContainer venueId={venue.id} /><ReviewContainer venueId={venue.id} /></div>) : <p>Venue data not available</p>;
+    const { classes } = this.props;
+
+    let loadingDisplay = (<div><CircularProgress className={classes.progress} size={50} /></div>);
+
+    let renderVenue = venue ? (<div><VenueItem venue={venue} /> <SuggestionContainer venueId={venue.id} /><ReviewContainer venueId={venue.id} /></div>) : loadingDisplay;
 
     return (
       <div className="venue-container-component">
@@ -47,4 +56,5 @@ const mapStateToProps = (state) => {
 }
 
 // this should allow it to dispatch FETCH_VENUES action so that it can update the store, if necessary
-export default connect(mapStateToProps, { fetchVenues })(VenueShow);
+export default compose(
+  withStyles(styles), connect(mapStateToProps, { fetchVenues }))(VenueShow);
