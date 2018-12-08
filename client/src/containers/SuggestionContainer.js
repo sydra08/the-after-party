@@ -148,6 +148,7 @@ class SuggestionContainer extends Component {
           vote={this.state.vote}
           handleVoteChange={this.handleVoteChange}
           categories={this.props.categories}
+          error={errorMsg}
           />
       </div>
     )
