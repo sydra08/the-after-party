@@ -6,12 +6,16 @@ import ReviewList from '../components/reviews/ReviewList.js';
 import ReviewForm from '../components/reviews/ReviewForm.js';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing.unit * 8
-  }
+  },
+  progress: {
+    margin: theme.spacing.unit * 2,
+  },
 });
 
 
@@ -64,15 +68,25 @@ class ReviewContainer extends Component {
     console.log("ReviewContainer component")
     console.log("ReviewContainer props")
     console.log(this.props)
-    const { classes, isError } = this.props;
+    const { classes, reviews, isLoading, isError } = this.props;
     let errorMsg = null;
+
     if(isError) {
       errorMsg = "There was an error submitting your review. Please try again"
     };
 
+    if(!!isLoading && !!reviews) {
+      console.log('loading page...')
+      return (
+        <div>
+          <CircularProgress className={classes.progress} size={50} />
+        </div>
+      );
+    }
+
     return (
       <div className={classes.root}>
-        <ReviewList reviews={this.props.reviews} />
+        <ReviewList reviews={reviews} />
 
         <Typography variant="subheading" align="center" color="error">
           { errorMsg }

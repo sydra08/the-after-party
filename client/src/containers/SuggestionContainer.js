@@ -6,14 +6,17 @@ import { fetchCategories } from '../actions/categoryActions';
 import SuggestionList from '../components/suggestions/SuggestionList.js';
 import SuggestionForm from '../components/suggestions/SuggestionForm.js';
 import { withStyles } from '@material-ui/core/styles';
-// import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing.unit * 8
-  }
+  },
+  progress: {
+    margin: theme.spacing.unit * 2,
+  },
 });
 
 class SuggestionContainer extends Component {
@@ -124,17 +127,29 @@ class SuggestionContainer extends Component {
     console.log("Suggestion Container component")
     console.log(this.props)
     console.log(this.props.categories[0])
-    const { classes, isError } = this.props;
+    const { classes, suggestions, isLoading, isError } = this.props;
+
     let errorMsg = null;
     if(isError) {
       errorMsg = "There was an error submitting your suggestion. Please try again"
     };
+
+    if(!!isLoading && !!suggestions) {
+      console.log('loading page...')
+      return (
+        <div>
+          <CircularProgress className={classes.progress} size={50} />
+        </div>
+      );
+    }
+
+
     return (
       <div className={classes.root}>
         <Typography variant="headline" gutterBottom>
           Check out suggestions
         </Typography>
-        <SuggestionList suggestions={this.props.suggestions} />
+        <SuggestionList suggestions={suggestions} />
 
         <Typography variant="subheading" align="center" color="error">
           { errorMsg }
