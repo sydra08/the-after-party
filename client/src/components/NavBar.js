@@ -23,7 +23,8 @@ function NavBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="title" component={Link} to='/' color="inherit" className={classes.flex}>The After Party</Typography>
+          <Typography variant="title" color="inherit" className={classes.flex}>The After Party</Typography>
+          <Button component={Link} to='/' color="inherit">Home</Button>
           <Button component={Link} to='/venues' color="inherit">Venues</Button>
         </Toolbar>
       </AppBar>
