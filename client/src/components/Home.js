@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.css';
 import { withStyles } from "@material-ui/core/styles";
-// import Card from '@material-ui/core/Card';
-// import CardContent from '@material-ui/core/CardContent';
 import Typography from "@material-ui/core/Typography";
+import Paper from '@material-ui/core/Paper';
+
 
 const styles = theme => ({
   root: {
@@ -13,23 +13,26 @@ const styles = theme => ({
   }
 });
 
-const Home = () => {
+const Home = (props) => {
+  const { classes } = props;
   return (
-    <div className="home">
-      <div id="banner">
-        <Typography variant="headline" component="h1">
+    <div>
+      <Paper className={classes.root} elevation={1}>
+        <Typography variant="headline" align="center">
           The After Party
         </Typography>
-        <Typography variant="subheading" component="subtitle2">
+        <Typography variant="subheading" align="center">
           Your source for concert venue reviews
         </Typography>
-        <Typography variant="subheading" component="subtitle2">
+        <Typography variant="subheading" align="center">
           and where to go before and after the show.
         </Typography>
-        <Typography variant="caption" component="caption">
-          Images: <a href="https://www.pexels.com/">Pexels</a>
-        </Typography>
+      </Paper>
+      <div className="home">
       </div>
+      <Typography variant="caption" align="right">
+        Image: <a href="https://www.pexels.com/">Pexels</a>
+      </Typography>
     </div>
   )
 }

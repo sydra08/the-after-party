@@ -27,7 +27,7 @@
   to { transform: rotate(360deg); }
 }
 
-#banner {
+.home {
   padding: 8em 0 9em 0;
   background-image: url("/applause-audience-band-196652.jpg");
   background-size: cover;
