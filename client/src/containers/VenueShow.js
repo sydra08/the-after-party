@@ -17,6 +17,8 @@ const styles = theme => ({
 });
 
 class VenueShow extends Component {
+
+  // fetch the venues - in place for when going directly to page
   componentDidMount() {
     console.log('the component mounted')
     this.props.fetchVenues();
@@ -28,7 +30,6 @@ class VenueShow extends Component {
     return this.props.venues.find(v => v.id === parseInt(this.props.match.params.venueId, 10))
   }
 
-  // add something to handle when data is empty
   render() {
     console.log("VenueShow component")
     const venue = this.selectVenue()
@@ -54,6 +55,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-// this should allow it to dispatch FETCH_VENUES action so that it can update the store, if necessary
 export default compose(
   withStyles(styles), connect(mapStateToProps, { fetchVenues }))(VenueShow);

@@ -26,8 +26,6 @@ const styles = theme => ({
   }
 });
 
-// need to add validation errors here
-
 const ReviewForm = (props) => {
   console.log("ReviewForm component")
   console.log(props)

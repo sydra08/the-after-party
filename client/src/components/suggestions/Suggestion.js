@@ -35,23 +35,23 @@ const styles = theme => ({
 
 class Suggestion extends Component {
   handleUpvote = (event, suggestion) => {
-    console.log("old total")
-    console.log(suggestion.upvotes)
+    // console.log("old total")
+    // console.log(suggestion.upvotes)
     console.log("Like button was pressed")
     const newUpvoteTotal = suggestion.upvotes + 1;
     this.props.upvoteSuggestion(suggestion, newUpvoteTotal);
   }
 
   handleDownvote = (event, suggestion) => {
-    console.log("old total")
-    console.log(suggestion.downvotes)
+    // console.log("old total")
+    // console.log(suggestion.downvotes)
     console.log("Dislike button was pressed")
     const newDownvoteTotal = suggestion.downvotes + 1;
     this.props.downvoteSuggestion(suggestion, newDownvoteTotal);
   }
 
   render(){
-    console.log("Suggestion component props")
+    console.log("Suggestion component props:")
     console.log(this.props)
     const { suggestion, classes } = this.props;
     const { name, category, address, upvotes, downvotes } = suggestion;

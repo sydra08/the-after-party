@@ -80,28 +80,23 @@ class SuggestionContainer extends Component {
     });
   }
 
+  // for address fields - only adds the last field you enter into state
+  // need to figure out how to deal with the nested attributes
+  // don't want to have an event handler for each property
+
   handleStreetChange = (event) => {
-    // this only adds the last field you enter into state
-    // need to figure out how to deal with the nested attributes
-    // don't want to have an event handler for each property
     const value = event.target.value;
 
     this.setState(Object.assign({}, this.state, { address_attributes: { street: value, city: this.state.address_attributes.city, state: this.state.address_attributes.state }}));
   }
 
   handleCityChange = (event) => {
-    // this only adds the last field you enter into state
-    // need to figure out how to deal with the nested attributes
-    // don't want to have an event handler for each property
     const value = event.target.value;
 
     this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: value, state: this.state.address_attributes.state }}));
   }
 
   handleStateChange = (event) => {
-    // this only adds the last field you enter into state
-    // need to figure out how to deal with the nested attributes
-    // don't want to have an event handler for each property
     const value = event.target.value;
 
     this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: this.state.address_attributes.city,state: value }}));

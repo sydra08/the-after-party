@@ -21,17 +21,12 @@ class VenueList extends Component {
     this.props.fetchVenues()
   }
 
-  // renderVenues() {
-  //   const { classes, venues, isLoading } = this.props
-  //   return (
-  //     <VenueIndex venues={venues} />
-  //   )}
-  // }
-
   render() {
     console.log("VenueList component")
 
     const { classes, venues, isLoading } = this.props
+
+    // if isLoading, show the loading screen, else show everything else
 
     if(!!isLoading && !!venues) {
       console.log('loading page...')
@@ -41,8 +36,7 @@ class VenueList extends Component {
         </div>
       );
     }
-    // if props.isLoading === true then show the is loading thing
-    // if it === false then show the rest of the stuff
+
     return (
       <div className="venue-container-component">
         <VenueIndex venues={venues} />
