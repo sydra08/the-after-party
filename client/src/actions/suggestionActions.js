@@ -34,7 +34,7 @@ export function addSuggestion(suggestionData) {
 }
 
 export function upvoteSuggestion(suggestion, newUpvoteTotal) {
-  // because the params are being passed in the URL i don't think it works well with strong params
+  // because the params are being passed in the URL i don't think it works well with strong params so use query params instead
   return function(dispatch) {
     console.log(suggestion)
     console.log(newUpvoteTotal)

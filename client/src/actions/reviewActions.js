@@ -2,7 +2,6 @@ import fetch from 'isomorphic-fetch';
 
 export function addReview(reviewData) {
   return (dispatch) => {
-    // debugger
     fetch(`/venues/${reviewData.venue_id}/reviews`, {
     method: 'POST',
     body: JSON.stringify(reviewData),
