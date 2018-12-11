@@ -17,15 +17,10 @@ class SuggestionsController < ApplicationController
   end
 
   def update
-    # binding.pry
-    # params are not being passed properly
     @suggestion = Suggestion.find_by(id: params[:id])
-    # binding.pry
     if @suggestion.update(suggestion_params)
-      # binding.pry
       render json: @suggestion, status: 200
     else
-      # binding.pry
       render json: @suggestion, status: 404
     end
   end
