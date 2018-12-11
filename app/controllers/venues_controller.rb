@@ -13,10 +13,4 @@ class VenuesController < ApplicationController
     end
   end
 
-  private
-
-  def venue_params
-    params.require(:venue).permit(:avg_rating)
-  end
-
 end
