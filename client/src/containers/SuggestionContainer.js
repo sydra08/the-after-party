@@ -41,7 +41,6 @@ class SuggestionContainer extends Component {
   }
 
   componentDidMount() {
-    // is the component mounting 2x bc there are 2 fetch calls?
     console.log('the SuggestionContainer component mounted')
     this.props.fetchSuggestions(this.props.venueId);
     this.props.fetchCategories();
