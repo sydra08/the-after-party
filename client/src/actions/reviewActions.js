@@ -10,13 +10,13 @@ export function addReview(reviewData) {
     }
   })
     .then(function(response) {
-      if(response.status >= 400){
-        console.log('Error:')
-        console.log(response.status)
-        return response.json()
-      }
-      console.log('Success')
-      console.log(response.status)
+      //if(response.ok){
+        //console.log('Error:')
+        //console.log(response.status)
+      //  return response.json()
+      //}
+      //console.log('Success')
+      //console.log(response.status)
       return response.json()
     })
     .then(review => dispatch({type: 'ADD_REVIEW', payload: review}))
