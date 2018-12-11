@@ -42,10 +42,8 @@ class SuggestionContainer extends Component {
 
   componentDidMount() {
     // is the component mounting 2x bc there are 2 fetch calls?
+    console.log('the SuggestionContainer component mounted')
     this.props.fetchSuggestions(this.props.venueId);
-    // this doesn't work even when fetchSuggestions() isn't called
-    // when you use postman the api call works...
-    // even when you remove suggestions from the game it doesn't work
     this.props.fetchCategories();
   }
 

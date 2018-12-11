@@ -17,8 +17,11 @@ const styles = theme => ({
 
 class VenueList extends Component {
   componentDidMount() {
-    console.log('the component mounted')
-    this.props.fetchVenues()
+    console.log('the VenueList component mounted')
+    const { venues } = this.props;
+    if (!venues.length) {
+      this.props.fetchVenues();
+    }
   }
 
   render() {

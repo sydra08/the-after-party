@@ -19,7 +19,7 @@ const styles = theme => ({
 class VenueShow extends Component {
   // only fetch venues if there isn't already data
   componentDidMount() {
-    console.log('the component mounted')
+    console.log('the VenueShow component mounted')
     const { venues } = this.props;
     if (!venues.length) {
       this.props.fetchVenues();

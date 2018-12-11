@@ -33,6 +33,7 @@ class ReviewContainer extends Component {
 
   // fetch the reviews for the venues after the component has mounted
   componentDidMount() {
+    console.log('the ReviewContainer component mounted')
     this.props.fetchReviews(this.props.venueId);
   }
 
