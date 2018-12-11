@@ -17,11 +17,13 @@ const styles = theme => ({
 });
 
 class VenueShow extends Component {
-
-  // fetch the venues - in place for when going directly to page
+  // only fetch venues if there isn't already data
   componentDidMount() {
     console.log('the component mounted')
-    this.props.fetchVenues();
+    const { venues } = this.props;
+    if (!venues.length) {
+      this.props.fetchVenues();
+    }
   }
 
   selectVenue() {
