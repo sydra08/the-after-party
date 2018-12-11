@@ -8,6 +8,7 @@ import SuggestionForm from '../components/suggestions/SuggestionForm.js';
 import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -16,6 +17,9 @@ const styles = theme => ({
   },
   progress: {
     margin: theme.spacing.unit * 2,
+  },
+  button: {
+    margin: theme.spacing.unit,
   },
 });
 
@@ -36,7 +40,8 @@ class SuggestionContainer extends Component {
         street: '',
         city: '',
         state: ''
-      }
+      },
+      suggestions: this.props.suggestions
     };
   }
 
@@ -115,6 +120,16 @@ class SuggestionContainer extends Component {
     this.setState(Object.assign({}, this.state, { category_attributes: {name: value}}))
   }
 
+  handleSort(event) {
+    console.log("the sort button was clicked")
+
+    let sortedSuggestions = this.props.suggestions.sort((A,B) => B.upvotes-A.upvotes)
+
+    this.setState(Object.assign({}, this.state, { suggestions: sortedSuggestions }));
+
+    // suggestions don't show up unless you press the button now...is that bc component hasn't mounted yet so there's no data?
+  }
+
   render() {
     console.log("Suggestion Container component")
     console.log(this.props)
@@ -141,7 +156,11 @@ class SuggestionContainer extends Component {
         <Typography variant="headline" gutterBottom>
           Check out suggestions
         </Typography>
-        <SuggestionList suggestions={suggestions} />
+
+        <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleSort(event)}> Sort by Likes
+        </Button>
+
+        <SuggestionList suggestions={this.state.suggestions} />
 
         <Typography variant="subheading" align="center" color="error">
           { errorMsg }
