@@ -28,19 +28,6 @@ class SuggestionContainer extends Component {
     super(props);
 
     this.state = {
-      name: '',
-      upvotes: 1,
-      downvotes: 0,
-      vote: "Like",
-      venue_id: this.props.venueId,
-      category_attributes: {
-        name: ""
-      },
-      address_attributes: {
-        street: '',
-        city: '',
-        state: ''
-      },
       suggestions: this.props.suggestions
     };
   }
@@ -134,7 +121,7 @@ class SuggestionContainer extends Component {
     console.log("Suggestion Container component")
     console.log(this.props)
     console.log(this.props.categories[0])
-    const { classes, isLoading, isError } = this.props;
+    const { venueId, classes, isLoading, isError } = this.props;
 
     // use what's in props if it exists otherwise use what's in state
     const suggestions = this.props.suggestions ? this.props.suggestions : this.state.suggetions;
@@ -169,7 +156,7 @@ class SuggestionContainer extends Component {
           { errorMsg }
         </Typography>
 
-        <SuggestionForm categories={this.props.categories} />
+        <SuggestionForm venueId={venueId} categories={this.props.categories} />
       </div>
     )
   }
