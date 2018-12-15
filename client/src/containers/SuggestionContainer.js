@@ -134,7 +134,10 @@ class SuggestionContainer extends Component {
     console.log("Suggestion Container component")
     console.log(this.props)
     console.log(this.props.categories[0])
-    const { classes, suggestions, isLoading, isError } = this.props;
+    const { classes, isLoading, isError } = this.props;
+
+    // use what's in props if it exists otherwise use what's in state
+    const suggestions = this.props.suggestions ? this.props.suggestions : this.state.suggetions;
 
     let errorMsg = null;
     if(isError) {
@@ -160,7 +163,7 @@ class SuggestionContainer extends Component {
         <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleSort(event)}> Sort by Likes
         </Button>
 
-        <SuggestionList suggestions={this.state.suggestions} />
+        <SuggestionList suggestions={suggestions} />
 
         <Typography variant="subheading" align="center" color="error">
           { errorMsg }
