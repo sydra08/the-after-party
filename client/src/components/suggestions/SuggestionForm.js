@@ -83,7 +83,7 @@ class SuggestionForm extends Component {
       vote: "Like",
       venue_id: this.props.venueId,
       category_attributes: {
-        name: "Fast Casual"
+        name: ""
       },
       address_attributes: {
         street: '',
@@ -105,22 +105,36 @@ class SuggestionForm extends Component {
   // need to figure out how to deal with the nested attributes
   // don't want to have an event handler for each property
 
-  handleStreetChange = (event) => {
+  handleAddressChange = (event) => {
     const value = event.target.value;
-
-    this.setState(Object.assign({}, this.state, { address_attributes: { street: value, city: this.state.address_attributes.city, state: this.state.address_attributes.state }}));
-  }
-
-  handleCityChange = (event) => {
-    const value = event.target.value;
-
-    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: value, state: this.state.address_attributes.state }}));
-  }
-
-  handleStateChange = (event) => {
-    const value = event.target.value;
-
-    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: this.state.address_attributes.city,state: value }}));
+    const name = event.target.name;
+    switch(name){
+      case 'street':
+        this.setState(prevState => ({
+          address_attributes: {
+            street: value,
+            ...prevState
+          }
+        }));
+        break;
+      case 'city':
+        this.setState(prevState => ({
+          address_attributes: {
+            street: prevState.address_attributes.street,
+            city: value
+          }
+        }));
+        break;
+      case 'state':
+        this.setState(prevState => ({
+          address_attributes: {
+            street: prevState.address_attributes.street,
+            city: prevState.address_attributes.city,
+            state: value
+          }
+        }));
+        break;
+      }
   }
 
   handleVoteChange = (event) => {
@@ -160,7 +174,7 @@ class SuggestionForm extends Component {
                 name="name"
                 label="Name"
                 value={this.state.name}
-                onChange={(event) => this.handleNameChange(event)}
+                onChange={this.handleNameChange}
                 className={classes.textField}
                 margin="normal"
                 fullWidth
@@ -171,7 +185,7 @@ class SuggestionForm extends Component {
                 name="street"
                 label="Street"
                 value={this.state.address_attributes.street}
-                onChange={this.handleStreetChange}
+                onChange={this.handleAddressChange}
                 className={classes.textField}
                 margin="normal"
               />
@@ -180,7 +194,7 @@ class SuggestionForm extends Component {
                 name="city"
                 label="City"
                 value={this.state.address_attributes.city}
-                onChange={this.handleCityChange}
+                onChange={this.handleAddressChange}
                 className={classes.textField}
                 margin="normal"
               />
@@ -189,7 +203,7 @@ class SuggestionForm extends Component {
                 name="state"
                 label="State"
                 value={this.state.address_attributes.state}
-                onChange={this.handleStateChange}
+                onChange={this.handleAddressChange}
                 className={classes.textField}
                 margin="normal"
               />
