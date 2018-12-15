@@ -134,7 +134,12 @@ class SuggestionForm extends Component {
           }
         }));
         break;
-      }
+      default:
+        this.setState(prevState => ({
+          prevState
+        }));
+        break;
+    }
   }
 
   handleVoteChange = (event) => {
