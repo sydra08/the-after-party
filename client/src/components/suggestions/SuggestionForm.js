@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { addSuggestion } from '../../actions/suggestionActions';
+import { fetchCategories } from '../../actions/categoryActions';
 import { withStyles } from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -63,6 +64,10 @@ class SuggestionForm extends Component {
         state: ''
       }
     };
+  }
+
+  componentDidMount() {
+    this.props.fetchCategories();
   }
 
   handleSubmit = (event) => {
@@ -224,8 +229,14 @@ class SuggestionForm extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    categories: state.categories.categories
+  }
+}
+
 export default compose(
-   withStyles(styles), connect(null, { addSuggestion }))(SuggestionForm);
+   withStyles(styles), connect(mapStateToProps, { addSuggestion, fetchCategories }))(SuggestionForm);
 
 
 // const SuggestionForm = (props) => {

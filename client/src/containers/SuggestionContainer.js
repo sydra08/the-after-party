@@ -35,7 +35,6 @@ class SuggestionContainer extends Component {
   componentDidMount() {
     console.log('the SuggestionContainer component mounted')
     this.props.fetchSuggestions(this.props.venueId);
-    this.props.fetchCategories();
   }
 
   // handleSubmit = (event) => {
@@ -120,7 +119,6 @@ class SuggestionContainer extends Component {
   render() {
     console.log("Suggestion Container component")
     console.log(this.props)
-    console.log(this.props.categories[0])
     const { venueId, classes, isLoading, isError } = this.props;
 
     // use what's in props if it exists otherwise use what's in state
@@ -156,7 +154,7 @@ class SuggestionContainer extends Component {
           { errorMsg }
         </Typography>
 
-        <SuggestionForm venueId={venueId} categories={this.props.categories} />
+        <SuggestionForm venueId={venueId} />
       </div>
     )
   }
@@ -165,7 +163,6 @@ class SuggestionContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     suggestions: state.suggestions.suggestions,
-    categories: state.categories.categories,
     isError: state.suggestions.isError
   }
 }
