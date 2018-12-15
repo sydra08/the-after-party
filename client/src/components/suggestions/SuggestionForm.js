@@ -101,45 +101,22 @@ class SuggestionForm extends Component {
     });
   }
 
-  // for address fields - only adds the last field you enter into state
-  // need to figure out how to deal with the nested attributes
-  // don't want to have an event handler for each property
-
-  handleAddressChange = (event) => {
+  handleStreetChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name;
-    switch(name){
-      case 'street':
-        this.setState(prevState => ({
-          address_attributes: {
-            street: value,
-            ...prevState
-          }
-        }));
-        break;
-      case 'city':
-        this.setState(prevState => ({
-          address_attributes: {
-            street: prevState.address_attributes.street,
-            city: value
-          }
-        }));
-        break;
-      case 'state':
-        this.setState(prevState => ({
-          address_attributes: {
-            street: prevState.address_attributes.street,
-            city: prevState.address_attributes.city,
-            state: value
-          }
-        }));
-        break;
-      default:
-        this.setState(prevState => ({
-          prevState
-        }));
-        break;
-    }
+
+    this.setState(Object.assign({}, this.state, { address_attributes: { street: value, city: this.state.address_attributes.city, state: this.state.address_attributes.state }}));
+  }
+
+  handleCityChange = (event) => {
+    const value = event.target.value;
+
+    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: value, state: this.state.address_attributes.state }}));
+  }
+
+  handleStateChange = (event) => {
+    const value = event.target.value;
+
+    this.setState(Object.assign({}, this.state, { address_attributes: { street: this.state.address_attributes.street, city: this.state.address_attributes.city,state: value }}));
   }
 
   handleVoteChange = (event) => {
@@ -190,7 +167,7 @@ class SuggestionForm extends Component {
                 name="street"
                 label="Street"
                 value={this.state.address_attributes.street}
-                onChange={this.handleAddressChange}
+                onChange={this.handleStreetChange}
                 className={classes.textField}
                 margin="normal"
               />
@@ -199,7 +176,7 @@ class SuggestionForm extends Component {
                 name="city"
                 label="City"
                 value={this.state.address_attributes.city}
-                onChange={this.handleAddressChange}
+                onChange={this.handleCityChange}
                 className={classes.textField}
                 margin="normal"
               />
@@ -208,7 +185,7 @@ class SuggestionForm extends Component {
                 name="state"
                 label="State"
                 value={this.state.address_attributes.state}
-                onChange={this.handleAddressChange}
+                onChange={this.handleStateChange}
                 className={classes.textField}
                 margin="normal"
               />
