@@ -195,7 +195,7 @@ class SuggestionForm extends Component {
               />
               <FormControl className={classes.formControl}>
                 <Select
-                  value={this.state.category}
+                  value={this.state.category_attributes.name}
                   onChange={this.handleCategoryChange}
                   displayEmpty
                   name="Category"
@@ -212,7 +212,7 @@ class SuggestionForm extends Component {
                   aria-label="vote"
                   name="vote"
                   className={classes.group}
-                  value={this.stat}
+                  value={this.state.vote}
                   onChange={this.handleVoteChange}
                   row
                 >
