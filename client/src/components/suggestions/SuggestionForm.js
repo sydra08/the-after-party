@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { addSuggestion } from '../../actions/suggestionActions';
 import { withStyles } from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -221,7 +224,9 @@ class SuggestionForm extends Component {
   }
 }
 
-export default withStyles(styles)(SuggestionForm);
+export default compose(
+   withStyles(styles), connect(null, { addSuggestion }))(SuggestionForm);
+
 
 // const SuggestionForm = (props) => {
 //   console.log("SuggestionForm component")

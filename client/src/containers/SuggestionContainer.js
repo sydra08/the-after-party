@@ -169,7 +169,7 @@ class SuggestionContainer extends Component {
           { errorMsg }
         </Typography>
 
-        <SuggestionForm addSuggestion={this.props.addSuggestion} categories={this.props.categories} />
+        <SuggestionForm categories={this.props.categories} />
       </div>
     )
   }
