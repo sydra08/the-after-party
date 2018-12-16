@@ -9,16 +9,7 @@ export function addReview(reviewData) {
       'Content-Type': 'application/json'
     }
   })
-    .then(function(response) {
-      //if(response.ok){
-        //console.log('Error:')
-        //console.log(response.status)
-      //  return response.json()
-      //}
-      //console.log('Success')
-      //console.log(response.status)
-      return response.json()
-    })
+    .then(response => response.json())
     .then(review => dispatch({type: 'ADD_REVIEW', payload: review}))
   }
 }

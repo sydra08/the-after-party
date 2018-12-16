@@ -19,16 +19,7 @@ export function addSuggestion(suggestionData) {
       'Content-Type': 'application/json'
     }
   })
-    .then(function(response) {
-      if(response.status >= 400){
-        console.log('Error:')
-        console.log(response.status)
-        return response.json()
-      }
-      console.log('Success')
-      console.log(response.status)
-      return response.json()
-    })
+    .then(response => response.json())
     .then(suggestion => dispatch({type: 'ADD_SUGGESTION', payload: suggestion}))
   }
 }
