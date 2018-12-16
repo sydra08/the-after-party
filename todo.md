@@ -173,6 +173,7 @@ https://www.npmjs.com/package/react-stars
   [x] https://react-bootstrap.github.io/ - never really had any success working with bootstrap, but willing to try
     + like the form validations
     + think that it's nice and basic and the Polaris one might get too complicated? It also looks really similar to the bootstrap stuff, just styled slightly differently at times
+[ ] fix issue where submitting a second suggestion without a category doesn't trigger an error...is that bc it doesn't fully re-render??
 
 having a loading indicator
 when component mounts it'll call fetchVenues()

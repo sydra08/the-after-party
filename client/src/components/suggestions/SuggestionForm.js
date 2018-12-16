@@ -9,6 +9,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 
@@ -94,7 +95,7 @@ const SuggestionForm = (props) => {
               className={classes.textField}
               margin="normal"
             />
-            <FormControl className={classes.formControl}>
+            <FormControl required className={classes.formControl}>
               <Select
                 value={category}
                 onChange={handleCategoryChange}

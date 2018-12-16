@@ -64,7 +64,7 @@ class SuggestionContainer extends Component {
       vote: "Like",
       venue_id: this.props.venueId,
       category_attributes: {
-        name: "Fast Casual"
+        name: ""
       },
       address_attributes: {
         street: '',
