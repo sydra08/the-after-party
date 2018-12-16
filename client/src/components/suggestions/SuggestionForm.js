@@ -189,7 +189,7 @@ class SuggestionForm extends Component {
                 className={classes.textField}
                 margin="normal"
               />
-              <FormControl className={classes.formControl}>
+              <FormControl className={classes.formControl} required>
                 <Select
                   value={this.state.category_attributes.name}
                   onChange={this.handleCategoryChange}
