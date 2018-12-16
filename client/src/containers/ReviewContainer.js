@@ -7,6 +7,7 @@ import ReviewForm from '../components/reviews/ReviewForm.js';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -15,6 +16,9 @@ const styles = theme => ({
   },
   progress: {
     margin: theme.spacing.unit * 2,
+  },
+  button: {
+    margin: theme.spacing.unit,
   },
 });
 
@@ -27,7 +31,8 @@ class ReviewContainer extends Component {
     this.state = {
       content: '',
       rating: 0,
-      venue_id: this.props.venueId
+      venue_id: this.props.venueId,
+      reviews: this.props.reviews
     };
   }
 
@@ -64,13 +69,25 @@ class ReviewContainer extends Component {
     });
   }
 
+  handleSort(event) {
+    console.log("the sort button was clicked")
+
+    let sortedReviews = this.props.reviews.sort((A,B) => B.rating-A.rating)
+
+    this.setState(Object.assign({}, this.state, { reviews: sortedReviews }));
+
+    // suggestions don't show up unless you press the button now...is that bc component hasn't mounted yet so there's no data?
+  }
+
   render() {
     console.log("ReviewContainer component")
     console.log("ReviewContainer props")
     console.log(this.props)
-    const { classes, reviews, isLoading, isError } = this.props;
-    let errorMsg = null;
+    const { classes, isLoading, isError } = this.props;
 
+    const reviews = this.props.reviews ? this.props.reviews : this.state.reviews;
+
+    let errorMsg = null;
     if(isError) {
       errorMsg = "There was an error submitting your review. Please try again"
     };
@@ -86,6 +103,10 @@ class ReviewContainer extends Component {
 
     return (
       <div className={classes.root}>
+
+        <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleSort(event)}> Sort by Rating
+        </Button>
+
         <ReviewList reviews={reviews} />
 
         <Typography variant="subheading" align="center" color="error">
