@@ -137,7 +137,7 @@ class SuggestionContainer extends Component {
     const { classes, isLoading, isError, categories } = this.props;
 
     // use what's in props if it exists otherwise use what's in state
-    const suggestions = this.props.suggestions ? this.props.suggestions : this.state.suggetions;
+    const suggestions = this.props.suggestions ? this.props.suggestions : this.state.suggestions;
 
     let errorMsg = null;
     if(isError) {
