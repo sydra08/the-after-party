@@ -41,7 +41,7 @@ class SuggestionContainer extends Component {
         city: '',
         state: ''
       },
-      suggestions: this.props.suggestions
+      suggestions: ''
     };
   }
 
@@ -120,7 +120,7 @@ class SuggestionContainer extends Component {
     this.setState(Object.assign({}, this.state, { category_attributes: {name: value}}))
   }
 
-  handleSort(event) {
+  handleSort = (event) => {
     console.log("the sort button was clicked")
 
     let sortedSuggestions = this.props.suggestions.sort((A,B) => B.upvotes-A.upvotes)
@@ -160,7 +160,7 @@ class SuggestionContainer extends Component {
           Check out suggestions
         </Typography>
 
-        <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleSort(event)}> Sort by Likes
+        <Button variant="contained" color="primary" className={classes.button} onClick={this.handleSort}> Sort by Likes
         </Button>
 
         <SuggestionList suggestions={suggestions} />
